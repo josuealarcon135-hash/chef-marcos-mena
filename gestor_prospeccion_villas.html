@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Prospección & Control de Alianzas — Chef Marcos Mena Viales</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              50: '#fcfaf5',
+              100: '#f8f3e8',
+              500: '#c5a059',
+              600: '#a67c2e',
+              700: '#7d5b18',
+              800: '#593f0d'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Lucide Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .card-hover { transition: all 0.2s ease-in-out; }
+    .card-hover:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -5px rgba(0, 0, 0, 0.08); }
+    /* Hide scrollbar for tabs */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-[#f8fafc] text-[#0f172a] min-h-screen pb-20">
+
+  <!-- ================= TOP HEADER ================= -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3.5">
+        
+        <!-- Brand / Identity -->
+        <div class="flex items-center space-x-3.5">
+          <div class="w-11 h-11 rounded-xl bg-gold-50 border-2 border-gold-600 flex items-center justify-center shrink-0 shadow-sm">
+            <i data-lucide="crown" class="w-6 h-6 text-gold-700"></i>
+          </div>
+          <div>
+            <div class="flex items-center space-x-2">
+              <h1 class="text-lg sm:text-xl font-extrabold text-slate-900">CRM de Alianzas · Chef Marcos Mena</h1>
+              <span class="bg-emerald-100 text-emerald-800 text-[11px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider">Activo</span>
+            </div>
+            <p class="text-xs text-slate-500 font-medium">Control de prospección diaria de Villas, Airbnbs y Concierges en Quepos / Manuel Antonio</p>
+          </div>
+        </div>
+
+        <!-- Quick Top Actions -->
+        <div class="flex flex-wrap items-center gap-2">
+          <a href="https://chef-marcos-mena.netlify.app" target="_blank" class="px-3 py-1.5 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-50 text-xs font-bold inline-flex items-center space-x-1.5 shadow-sm">
+            <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-500"></i>
+            <span>Ver Web</span>
+          </a>
+          <button onclick="openAddModal()" class="px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold inline-flex items-center space-x-1.5 shadow-sm transition-all">
+            <i data-lucide="plus-circle" class="w-4 h-4"></i>
+            <span>+ 1 Villa</span>
+          </button>
+          <button onclick="openBulkModal()" class="px-3.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold inline-flex items-center space-x-1.5 shadow-sm transition-all">
+            <i data-lucide="file-spreadsheet" class="w-4 h-4"></i>
+            <span>+ Carga Masiva</span>
+          </button>
+          
+          <!-- Backup Dropdown / Actions -->
+          <div class="flex items-center space-x-1 border-l border-slate-200 pl-2">
+            <button onclick="exportToJSON()" class="p-1.5 rounded-lg border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs" title="Descargar Respaldo JSON">
+              <i data-lucide="download" class="w-4 h-4"></i>
+            </button>
+            <label class="p-1.5 rounded-lg border border-slate-300 hover:bg-slate-50 text-slate-700 text-xs cursor-pointer" title="Importar Respaldo JSON">
+              <i data-lucide="upload" class="w-4 h-4"></i>
+              <input type="file" id="import-file" accept=".json" class="hidden" onchange="importFromJSON(event)">
+            </label>
+            <button onclick="resetDefaults()" class="p-1.5 rounded-lg border border-slate-300 hover:bg-red-50 hover:text-red-600 text-slate-400 text-xs" title="Restaurar Lista Base">
+              <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= METRICS & STATS ================= -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+      
+      <!-- Total -->
+      <div onclick="setStatusFilter('all')" class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm cursor-pointer hover:border-slate-400 transition-all flex flex-col justify-between">
+        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Total Registrados</span>
+        <div class="flex items-baseline justify-between mt-1.5">
+          <span class="text-2xl font-black text-slate-900" id="stat-total">0</span>
+          <i data-lucide="building-2" class="w-4 h-4 text-slate-400"></i>
+        </div>
+      </div>
+
+      <!-- Pendientes -->
+      <div onclick="setStatusFilter('pending')" class="bg-white p-3.5 rounded-xl border border-amber-200 bg-amber-50/30 shadow-sm cursor-pointer hover:border-amber-400 transition-all flex flex-col justify-between">
+        <span class="text-[11px] font-bold text-amber-700 uppercase tracking-wider">Por Contactar</span>
+        <div class="flex items-baseline justify-between mt-1.5">
+          <span class="text-2xl font-black text-amber-800" id="stat-pending">0</span>
+          <i data-lucide="clock" class="w-4 h-4 text-amber-600"></i>
+        </div>
+      </div>
+
+      <!-- Contactados -->
+      <div onclick="setStatusFilter('contacted')" class="bg-white p-3.5 rounded-xl border border-blue-200 bg-blue-50/30 shadow-sm cursor-pointer hover:border-blue-400 transition-all flex flex-col justify-between">
+        <span class="text-[11px] font-bold text-blue-700 uppercase tracking-wider">Contactados</span>
+        <div class="flex items-baseline justify-between mt-1.5">
+          <span class="text-2xl font-black text-blue-800" id="stat-contacted">0</span>
+          <i data-lucide="send" class="w-4 h-4 text-blue-600"></i>
+        </div>
+      </div>
+
+      <!-- Requiere Seguimiento -->
+      <div onclick="setStatusFilter('followup')" class="bg-white p-3.5 rounded-xl border border-rose-200 bg-rose-50/30 shadow-sm cursor-pointer hover:border-rose-400 transition-all flex flex-col justify-between">
+        <span class="text-[11px] font-bold text-rose-700 uppercase tracking-wider">Sin Respuesta (2+ d)</span>
+        <div class="flex items-baseline justify-between mt-1.5">
+          <span class="text-2xl font-black text-rose-800" id="stat-followup">0</span>
+          <i data-lucide="alert-circle" class="w-4 h-4 text-rose-600"></i>
+        </div>
+      </div>
+
+      <!-- Interesados -->
+      <div onclick="setStatusFilter('interested')" class="bg-white p-3.5 rounded-xl border border-purple-200 bg-purple-50/30 shadow-sm cursor-pointer hover:border-purple-400 transition-all flex flex-col justify-between">
+        <span class="text-[11px] font-bold text-purple-700 uppercase tracking-wider">Interesados</span>
+        <div class="flex items-baseline justify-between mt-1.5">
+          <span class="text-2xl font-black text-purple-800" id="stat-interested">0</span>
+          <i data-lucide="sparkles" class="w-4 h-4 text-purple-600"></i>
+        </div>
+      </div>
+
+      <!-- Alianzas Cerradas -->
+      <div onclick="setStatusFilter('closed')" class="bg-white p-3.5 rounded-xl border border-emerald-300 bg-emerald-50/50 shadow-sm cursor-pointer hover:border-emerald-500 transition-all flex flex-col justify-between">
+        <span class="text-[11px] font-bold text-emerald-700 uppercase tracking-wider">Alianzas Cerradas</span>
+        <div class="flex items-baseline justify-between mt-1.5">
+          <span class="text-2xl font-black text-emerald-800" id="stat-closed">0</span>
+          <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= CONTROL BAR: SEARCH & FILTERS ================= -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
+    <div class="bg-white p-3.5 sm:p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-3">
+      
+      <!-- Search Input -->
+      <div class="relative w-full md:w-80">
+        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+        <input type="text" id="search-input" oninput="filterVillas()" placeholder="Buscar villa, contacto o zona..." class="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-medium focus:outline-none focus:border-gold-600 focus:bg-white transition-all">
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex items-center space-x-1.5 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 no-scrollbar">
+        <button onclick="setStatusFilter('all')" class="filter-btn active px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white shrink-0" data-filter="all">Todos (<span id="count-all">0</span>)</button>
+        <button onclick="setStatusFilter('pending')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0" data-filter="pending">⏳ Pendientes (<span id="count-pending">0</span>)</button>
+        <button onclick="setStatusFilter('contacted')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0" data-filter="contacted">📨 Contactados (<span id="count-contacted">0</span>)</button>
+        <button onclick="setStatusFilter('followup')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0" data-filter="followup">⏰ Seguimiento (<span id="count-followup">0</span>)</button>
+        <button onclick="setStatusFilter('interested')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0" data-filter="interested">⭐ Interesados (<span id="count-interested">0</span>)</button>
+        <button onclick="setStatusFilter('closed')" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 shrink-0" data-filter="closed">🤝 Cerradas (<span id="count-closed">0</span>)</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= VILLAS LIST GRID ================= -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div id="villas-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+      <!-- Injected via JS -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="hidden text-center py-16 bg-white rounded-2xl border border-slate-200 p-8 mt-2">
+      <div class="w-16 h-16 rounded-full bg-slate-100 text-slate-400 mx-auto flex items-center justify-center mb-4">
+        <i data-lucide="inbox" class="w-8 h-8"></i>
+      </div>
+      <h3 class="text-base font-extrabold text-slate-800">No se encontraron registros</h3>
+      <p class="text-xs text-slate-500 mt-1">Prueba con otro filtro o agrega nuevos prospectos.</p>
+    </div>
+  </main>
+
+  <!-- ================= DAILY PROSPECTING ACCORDION / TOOLKIT ================= -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-700">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-700/60 pb-5">
+        <div class="flex items-center space-x-3.5">
+          <div class="w-10 h-10 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center border border-gold-500/30 shrink-0">
+            <i data-lucide="radar" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h2 class="text-base sm:text-lg font-extrabold">Radar de Prospección Diaria: Quepos & Manuel Antonio</h2>
+            <p class="text-xs text-slate-300">Cómo encontrar y añadir 15 a 20 nuevos anfitriones cada día en 10 minutos</p>
+          </div>
+        </div>
+        <button onclick="toggleGuide()" id="btn-toggle-guide" class="px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-xs font-bold text-white transition-all self-start sm:self-auto flex items-center space-x-1.5">
+          <span>Ver Rutina Diaria</span>
+          <i data-lucide="chevron-down" id="guide-chevron" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Quick 1-Click Search Engines -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5">
+        <a href="https://www.google.com/maps/search/luxury+villas+manuel+antonio+costa+rica" target="_blank" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <span class="text-xs font-bold block text-white">Google Maps</span>
+            <span class="text-[10px] text-slate-400 block">Villas Manuel Antonio</span>
+          </div>
+        </a>
+
+        <a href="https://www.airbnb.com/s/Manuel-Antonio--Quepos--Puntarenas--Costa-Rica/homes?min_bedrooms=3" target="_blank" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-lg bg-rose-500/20 text-rose-400 flex items-center justify-center shrink-0">
+            <i data-lucide="home" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <span class="text-xs font-bold block text-white">Airbnb Luxe</span>
+            <span class="text-[10px] text-slate-400 block">3+ Cuartos con Piscina</span>
+          </div>
+        </a>
+
+        <a href="https://www.vrbo.com/search/keywords:manuel-antonio-puntarenas-costa-rica" target="_blank" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0">
+            <i data-lucide="compass" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <span class="text-xs font-bold block text-white">VRBO Quepos</span>
+            <span class="text-[10px] text-slate-400 block">Propiedades de Lujo</span>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/explore/tags/manuelantoniovillas/" target="_blank" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-lg bg-pink-500/20 text-pink-400 flex items-center justify-center shrink-0">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <span class="text-xs font-bold block text-white">Instagram Tags</span>
+            <span class="text-[10px] text-slate-400 block">#manuelantoniovillas</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Expandable Step by Step Routine -->
+      <div id="guide-content" class="hidden mt-6 pt-6 border-t border-slate-800 space-y-4 text-xs text-slate-300">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-4 rounded-xl bg-white/5 border border-white/5 space-y-1.5">
+            <span class="text-gold-400 font-extrabold uppercase tracking-wide block">1. Encontrar Número en 30 Segundos</span>
+            <p class="leading-relaxed">Abre Google Maps y busca <em>"Villa rental Manuel Antonio"</em>. Haz clic en la villa: casi todas tienen botón directo de teléfono o sitio web oficial donde sale el WhatsApp del administrador local.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white/5 border border-white/5 space-y-1.5">
+            <span class="text-gold-400 font-extrabold uppercase tracking-wide block">2. Cargar en el Sistema</span>
+            <p class="leading-relaxed">Toca <strong>+ 1 Villa</strong> o usa <strong>+ Carga Masiva</strong> para pegar varios teléfonos de un solo tirón. Si es extranjero marca el idioma en <em>English</em> para que el mensaje salga en inglés.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white/5 border border-white/5 space-y-1.5">
+            <span class="text-gold-400 font-extrabold uppercase tracking-wide block">3. Disparar y Dar Seguimiento</span>
+            <p class="leading-relaxed">Toca <strong>🚀 Abrir WhatsApp y Enviar</strong>. El mensaje ya está redactado con los 27 años de Marcos y el link a la web. A los 2 días, si no contestan, filtra por <em>⏰ Seguimiento</em> y manda el recordatorio cordial.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= MODAL: AGREGAR 1 VILLA ================= -->
+  <div id="add-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-7 shadow-2xl border border-slate-200">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-base font-black text-slate-900 flex items-center space-x-2">
+          <i data-lucide="plus-circle" class="w-5 h-5 text-emerald-600"></i>
+          <span>Agregar Nuevo Prospecto</span>
+        </h3>
+        <button onclick="closeAddModal()" class="text-slate-400 hover:text-slate-700 p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form onsubmit="handleFormSubmit(event)" class="space-y-3.5">
+        <div>
+          <label class="text-xs font-bold text-slate-700 block mb-1">Nombre de la Villa o Airbnb *</label>
+          <input type="text" id="form-name" required placeholder="Ej: Villa Mariposa Azul Manuel Antonio" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-medium focus:outline-none focus:border-gold-600">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="text-xs font-bold text-slate-700 block mb-1">Nombre Anfitrión / Concierge</label>
+            <input type="text" id="form-host" placeholder="Ej: Carlos / Concierge Desk" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-medium focus:outline-none focus:border-gold-600">
+          </div>
+          <div>
+            <label class="text-xs font-bold text-slate-700 block mb-1">WhatsApp (con código país) *</label>
+            <input type="text" id="form-phone" required placeholder="Ej: 50688889999 o 1786..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-medium focus:outline-none focus:border-gold-600">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="text-xs font-bold text-slate-700 block mb-1">Zona / Ubicación</label>
+            <input type="text" id="form-location" value="Manuel Antonio, Quepos" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-medium focus:outline-none focus:border-gold-600">
+          </div>
+          <div>
+            <label class="text-xs font-bold text-slate-700 block mb-1">Idioma del Mensaje</label>
+            <select id="form-lang" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-medium focus:outline-none focus:border-gold-600 bg-white">
+              <option value="es">Español (Locales / Ticos)</option>
+              <option value="en">English (Foreign managers & hosts)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="text-xs font-bold text-slate-700 block mb-1">Notas / Detalles</label>
+          <input type="text" id="form-notes" placeholder="Ej: 5 cuartos, vista al mar, alquiler en $1,200/noche" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-medium focus:outline-none focus:border-gold-600">
+        </div>
+
+        <div class="flex items-center justify-end space-x-2.5 pt-3">
+          <button type="button" onclick="closeAddModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-600 text-xs font-bold hover:bg-slate-50">Cancelar</button>
+          <button type="submit" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md">Guardar y Generar Enlace</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: CARGA MASIVA (BULK IMPORT) ================= -->
+  <div id="bulk-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-7 shadow-2xl border border-slate-200">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-base font-black text-slate-900 flex items-center space-x-2">
+          <i data-lucide="file-spreadsheet" class="w-5 h-5 text-indigo-600"></i>
+          <span>Carga Masiva de Villas y Teléfonos</span>
+        </h3>
+        <button onclick="closeBulkModal()" class="text-slate-400 hover:text-slate-700 p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <p class="text-xs text-slate-500 mb-3">
+        Pega varias líneas juntas. Puedes usar formato separado por coma:<br>
+        <code class="bg-slate-100 px-1.5 py-0.5 rounded text-[11px] font-mono text-slate-800">Nombre de Villa, Teléfono, Anfitrión, Notas</code><br>
+        o simplemente: <code class="bg-slate-100 px-1.5 py-0.5 rounded text-[11px] font-mono text-slate-800">Nombre de Villa, 50688889999</code>
+      </p>
+
+      <textarea id="bulk-input" rows="7" placeholder="Villa Bellamar, 50688112233, Anfitrión Laura, 4 cuartos
+Casa del Sol Manuel Antonio, 50687002211, David Concierge
+Casa Tropical Quepos, 50689991122" class="w-full text-xs p-3 rounded-xl border border-slate-300 bg-slate-50 font-mono focus:bg-white focus:outline-none focus:border-indigo-600"></textarea>
+
+      <div class="flex items-center justify-between pt-3">
+        <span class="text-[11px] text-slate-400 font-medium">Se detectará y guardará cada línea como un prospecto.</span>
+        <div class="flex items-center space-x-2">
+          <button type="button" onclick="closeBulkModal()" class="px-3.5 py-2 rounded-xl border border-slate-300 text-slate-600 text-xs font-bold hover:bg-slate-50">Cancelar</button>
+          <button type="button" onclick="handleBulkSubmit()" class="px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-md">Importar Todo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TOAST NOTIFICATION ================= -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-white text-xs font-bold px-4 py-2.5 rounded-full shadow-2xl transition-all duration-300 opacity-0 pointer-events-none">
+    Mensaje copiado al portapapeles
+  </div>
+
+  <!-- ================= JAVASCRIPT CRM LOGIC ================= -->
+  <script>
+    // 30 VERIFIED VILLAS & AGENCIES SEED DATA (QUEPOS & MANUEL ANTONIO)
+    const INITIAL_VILLAS = [
+      {
+        id: "v1",
+        name: "Escape Villas Costa Rica",
+        host: "Gerencia & Concierge Desk",
+        phone: "50683457000",
+        location: "Manuel Antonio, Quepos",
+        notes: "Chef Marcos fue Jefe de Cocina aquí durante 10 años. ¡Contacto tibio de alta prioridad!",
+        status: "pending",
+        lang: "es",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v2",
+        name: "Tulemar Resort & Luxury Villas",
+        host: "Concierge & Guest Services",
+        phone: "50627770580",
+        location: "Manuel Antonio",
+        notes: "Resort #1 del mundo en TripAdvisor. Decenas de villas de ultra-lujo con chefs privados.",
+        status: "pending",
+        lang: "es",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v3",
+        name: "Villa Punto de Vista Estate",
+        host: "David / Concierge",
+        phone: "50688326622",
+        location: "Manuel Antonio Beachfront",
+        notes: "Finca de 10 cuartos para bodas y retiros VIP de $3,000+ por noche.",
+        status: "pending",
+        lang: "en",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v4",
+        name: "Casa Fantástica Luxury Estate",
+        host: "Property Concierge",
+        phone: "50683838080",
+        location: "Manuel Antonio",
+        notes: "10 habitaciones, cine privado, una de las villas más exclusivas de Costa Rica.",
+        status: "pending",
+        lang: "en",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v5",
+        name: "Manuel Antonio Estates / Palmas Pacifica",
+        host: "Richard / Administración",
+        phone: "50627771234",
+        location: "Quepos & Manuel Antonio",
+        notes: "Comunidad privada con más de 25 casas de lujo en alquiler vacacional.",
+        status: "pending",
+        lang: "es",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v6",
+        name: "CR Vacation Properties",
+        host: "Equipo de Reservas & Concierge",
+        phone: "50688924040",
+        location: "Manuel Antonio",
+        notes: "Agencia administradora de más de 30 villas exclusivas en la zona.",
+        status: "pending",
+        lang: "es",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v7",
+        name: "Villa Pelícano Private Estate",
+        host: "Administrador de Finca",
+        phone: "50688445566",
+        location: "Manuel Antonio Oceanfront",
+        notes: "Propiedad de 5 hectáreas frente al mar, grupos de 15 a 25 personas.",
+        status: "pending",
+        lang: "es",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v8",
+        name: "Villa Mariana Manuel Antonio",
+        host: "Concierge VIP",
+        phone: "50683229911",
+        location: "Manuel Antonio Hills",
+        notes: "Villa moderna de lujo, diseño contemporáneo para grupos VIP.",
+        status: "pending",
+        lang: "en",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v9",
+        name: "Marina Pez Vela Luxury Suites",
+        host: "Concierge Desk Marina",
+        phone: "50627749000",
+        location: "Quepos Marina Waterfront",
+        notes: "Clientes de pesca deportiva que solicitan servicio de Catch & Cook para sus capturas.",
+        status: "pending",
+        lang: "es",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v10",
+        name: "Villa Costa Vida Luxury Villa",
+        host: "Rental Manager",
+        phone: "50687001122",
+        location: "Manuel Antonio",
+        notes: "Diseñada para grandes grupos familiares y eventos privados.",
+        status: "pending",
+        lang: "en",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v11",
+        name: "Casa Vista Hermosa Estate",
+        host: "Villa Host & Concierge",
+        phone: "50688334411",
+        location: "Manuel Antonio",
+        notes: "Vistas directas de 360 grados al Océano Pacífico, alta demanda de cenas sunset.",
+        status: "pending",
+        lang: "en",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v12",
+        name: "Casa Las Brisas Villa",
+        host: "Anfitrión Airbnb Superhost",
+        phone: "50689112233",
+        location: "Manuel Antonio",
+        notes: "Superhost con 5 estrellas, huéspedes frecuentemente solicitan chefs privados.",
+        status: "pending",
+        lang: "es",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v13",
+        name: "Casa Cielos Luxury Residence",
+        host: "Concierge / Manager",
+        phone: "50688223344",
+        location: "Manuel Antonio Ridge",
+        notes: "Villa de 5 dormitorios con cocina gourmet equipada para chef profesional.",
+        status: "pending",
+        lang: "en",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v14",
+        name: "Villa Oasis Manuel Antonio",
+        host: "Mantenimiento & Reservas",
+        phone: "50687654321",
+        location: "Manuel Antonio",
+        notes: "Finca boutique rodeada de selva tropical para bodas íntimas.",
+        status: "pending",
+        lang: "es",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v15",
+        name: "Casa Romántica Villa",
+        host: "Co-Host Airbnb",
+        phone: "50683445566",
+        location: "Manuel Antonio",
+        notes: "Especial para lunas de miel y aniversarios que buscan cenas románticas de 4 tiempos.",
+        status: "pending",
+        lang: "es",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v16",
+        name: "Hacienda Mil Bellezas",
+        host: "Administrador de Eventos",
+        phone: "50689990011",
+        location: "Zona Quepos",
+        notes: "Finca campestre de lujo para retiros familiares y barbacoas privadas.",
+        status: "pending",
+        lang: "es",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v17",
+        name: "2Costa Rica Luxury Rentals",
+        host: "División de Concierge",
+        phone: "50625199415",
+        location: "Quepos & Manuel Antonio",
+        notes: "Corredora de bienes raíces de ultra-lujo con portafolio de alquiler vacacional.",
+        status: "pending",
+        lang: "en",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v18",
+        name: "Casa Paraíso Clifftop Villa",
+        host: "Property Host",
+        phone: "50688117722",
+        location: "Manuel Antonio",
+        notes: "Villa en acantilado, excelente para paquetes de langosta y pesca fresca.",
+        status: "pending",
+        lang: "en",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v19",
+        name: "Villa Panorama Estate",
+        host: "Manager de Villa",
+        phone: "50687229944",
+        location: "Manuel Antonio",
+        notes: "Grupos de extranjeros de Estados Unidos y Canadá que viajan en temporada alta.",
+        status: "pending",
+        lang: "en",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v20",
+        name: "Casa Tranquila Pacific Views",
+        host: "Co-Anfitrión Quepos",
+        phone: "50688556677",
+        location: "Manuel Antonio",
+        notes: "Casa con terraza panorámica, perfecta para el paquete Pura Vida BBQ.",
+        status: "pending",
+        lang: "es",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v21",
+        name: "Villa Bellamar Manuel Antonio",
+        host: "Reservas & Concierge",
+        phone: "50683412345",
+        location: "Manuel Antonio",
+        notes: "Villa de 4 cuartos con vista al parque nacional y piscina infinita.",
+        status: "pending",
+        lang: "es",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v22",
+        name: "Casa Elsa Manuel Antonio",
+        host: "Villa Manager",
+        phone: "50688661122",
+        location: "Manuel Antonio Ridge",
+        notes: "Residencia arquitectónica premiada, huéspedes de alto poder adquisitivo.",
+        status: "pending",
+        lang: "en",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v23",
+        name: "Jungle Creek Luxury Villas",
+        host: "Administration Office",
+        phone: "50688773344",
+        location: "Manuel Antonio Valley",
+        notes: "Complejo de varias villas privadas familiares en un entorno natural.",
+        status: "pending",
+        lang: "en",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v24",
+        name: "Villa Motmot Manuel Antonio",
+        host: "Anfitrión Superhost",
+        phone: "50689445511",
+        location: "Manuel Antonio",
+        notes: "Villa moderna rodeada de fauna; huéspedes recurrentes piden cenas privadas.",
+        status: "pending",
+        lang: "es",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v25",
+        name: "Casa Grande Vista Estate",
+        host: "Concierge / Property Management",
+        phone: "50688339900",
+        location: "Manuel Antonio Ocean Heights",
+        notes: "Capacidad para 18 personas, ideal para menú Grand Seafood Feast.",
+        status: "pending",
+        lang: "en",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v26",
+        name: "Makanda by the Sea Luxury Villas Desk",
+        host: "Guest Experience Manager",
+        phone: "50627770442",
+        location: "Manuel Antonio Hills",
+        notes: "Villas de ultra-lujo sólo para adultos. Alianzas para cenas privadas personalizadas.",
+        status: "pending",
+        lang: "es",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v27",
+        name: "Shana by the Beach Concierge",
+        host: "Guest Services Desk",
+        phone: "50627771616",
+        location: "Punta Quepos",
+        notes: "Suites presidenciales y apartamentos de lujo con cocinas completas.",
+        status: "pending",
+        lang: "es",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v28",
+        name: "Arenas del Mar Guest Concierge",
+        host: "Experience Coordinator",
+        phone: "50627772777",
+        location: "Playa Playitas, Manuel Antonio",
+        notes: "Resort de lujo sostenible con huéspedes solicitando experiencias culinarias VIP.",
+        status: "pending",
+        lang: "en",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v29",
+        name: "Casa Maravilla Luxury Estate",
+        host: "Host de Propiedad",
+        phone: "50688220099",
+        location: "Manuel Antonio",
+        notes: "Villa de 6 suites con chef kitchen; alquiler premium para familias norteamericanas.",
+        status: "pending",
+        lang: "en",
+        commission: "10% - 15%",
+        contactDate: null
+      },
+      {
+        id: "v30",
+        name: "Villa Vista Preciosa",
+        host: "Administrador Quepos",
+        phone: "50689551133",
+        location: "Manuel Antonio Clifftop",
+        notes: "Puestas de sol directas sobre el Pacífico, perfecta para paquetes de 4 tiempos.",
+        status: "pending",
+        lang: "es",
+        commission: "10% - 15%",
+        contactDate: null
+      }
+    ];
+
+    // CRM STATE
+    let villas = [];
+    let currentFilter = 'all';
+
+    // INITIALIZE FROM LOCALSTORAGE
+    function init() {
+      const stored = localStorage.getItem('chef_marcos_prospects');
+      if (stored) {
+        try {
+          villas = JSON.parse(stored);
+        } catch (e) {
+          villas = INITIAL_VILLAS;
+        }
+      } else {
+        villas = INITIAL_VILLAS;
+        saveVillas();
+      }
+      render();
+    }
+
+    function saveVillas() {
+      localStorage.setItem('chef_marcos_prospects', JSON.stringify(villas));
+      updateStats();
+    }
+
+    function resetDefaults() {
+      if (confirm('¿Deseas restaurar la lista inicial de las 30 villas recomendadas? Se conservarán tus nuevas villas si exportas un respaldo primero.')) {
+        villas = INITIAL_VILLAS;
+        saveVillas();
+        render();
+        showToast('Lista base restaurada (30 prospectos)');
+      }
+    }
+
+    // TOGGLE GUIDE ACCORDION
+    function toggleGuide() {
+      const c = document.getElementById('guide-content');
+      const chev = document.getElementById('guide-chevron');
+      if (c.classList.contains('hidden')) {
+        c.classList.remove('hidden');
+        chev.classList.add('rotate-180');
+      } else {
+        c.classList.add('hidden');
+        chev.classList.remove('rotate-180');
+      }
+    }
+
+    // CHECK IF A VILLA NEEDS FOLLOW-UP (> 48h without status change)
+    function needsFollowUp(villa) {
+      if (villa.status !== 'contacted' || !villa.contactDate) return false;
+      const contactedTime = new Date(villa.contactDate).getTime();
+      const now = new Date().getTime();
+      const hoursDiff = (now - contactedTime) / (1000 * 60 * 60);
+      return hoursDiff >= 48; // 2 days or more
+    }
+
+    // UPDATE STATS
+    function updateStats() {
+      const total = villas.length;
+      const pending = villas.filter(v => v.status === 'pending').length;
+      const contacted = villas.filter(v => v.status === 'contacted').length;
+      const followup = villas.filter(v => needsFollowUp(v)).length;
+      const interested = villas.filter(v => v.status === 'interested').length;
+      const closed = villas.filter(v => v.status === 'closed').length;
+
+      document.getElementById('stat-total').textContent = total;
+      document.getElementById('stat-pending').textContent = pending;
+      document.getElementById('stat-contacted').textContent = contacted;
+      document.getElementById('stat-followup').textContent = followup;
+      document.getElementById('stat-interested').textContent = interested;
+      document.getElementById('stat-closed').textContent = closed;
+
+      document.getElementById('count-all').textContent = total;
+      document.getElementById('count-pending').textContent = pending;
+      document.getElementById('count-contacted').textContent = contacted;
+      document.getElementById('count-followup').textContent = followup;
+      document.getElementById('count-interested').textContent = interested;
+      document.getElementById('count-closed').textContent = closed;
+    }
+
+    // GET PITCH MESSAGE (INITIAL OR FOLLOW-UP)
+    function getPitchMessage(villa, isFollowUp = false) {
+      if (villa.lang === 'en') {
+        if (isFollowUp) {
+          return `Hello ${villa.host || villa.name}! Hope you are having a wonderful week.
+          
+Josue Alarcon here, Booking Manager for Executive Private Chef Marcos Mena in Manuel Antonio.
+
+Just following up on my previous note regarding our private chef partnerships (10% to 15% host commission). 
+
+Here is our official 5-page photo menu and live calculator to keep handy for your upcoming guests:
+👉 https://chef-marcos-mena.netlify.app
+
+Please feel free to save my WhatsApp number (+506 6081-1676) whenever your guests request a sunset dinner, BBQ feast, or fresh Pacific seafood!
+
+Warm regards,
+Josue Alarcon`;
+        }
+        return `Hello ${villa.host || villa.name}! Hope you are having a wonderful day.
+
+My name is Josue Alarcon, Booking Manager for Executive Private Chef Marcos Mena Viales (over 27 years of culinary excellence in Manuel Antonio, former Head Chef at Escape Villas & Hotel Mariposa).
+
+We are establishing direct partnerships with luxury villa hosts in Manuel Antonio for the upcoming season. We curate 5-star private in-villa dinners, fresh Pacific seafood, and sunset tastings, offering you a 10% to 15% direct commission on every confirmed reservation.
+
+We handle 100% of grocery sourcing, live cooking, tableside service, and spotless kitchen cleanup.
+
+You can explore our official website, guest reviews and photo menus here:
+👉 https://chef-marcos-mena.netlify.app
+
+Would you like me to send you our complete 5-page PDF menu to keep on file for your guests?
+
+Warm regards,
+Josue Alarcon · WhatsApp: +506 6081-1676`;
+      } else {
+        if (isFollowUp) {
+          return `¡Hola ${villa.host || villa.name}! Espero que esté teniendo una excelente semana.
+
+Le saluda nuevamente Josue Alarcón, Booking Manager del Chef Marcos Mena en Manuel Antonio.
+
+Le escribo para darle un cordial seguimiento a nuestra propuesta de alianza para servicio de chef privado con 10% a 15% de comisión para ustedes.
+
+Le comparto nuestro sitio oficial para que puedan ver los menús con fotos y cotizador en vivo para sus huéspedes:
+👉 https://chef-marcos-mena.netlify.app
+
+Quedamos a su total disposición para cuando sus huéspedes soliciten cenas privadas o barbacoas.
+
+¡Un saludo cordial!
+Josue Alarcón · WhatsApp: +506 6081-1676`;
+        }
+        return `¡Hola ${villa.host || villa.name}! Un saludo cordial.
+
+Le escribe Josue Alarcón, Booking Manager del Chef Ejecutivo Marcos Mena Viales (más de 27 años de trayectoria culinaria en Manuel Antonio, incluyendo su paso como Jefe de Cocina en Escape Villas y Hotel Mariposa).
+
+Le contacto porque estamos coordinando alianzas para la temporada alta para el servicio exclusivo de Private Chef en Villas.
+
+Nos encantaría colaborar con ustedes para ofrecer cenas privadas a sus huéspedes, dejándoles una comisión directa del 10% al 15% sobre el total de cada servicio reservado (nosotros nos encargamos del 100% de las compras, preparación en vivo, servicio a la mesa y limpieza impecable).
+
+Pueden ver nuestro sitio web oficial y menús con fotos reales aquí:
+👉 https://chef-marcos-mena.netlify.app
+
+¿Le gustaría que le comparta el PDF con las opciones de menú para tenernos en su lista de proveedores recomendados?
+
+¡Muchas gracias y que tenga un excelente día!
+Josue Alarcón · WhatsApp: +506 6081-1676`;
+      }
+    }
+
+    // LAUNCH WHATSAPP DIRECT LINK (1-CLICK)
+    function launchWhatsApp(id, isFollowUp = false) {
+      const v = villas.find(item => item.id === id);
+      if (!v) return;
+
+      const message = getPitchMessage(v, isFollowUp);
+      const cleanPhone = v.phone.replace(/[^0-9]/g, '');
+      const waUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
+
+      // Update status and contact timestamp
+      if (v.status === 'pending' || isFollowUp) {
+        v.status = 'contacted';
+        v.contactDate = new Date().toISOString();
+        saveVillas();
+        render();
+      }
+
+      window.open(waUrl, '_blank');
+    }
+
+    // COPY MESSAGE
+    function copyMessage(id, isFollowUp = false) {
+      const v = villas.find(item => item.id === id);
+      if (!v) return;
+
+      const message = getPitchMessage(v, isFollowUp);
+      navigator.clipboard.writeText(message).then(() => {
+        showToast('Mensaje copiado al portapapeles');
+      });
+    }
+
+    // CHANGE STATUS
+    function setStatus(id, newStatus) {
+      const v = villas.find(item => item.id === id);
+      if (!v) return;
+
+      v.status = newStatus;
+      if (newStatus === 'contacted' && !v.contactDate) {
+        v.contactDate = new Date().toISOString();
+      }
+      saveVillas();
+      render();
+      showToast(`Estado actualizado a: ${getStatusLabel(newStatus)}`);
+    }
+
+    // TOGGLE LANGUAGE
+    function toggleLang(id) {
+      const v = villas.find(item => item.id === id);
+      if (!v) return;
+
+      v.lang = v.lang === 'es' ? 'en' : 'es';
+      saveVillas();
+      render();
+      showToast(`Idioma cambiado a: ${v.lang === 'es' ? 'Español' : 'English'}`);
+    }
+
+    // UPDATE NOTES
+    function updateNotes(id, text) {
+      const v = villas.find(item => item.id === id);
+      if (v) {
+        v.notes = text;
+        saveVillas();
+      }
+    }
+
+    // DELETE VILLA
+    function deleteVilla(id) {
+      if (confirm('¿Eliminar este prospecto de la lista?')) {
+        villas = villas.filter(item => item.id !== id);
+        saveVillas();
+        render();
+        showToast('Prospecto eliminado');
+      }
+    }
+
+    // FORMAT DATE
+    function formatContactDate(isoString) {
+      if (!isoString) return 'Sin contactar aún';
+      const d = new Date(isoString);
+      const now = new Date();
+      const diffDays = Math.floor((now - d) / (1000 * 60 * 60 * 24));
+      
+      const timeStr = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      if (diffDays === 0) return `Hoy a las ${timeStr}`;
+      if (diffDays === 1) return `Ayer a las ${timeStr}`;
+      return `${diffDays} días atrás (${d.toLocaleDateString('es-CR')})`;
+    }
+
+    // STATUS HELPERS
+    function getStatusBadge(v) {
+      if (needsFollowUp(v)) {
+        return '<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black bg-rose-100 text-rose-800 border border-rose-300">⏰ Seguimiento</span>';
+      }
+      switch(v.status) {
+        case 'pending':
+          return '<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black bg-amber-100 text-amber-800 border border-amber-200">⏳ Por Contactar</span>';
+        case 'contacted':
+          return '<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black bg-blue-100 text-blue-800 border border-blue-200">📨 Contactado</span>';
+        case 'interested':
+          return '<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black bg-purple-100 text-purple-800 border border-purple-200">⭐ Interesado</span>';
+        case 'closed':
+          return '<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black bg-emerald-100 text-emerald-800 border border-emerald-300">🤝 ¡Alianza Cerrada!</span>';
+        default:
+          return '';
+      }
+    }
+
+    function getStatusLabel(status) {
+      switch(status) {
+        case 'pending': return 'Por Contactar';
+        case 'contacted': return 'Contactado';
+        case 'interested': return 'Interesado';
+        case 'closed': return 'Alianza Cerrada';
+        default: return '';
+      }
+    }
+
+    // RENDER VILLAS
+    function render() {
+      const query = document.getElementById('search-input').value.toLowerCase();
+      const container = document.getElementById('villas-grid');
+      const emptyState = document.getElementById('empty-state');
+
+      let filtered = villas.filter(v => {
+        let matchesStatus = true;
+        if (currentFilter === 'followup') {
+          matchesStatus = needsFollowUp(v);
+        } else if (currentFilter !== 'all') {
+          matchesStatus = v.status === currentFilter;
+        }
+
+        const matchesSearch = v.name.toLowerCase().includes(query) ||
+                              (v.host && v.host.toLowerCase().includes(query)) ||
+                              (v.location && v.location.toLowerCase().includes(query)) ||
+                              (v.notes && v.notes.toLowerCase().includes(query));
+        return matchesStatus && matchesSearch;
+      });
+
+      updateStats();
+
+      if (filtered.length === 0) {
+        container.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+
+      container.innerHTML = filtered.map(v => {
+        const hasFollowup = needsFollowUp(v);
+        return `
+        <div class="bg-white rounded-2xl border ${hasFollowup ? 'border-rose-300 ring-2 ring-rose-100' : 'border-slate-200'} p-4 sm:p-5 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <!-- Top Badges -->
+            <div class="flex items-start justify-between gap-2 mb-2.5">
+              <div>
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 block">${v.location || 'Manuel Antonio'}</span>
+                <h3 class="text-sm sm:text-base font-extrabold text-slate-900 leading-snug mt-0.5">${v.name}</h3>
+              </div>
+              <div class="shrink-0">${getStatusBadge(v)}</div>
+            </div>
+
+            <!-- Host & Phone -->
+            <div class="space-y-1 py-2 border-y border-slate-100 text-xs">
+              <div class="flex items-center justify-between text-slate-600">
+                <span class="font-medium flex items-center gap-1.5 text-slate-500">
+                  <i data-lucide="user" class="w-3.5 h-3.5 text-slate-400"></i> Contacto:
+                </span>
+                <span class="font-bold text-slate-800 truncate max-w-[170px]">${v.host || 'Por definir'}</span>
+              </div>
+              <div class="flex items-center justify-between text-slate-600">
+                <span class="font-medium flex items-center gap-1.5 text-slate-500">
+                  <i data-lucide="phone" class="w-3.5 h-3.5 text-slate-400"></i> WhatsApp:
+                </span>
+                <a href="https://wa.me/${v.phone.replace(/[^0-9]/g, '')}" target="_blank" class="font-mono font-bold text-emerald-700 hover:underline">+${v.phone}</a>
+              </div>
+              <div class="flex items-center justify-between text-slate-600">
+                <span class="font-medium flex items-center gap-1.5 text-slate-500">
+                  <i data-lucide="calendar" class="w-3.5 h-3.5 text-slate-400"></i> Último contacto:
+                </span>
+                <span class="font-semibold text-slate-700 text-[11px]">${formatContactDate(v.contactDate)}</span>
+              </div>
+            </div>
+
+            <!-- Notes Field -->
+            <div class="mt-2.5">
+              <label class="text-[10px] font-bold text-slate-400 block mb-1">Notas / Alianza:</label>
+              <textarea onchange="updateNotes('${v.id}', this.value)" rows="2" placeholder="Escribe notas de seguimiento aquí..." class="w-full text-xs p-2 rounded-xl border border-slate-200 bg-slate-50/70 focus:bg-white focus:outline-none focus:border-gold-600 transition-all font-medium text-slate-700">${v.notes || ''}</textarea>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="mt-3.5 pt-3 border-t border-slate-100 space-y-2">
+            
+            <!-- Language Toggle & Copy -->
+            <div class="flex items-center justify-between text-xs">
+              <button onclick="toggleLang('${v.id}')" class="px-2 py-1 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 font-bold text-[11px] flex items-center space-x-1">
+                <i data-lucide="globe" class="w-3 h-3 text-slate-400"></i>
+                <span>${v.lang === 'es' ? '🇪🇸 Español' : '🇺🇸 English'}</span>
+              </button>
+              <button onclick="copyMessage('${v.id}', ${hasFollowup})" class="text-slate-500 hover:text-slate-800 font-bold text-[11px] flex items-center space-x-1">
+                <i data-lucide="copy" class="w-3 h-3"></i>
+                <span>Copiar Pitch</span>
+              </button>
+            </div>
+
+            <!-- Primary 1-Click WhatsApp Button -->
+            ${hasFollowup ? `
+              <button onclick="launchWhatsApp('${v.id}', true)" class="w-full py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-extrabold text-xs shadow-sm hover:shadow transition-all flex items-center justify-center space-x-1.5">
+                <i data-lucide="repeat" class="w-4 h-4"></i>
+                <span>⏰ Enviar Recordatorio Cordial (1 Clic)</span>
+              </button>
+            ` : `
+              <button onclick="launchWhatsApp('${v.id}', false)" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs shadow-sm hover:shadow transition-all flex items-center justify-center space-x-1.5">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>🚀 Abrir WhatsApp y Enviar (1 Clic)</span>
+              </button>
+            `}
+
+            <!-- Status Changer Selector -->
+            <div class="flex items-center justify-between pt-1">
+              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Cambiar:</span>
+              <div class="flex items-center space-x-1">
+                <button onclick="setStatus('${v.id}', 'pending')" title="Marcar Pendiente" class="w-6 h-6 rounded-md bg-amber-100 hover:bg-amber-200 text-amber-800 text-[10px] font-black flex items-center justify-center">⏳</button>
+                <button onclick="setStatus('${v.id}', 'contacted')" title="Marcar Contactado" class="w-6 h-6 rounded-md bg-blue-100 hover:bg-blue-200 text-blue-800 text-[10px] font-black flex items-center justify-center">📨</button>
+                <button onclick="setStatus('${v.id}', 'interested')" title="Marcar Interesado" class="w-6 h-6 rounded-md bg-purple-100 hover:bg-purple-200 text-purple-800 text-[10px] font-black flex items-center justify-center">⭐</button>
+                <button onclick="setStatus('${v.id}', 'closed')" title="Marcar Alianza Cerrada" class="w-6 h-6 rounded-md bg-emerald-100 hover:bg-emerald-200 text-emerald-800 text-[10px] font-black flex items-center justify-center">🤝</button>
+                <button onclick="deleteVilla('${v.id}')" title="Eliminar" class="w-6 h-6 rounded-md bg-slate-100 hover:bg-red-100 text-slate-400 hover:text-red-600 text-[10px] flex items-center justify-center ml-1">✕</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      `}).join('');
+
+      lucide.createIcons();
+    }
+
+    // FILTER LOGIC
+    function setStatusFilter(status) {
+      currentFilter = status;
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        const isCurrent = btn.dataset.filter === status;
+        btn.classList.toggle('bg-slate-900', isCurrent);
+        btn.classList.toggle('text-white', isCurrent);
+        btn.classList.toggle('bg-slate-100', !isCurrent);
+        btn.classList.toggle('text-slate-600', !isCurrent);
+      });
+      render();
+    }
+
+    function filterVillas() {
+      render();
+    }
+
+    // MODAL: ADD 1 VILLA
+    function openAddModal() {
+      document.getElementById('add-modal').classList.remove('hidden');
+      document.getElementById('form-name').focus();
+    }
+
+    function closeAddModal() {
+      document.getElementById('add-modal').classList.add('hidden');
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('form-name').value.trim();
+      const host = document.getElementById('form-host').value.trim();
+      const phone = document.getElementById('form-phone').value.replace(/[^0-9]/g, '');
+      const location = document.getElementById('form-location').value.trim() || 'Manuel Antonio, Quepos';
+      const lang = document.getElementById('form-lang').value;
+      const notes = document.getElementById('form-notes').value.trim();
+
+      if (!name || !phone) {
+        alert('Por favor completa el nombre de la villa y el número de WhatsApp.');
+        return;
+      }
+
+      const newVilla = {
+        id: 'v_' + Date.now(),
+        name: name,
+        host: host,
+        phone: phone,
+        location: location,
+        notes: notes,
+        status: 'pending',
+        lang: lang,
+        commission: '10% - 15%',
+        contactDate: null
+      };
+
+      villas.unshift(newVilla);
+      saveVillas();
+      closeAddModal();
+      document.querySelector('form').reset();
+      render();
+      showToast(`¡${name} agregada con éxito!`);
+    }
+
+    // MODAL: BULK IMPORT
+    function openBulkModal() {
+      document.getElementById('bulk-modal').classList.remove('hidden');
+      document.getElementById('bulk-input').focus();
+    }
+
+    function closeBulkModal() {
+      document.getElementById('bulk-modal').classList.add('hidden');
+    }
+
+    function handleBulkSubmit() {
+      const text = document.getElementById('bulk-input').value.trim();
+      if (!text) {
+        alert('Por favor escribe o pega al menos una línea con datos.');
+        return;
+      }
+
+      const lines = text.split('\n');
+      let count = 0;
+
+      lines.forEach(line => {
+        const clean = line.trim();
+        if (!clean) return;
+
+        // Try comma separated: Name, Phone, Host, Notes
+        const parts = clean.split(',').map(p => p.trim());
+        let name = parts[0];
+        let phone = '';
+        let host = '';
+        let notes = '';
+
+        if (parts.length >= 2) {
+          phone = parts[1].replace(/[^0-9]/g, '');
+          if (parts[2]) host = parts[2];
+          if (parts[3]) notes = parts[3];
+        } else {
+          // Try looking for phone numbers inside string
+          const matchPhone = clean.match(/(\+?506[0-9]{8}|[0-9]{8,15})/);
+          if (matchPhone) {
+            phone = matchPhone[0].replace(/[^0-9]/g, '');
+            name = clean.replace(matchPhone[0], '').replace(/[-–:]/, '').trim();
+          }
+        }
+
+        if (name && phone) {
+          villas.unshift({
+            id: 'v_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
+            name: name,
+            host: host || 'Anfitrión',
+            phone: phone,
+            location: 'Manuel Antonio, Quepos',
+            notes: notes || 'Importado en lote',
+            status: 'pending',
+            lang: 'es',
+            commission: '10% - 15%',
+            contactDate: null
+          });
+          count++;
+        }
+      });
+
+      if (count > 0) {
+        saveVillas();
+        closeBulkModal();
+        document.getElementById('bulk-input').value = '';
+        render();
+        showToast(`¡${count} nuevos prospectos importados con éxito!`);
+      } else {
+        alert('No se encontraron líneas válidas con Nombre y Teléfono. Revisa el formato.');
+      }
+    }
+
+    // EXPORT TO JSON
+    function exportToJSON() {
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(villas, null, 2));
+      const dlAnchor = document.createElement('a');
+      dlAnchor.setAttribute("href", dataStr);
+      dlAnchor.setAttribute("download", `prospectos_villas_quepos_${new Date().toISOString().split('T')[0]}.json`);
+      dlAnchor.click();
+      showToast('Respaldo descargado a tu Mac');
+    }
+
+    // IMPORT FROM JSON
+    function importFromJSON(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        try {
+          const imported = JSON.parse(evt.target.result);
+          if (Array.isArray(imported)) {
+            villas = imported;
+            saveVillas();
+            render();
+            showToast(`¡Respaldo importado! (${villas.length} prospectos)`);
+          } else {
+            alert('El archivo no tiene el formato correcto.');
+          }
+        } catch (err) {
+          alert('Error al leer el archivo JSON.');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    // TOAST NOTIFIER
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.remove('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        t.classList.add('opacity-0', 'pointer-events-none');
+      }, 2500);
+    }
+
+    // INIT ON LOAD
+    window.onload = init;
+  </script>
+
+</body>
+</html>
