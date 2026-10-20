@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propuesta Comercial Formal — Chef Marcos Mena Viales | Transformación Digital & Adquisición VIP</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #0a0e1a;
+      --primary-card: #121829;
+      --accent: #c5ab6b;
+      --accent-bright: #dfc88e;
+      --accent-dark: #8c7336;
+      --accent-soft: #fcf9f2;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --text-light: #f8fafc;
+      --bg-body: #eceff4;
+      --border-color: #e2e8f0;
+      --border-gold: rgba(197, 171, 107, 0.4);
+      --success: #10b981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      line-height: 1.5;
+      padding: 30px 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TOP ACTION TOOLBAR (Hidden in Print/PDF) */
+    .top-toolbar {
+      max-width: 900px;
+      margin: 0 auto 20px auto;
+      background: #ffffff;
+      padding: 14px 24px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border-color);
+    }
+
+    .toolbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .toolbar-brand i {
+      color: var(--accent);
+      font-size: 18px;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-print {
+      background: linear-gradient(135deg, #c5ab6b, #b39552);
+      color: #000;
+      border: none;
+      padding: 9px 20px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 8px rgba(197, 171, 107, 0.35);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-print:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
+
+    /* MASTER PROPOSAL CONTAINER */
+    .proposal-paper {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      overflow: hidden;
+    }
+
+    /* HEADER & COVER */
+    .proposal-header {
+      background: linear-gradient(135deg, #07090e 0%, #111827 100%);
+      color: var(--text-light);
+      padding: 45px 50px;
+      position: relative;
+      border-bottom: 3px solid var(--accent);
+    }
+
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(197, 171, 107, 0.15);
+      border: 1px solid var(--border-gold);
+      color: var(--accent-bright);
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 20px;
+    }
+
+    .header-title {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .header-title span {
+      color: var(--accent);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .header-subtitle {
+      font-size: 15px;
+      color: #94a3b8;
+      max-width: 700px;
+      font-weight: 400;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-cols: 2;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .meta-val {
+      font-size: 14px;
+      color: #f1f5f9;
+      font-weight: 600;
+    }
+
+    /* BODY CONTENT */
+    .proposal-body {
+      padding: 50px;
+    }
+
+    .section-block {
+      margin-bottom: 45px;
+      break-inside: avoid;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .section-number {
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      border: 1px solid var(--border-gold);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      font-family: 'Cinzel', serif;
+    }
+
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.03em;
+    }
+
+    /* CARDS & DIAGNOSTIC */
+    .diagnostic-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .diag-card {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 16px 20px;
+      border-left: 4px solid #ef4444;
+    }
+
+    .diag-card.solution {
+      border-left: 4px solid var(--success);
+      background: #f0fdf4;
+    }
+
+    .diag-card h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .diag-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* PHASES LIST */
+    .phase-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      break-inside: avoid;
+    }
+
+    .phase-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: #f1f5f9;
+      color: #475569;
+      margin-bottom: 10px;
+    }
+
+    .phase-badge.p1 { background: #eff6ff; color: #1d4ed8; }
+    .phase-badge.p2 { background: #faf5ff; color: #7e22ce; }
+    .phase-badge.p3 { background: #fffbeb; color: #b45309; }
+
+    .phase-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .deliverables-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .deliverables-list li {
+      font-size: 13px;
+      color: #334155;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.4;
+    }
+
+    .deliverables-list li i {
+      color: var(--success);
+      font-size: 14px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    /* PRICING MATRIX */
+    .pricing-table-wrap {
+      margin-top: 20px;
+      overflow-x: auto;
+      break-inside: avoid;
+    }
+
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .pricing-table th, .pricing-table td {
+      padding: 14px 16px;
+      border: 1px solid #e2e8f0;
+      font-size: 13px;
+    }
+
+    .pricing-table th {
+      background: #f8fafc;
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .pricing-table th.featured {
+      background: #0f172a;
+      color: var(--accent);
+      border-color: #0f172a;
+      position: relative;
+    }
+
+    .pricing-table th.featured::after {
+      content: '★ RECOMENDADO';
+      position: absolute;
+      top: -12px;
+      right: 12px;
+      background: var(--accent);
+      color: #000;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .pricing-table td.center {
+      text-align: center;
+    }
+
+    .pricing-table td.featured-col {
+      background: #fdfbf7;
+      font-weight: 600;
+    }
+
+    .price-tag {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      display: block;
+      margin-top: 6px;
+    }
+
+    .price-tag.gold {
+      color: var(--accent-dark);
+    }
+
+    /* RETAINER BOXES */
+    .retainer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+      break-inside: avoid;
+    }
+
+    .retainer-card {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .retainer-card.recommended {
+      background: #ffffff;
+      border: 2px solid var(--accent);
+      box-shadow: 0 4px 20px rgba(197, 171, 107, 0.15);
+      position: relative;
+    }
+
+    .rec-badge {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #000;
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 2px 10px;
+      border-radius: 50px;
+      letter-spacing: 0.05em;
+    }
+
+    .retainer-card h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .retainer-price {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .retainer-price span {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .retainer-list {
+      list-style: none;
+      font-size: 12px;
+      color: #475569;
+      space-y: 8px;
+    }
+
+    .retainer-list li {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .retainer-list li i {
+      color: var(--success);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    /* ROI BANNER */
+    .roi-banner {
+      background: linear-gradient(135deg, #fefce8 0%, #fef08a 100%);
+      border: 1px solid #fde047;
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      break-inside: avoid;
+    }
+
+    .roi-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 12px;
+      background: #eab308;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .roi-content h4 {
+      font-size: 16px;
+      font-weight: 800;
+      color: #854d0e;
+      margin-bottom: 4px;
+    }
+
+    .roi-content p {
+      font-size: 13px;
+      color: #713f12;
+      line-height: 1.5;
+    }
+
+    /* TIMELINE */
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+      break-inside: avoid;
+    }
+
+    .timeline-card {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 14px;
+      border-top: 3px solid var(--accent);
+    }
+
+    .timeline-week {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+
+    .timeline-card h5 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .timeline-card p {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* SIGNATURE BLOCK */
+    .signature-area {
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 2px dashed #cbd5e1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      break-inside: avoid;
+    }
+
+    .sig-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sig-line {
+      height: 1px;
+      background: #94a3b8;
+      margin-top: 50px;
+      margin-bottom: 8px;
+    }
+
+    .sig-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .sig-role {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* FOOTER */
+    .proposal-footer {
+      background: #f8fafc;
+      border-top: 1px solid var(--border-color);
+      padding: 20px 50px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      body {
+        background-color: #ffffff;
+        padding: 0;
+      }
+
+      .top-toolbar {
+        display: none !important;
+      }
+
+      .proposal-paper {
+        max-width: 100%;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+      }
+
+      .proposal-body {
+        padding: 30px 40px;
+      }
+
+      .section-block {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .page-break {
+        page-break-before: always;
+        break-before: always;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FLOATING PRINT / EXPORT TOOLBAR -->
+  <aside class="top-toolbar" aria-label="Controles de exportación">
+    <div class="toolbar-brand">
+      <i class="fa-solid fa-file-signature"></i>
+      <span>Propuesta Comercial Formal — Chef Marcos Mena Viales</span>
+    </div>
+    <div class="toolbar-actions">
+      <button class="btn-print" onclick="window.print()">
+        <i class="fa-solid fa-print"></i>
+        <span>Guardar en PDF / Imprimir</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- MASTER PROPOSAL PAPER -->
+  <main class="proposal-paper">
+
+    <!-- COVER / HEADER -->
+    <header class="proposal-header">
+      <div class="header-badge">
+        <i class="fa-solid fa-crown"></i>
+        <span>Propuesta Comercial de Consultoría & Desarrollo</span>
+      </div>
+
+      <h1 class="header-title">
+        Plan Maestro de Transformación Digital & <span>Adquisición de Clientes VIP</span>
+      </h1>
+
+      <p class="header-subtitle">
+        Estrategia integral para posicionar al Chef Marcos Mena como la opción gastronómica #1 en villas de lujo de Manuel Antonio, Quepos y la Costa Pacífica.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-item">
+          <span class="meta-label">Cliente</span>
+          <span class="meta-val">Chef Marcos Mena Viales</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Ubicación</span>
+          <span class="meta-val">Manuel Antonio & Quepos, CR</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Fecha de Emisión</span>
+          <span class="meta-val">Septiembre 2026</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Validez de Oferta</span>
+          <span class="meta-val">30 Días Calendario</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="proposal-body">
+
+      <!-- SECTION 1: RESUMEN Y DIAGNÓSTICO -->
+      <section class="section-block">
+        <div class="section-heading">
+          <div class="section-number">01</div>
+          <h2 class="section-title">Diagnóstico Estratégico & Justificación</h2>
+        </div>
+
+        <p style="font-size: 13.5px; color: #475569; line-height: 1.6; margin-bottom: 16px;">
+          Con más de <strong>27 años de trayectoria</strong> en propiedades de ultra lujo como <em>Tulemar (Casa Belleza Verde)</em> y <em>Escape Villas</em>, la capacidad culinaria del Chef Marcos es de nivel internacional. Sin embargo, su infraestructura digital actual limita gravemente su capacidad para captar turistas con alto poder adquisitivo.
+        </p>
+
+        <div class="diagnostic-grid">
+          <div class="diag-card">
+            <h4><i class="fa-solid fa-triangle-exclamation" style="color: #ef4444;"></i> Desconexión de Marca</h4>
+            <p>El perfil de Facebook se llama <em>"Restaurante El Point"</em> (un negocio inactivo), generando confusión y desconfianza entre los huéspedes VIP.</p>
+          </div>
+          <div class="diag-card solution">
+            <h4><i class="fa-solid fa-circle-check" style="color: #10b981;"></i> Marca Personal Luxury</h4>
+            <p>Rebranding total hacia <em>"Chef Marcos Mena | Private Chef Costa Rica"</em> en Instagram, TikTok, Facebook y WhatsApp Business VIP.</p>
+          </div>
+          <div class="diag-card">
+            <h4><i class="fa-solid fa-triangle-exclamation" style="color: #ef4444;"></i> Menú & Web Obsoletos</h4>
+            <p>Menú antiguo con platos casuales ("burritos, cheese cubes"), fotos de buffet y errores de inglés que impiden cobrar tarifas prémium.</p>
+          </div>
+          <div class="diag-card solution">
+            <h4><i class="fa-solid fa-circle-check" style="color: #10b981;"></i> Menú Interactivo & Web de Alta Conversión</h4>
+            <p>Nueva web estilo Obsidian & Gold con menú interactivo de autor, cotizador rápido a WhatsApp y versión editorial imprimible.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: ALCANCE DETALLADO -->
+      <section class="section-block">
+        <div class="section-heading">
+          <div class="section-number">02</div>
+          <h2 class="section-title">Alcance del Proyecto por Fases</h2>
+        </div>
+
+        <!-- FASE 1 -->
+        <div class="phase-box">
+          <span class="phase-badge p1">Fase 1: Identidad & Rebranding</span>
+          <h3 class="phase-title">Arquitectura de Marca Personal & Dossier Ejecutivo</h3>
+          <ul class="deliverables-list">
+            <li><i class="fa-solid fa-check"></i> <span><strong>Rebranding de Facebook:</strong> Migración de "El Point" a Página Oficial de Chef Privado.</span></li>
+            <li><i class="fa-solid fa-check"></i> <span><strong>Lanzamiento en Redes:</strong> Creación y configuración de perfiles en Instagram y TikTok (@chefmarcosmena.cr).</span></li>
+            <li><i class="fa-solid fa-check"></i> <span><strong>WhatsApp Business VIP:</strong> Respuestas rápidas automáticas y catálogo de experiencias.</span></li>
+            <li><i class="fa-solid fa-check"></i> <span><strong>Curriculum / Dossier Ejecutivo:</strong> Formato digital y PDF de lujo para presentar a condominios y villas.</span></li>
+          </ul>
+        </div>
+
+        <!-- FASE 2 -->
+        <div class="phase-box">
+          <span class="phase-badge p2">Fase 2: Plataforma Web</span>
+          <h3 class="phase-title">Nueva Web de Conversión & Menú de Autor (chefmarcoscr.com)</h3>
+          <ul class="deliverables-list">
+            <li><i class="fa-solid fa-check"></i> <span><strong>Desarrollo Web Mobile-First:</strong> Diseño de lujo Obsidian & Gold con carga ultra veloz.</span></li>
+            <li><i class="fa-solid fa-check"></i> <span><strong>Menú Interactivo en Inglés:</strong> Redacción gourmet, filtros por categorías y alérgenos.</span></li>
+            <li><i class="fa-solid fa-check"></i> <span><strong>Menú Editorial Imprimible:</strong> Versión PDF de alta definición para concierge y villas.</span></li>
+            <li><i class="fa-solid fa-check"></i> <span><strong>Embudo WhatsApp Booking:</strong> Generador inteligente de cotizaciones directas al celular.</span></li>
+          </ul>
+        </div>
+
+        <!-- FASE 3 -->
+        <div class="phase-box">
+          <span class="phase-badge p3">Fase 3: Atracción & Ventas</span>
+          <h3 class="phase-title">Google Local SEO, Alianzas B2B & Viralidad</h3>
+          <ul class="deliverables-list">
+            <li><i class="fa-solid fa-check"></i> <span><strong>Google Maps (Business Profile):</strong> Posicionamiento local #1 para "Private Chef Manuel Antonio".</span></li>
+            <li><i class="fa-solid fa-check"></i> <span><strong>Sistema de Reseñas 5 Estrellas:</strong> Flujo automatizado para recolectar testimonios de clientes.</span></li>
+            <li><i class="fa-solid fa-check"></i> <span><strong>Kit B2B para Concierges:</strong> One-Pager digital en inglés con esquema de comisiones del 10%-15%.</span></li>
+            <li><i class="fa-solid fa-check"></i> <span><strong>Guía de Contenido Viral:</strong> Fórmulas para Reels de "Catch & Cook" y flameados en villas.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SECTION 3: PAQUETES DE INVERSIÓN (PAGE BREAK IN PRINT) -->
+      <section class="section-block page-break">
+        <div class="section-heading">
+          <div class="section-number">03</div>
+          <h2 class="section-title">Opciones de Inversión (Pago Único)</h2>
+        </div>
+
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+          Se plantean 3 niveles de implementación según los objetivos comerciales inmediatos del Chef Marcos:
+        </p>
+
+        <div class="pricing-table-wrap">
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th style="width: 46%;">Entregables Clave</th>
+                <th style="width: 18%;">Esencial</th>
+                <th style="width: 20%;" class="featured">Profesional</th>
+                <th style="width: 16%;">Élite 360</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nueva Página Web de Alta Conversión</td>
+                <td class="center"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+                <td class="center featured-col"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+                <td class="center"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+              </tr>
+              <tr>
+                <td>Menú Digital Interactivo en Inglés Gourmet</td>
+                <td class="center"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+                <td class="center featured-col"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+                <td class="center"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+              </tr>
+              <tr>
+                <td>Menú en PDF Editorial Imprimible para Huéspedes</td>
+                <td class="center"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+                <td class="center featured-col"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+                <td class="center"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+              </tr>
+              <tr>
+                <td>Embudo de Reserva Directa a WhatsApp</td>
+                <td class="center"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+                <td class="center featured-col"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+                <td class="center"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+              </tr>
+              <tr>
+                <td>Curriculum / Dossier Ejecutivo de Lujo (PDF & Web)</td>
+                <td class="center" style="color: #cbd5e1;">—</td>
+                <td class="center featured-col"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+                <td class="center"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+              </tr>
+              <tr>
+                <td>Rebranding Facebook & Apertura Instagram/TikTok</td>
+                <td class="center" style="color: #cbd5e1;">—</td>
+                <td class="center featured-col"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+                <td class="center"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+              </tr>
+              <tr>
+                <td>Optimización SEO Google Business Profile (Maps)</td>
+                <td class="center" style="color: #cbd5e1;">—</td>
+                <td class="center featured-col"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+                <td class="center"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+              </tr>
+              <tr>
+                <td>Kit Comercial B2B para Concierges (One-Pager)</td>
+                <td class="center" style="color: #cbd5e1;">—</td>
+                <td class="center featured-col"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+                <td class="center"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+              </tr>
+              <tr>
+                <td>Producción Inicial de 12 Reels/Posts de Lanzamiento</td>
+                <td class="center" style="color: #cbd5e1;">—</td>
+                <td class="center featured-col" style="color: #cbd5e1;">—</td>
+                <td class="center"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+              </tr>
+              <tr>
+                <td>Campaña de Publicidad Digital en Google / Meta Ads</td>
+                <td class="center" style="color: #cbd5e1;">—</td>
+                <td class="center featured-col" style="color: #cbd5e1;">—</td>
+                <td class="center"><i class="fa-solid fa-check" style="color: var(--success);"></i></td>
+              </tr>
+              <tr style="border-top: 2px solid #0f172a;">
+                <td><strong>INVERSIÓN TOTAL (Pago Único)</strong></td>
+                <td><span class="price-tag">$850 <small style="font-size: 11px;">USD</small></span></td>
+                <td class="featured-col"><span class="price-tag gold">$1,650 <small style="font-size: 11px;">USD</small></span></td>
+                <td><span class="price-tag">$2,600 <small style="font-size: 11px;">USD</small></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ROI BANNER -->
+        <div class="roi-banner">
+          <div class="roi-icon">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <div class="roi-content">
+            <h4>Retorno Inmediato de la Inversión (ROI)</h4>
+            <p>
+              Una cena privada promedio para 8 comensales genera entre <strong>$800 y $1,200 USD</strong>. Con el <strong>Plan Profesional ($1,650 USD)</strong>, el proyecto se paga completamente con tan solo <strong>2 a 3 servicios cerrados</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: SERVICIOS MENSUALES RECURRENTES -->
+      <section class="section-block">
+        <div class="section-heading">
+          <div class="section-number">04</div>
+          <h2 class="section-title">Planes Mensuales (Mantenimiento & Marketing)</h2>
+        </div>
+
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">
+          Planes opcionales para mantener la web 100% operativa y asegurar un flujo constante de clientes todo el año:
+        </p>
+
+        <div class="retainer-grid">
+          <!-- RETAINER 1 -->
+          <div class="retainer-card">
+            <div>
+              <h4>Soporte Web & Hosting</h4>
+              <div class="retainer-price">$190 <span>/ mes</span></div>
+              <ul class="retainer-list">
+                <li><i class="fa-solid fa-check"></i> Hosting Cloud de alta velocidad y SSL.</li>
+                <li><i class="fa-solid fa-check"></i> Actualizaciones de menú y fotos mensuales.</li>
+                <li><i class="fa-solid fa-check"></i> Monitoreo y copias de seguridad semanales.</li>
+                <li><i class="fa-solid fa-check"></i> Soporte técnico prioritario.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- RETAINER 2 (RECOMENDADO) -->
+          <div class="retainer-card recommended">
+            <div class="rec-badge">MÁS POPULAR</div>
+            <div>
+              <h4>Web + Redes & Google</h4>
+              <div class="retainer-price" style="color: var(--accent-dark);">$490 <span>/ mes</span></div>
+              <ul class="retainer-list">
+                <li><i class="fa-solid fa-check"></i> <strong>Todo lo del plan Soporte Web.</strong></li>
+                <li><i class="fa-solid fa-check"></i> Edición y publicación de <strong>6 a 8 Reels/TikToks</strong> al mes.</li>
+                <li><i class="fa-solid fa-check"></i> Gestión y optimización de Google Maps.</li>
+                <li><i class="fa-solid fa-check"></i> Estrategia de promociones para temporadas altas.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- RETAINER 3 -->
+          <div class="retainer-card">
+            <div>
+              <h4>Growth Partner 360</h4>
+              <div class="retainer-price">$850 <span>/ mes</span></div>
+              <ul class="retainer-list">
+                <li><i class="fa-solid fa-check"></i> <strong>Todo lo del plan Web + Redes.</strong></li>
+                <li><i class="fa-solid fa-check"></i> Gestión de campañas pagadas (Google / Meta Ads).</li>
+                <li><i class="fa-solid fa-check"></i> Prospección mensual con nuevos concierges.</li>
+                <li><i class="fa-solid fa-check"></i> Reporte ejecutivo mensual de ventas.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: CRONOGRAMA & FIRMA -->
+      <section class="section-block">
+        <div class="section-heading">
+          <div class="section-number">05</div>
+          <h2 class="section-title">Cronograma de Ejecución (4 Semanas)</h2>
+        </div>
+
+        <div class="timeline-grid">
+          <div class="timeline-card">
+            <div class="timeline-week">Semana 1</div>
+            <h5>Marca & Menú</h5>
+            <p>Rebranding de Facebook, apertura de Instagram/TikTok y aprobación de textos del nuevo menú.</p>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-week">Semana 2</div>
+            <h5>Desarrollo Web</h5>
+            <p>Construcción de chefmarcoscr.com, menú interactivo, PDF descargable y nuevo CV ejecutivo.</p>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-week">Semana 3</div>
+            <h5>Atracción & SEO</h5>
+            <p>Alta en Google Maps, kit digital para concierges de villas y conexión a WhatsApp Business.</p>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-week">Semana 4</div>
+            <h5>Lanzamiento</h5>
+            <p>Pruebas de navegación en móviles, entrega de accesos y capacitación al chef.</p>
+          </div>
+        </div>
+
+        <!-- CONDICIONES -->
+        <div style="margin-top: 30px; padding: 16px 20px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 12.5px; color: #475569;">
+          <strong>Condiciones Comerciales:</strong> 50% de anticipo al inicio de labores y 50% contra entrega y publicación en vivo. Medios de pago: Transferencia bancaria (Costa Rica / SINPE Móvil), transferencia internacional o tarjeta digital. Incluye 30 días de garantía y ajustes menores post-lanzamiento.
+        </div>
+
+        <!-- SIGNATURE AREA -->
+        <div class="signature-area">
+          <div class="sig-box">
+            <div class="sig-line"></div>
+            <div class="sig-name">Chef Marcos Mena Viales</div>
+            <div class="sig-role">Cliente / Chef Ejecutivo & Private Chef</div>
+          </div>
+
+          <div class="sig-box">
+            <div class="sig-line"></div>
+            <div class="sig-name">Director de Proyecto & Consultor Digital</div>
+            <div class="sig-role">Estrategia Digital & Desarrollo Web</div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="proposal-footer">
+      Documento confidencial preparado exclusivamente para Chef Marcos Mena Viales · Manuel Antonio, Costa Rica · Todos los derechos reservados © 2026
+    </footer>
+
+  </main>
+
+</body>
+</html>

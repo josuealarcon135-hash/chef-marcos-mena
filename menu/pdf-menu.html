@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chef Marcos Mena Viales — Private Gastronomic Villa Menu | Costa Rica</title>
+  
+  <!-- Google Fonts: Inter & Plus Jakarta Sans (Crystal Clear & Ultra Legible) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* ==========================================================================
+       Print & PDF Master Stylesheet — 5-Star Luxury Light & Gold Editorial
+       Inspired by Relais & Châteaux, Michelin Guide & Aman Resorts Menus
+       ========================================================================== */
+    @page {
+      size: letter portrait;
+      margin: 0;
+    }
+
+    :root {
+      --bg-canvas: #f0ece1;
+      --bg-page: #ffffff;
+      --bg-card: #f9f7f2;
+      --bg-card-highlight: #f4efe2;
+      
+      /* Rich Luxury Colors */
+      --gold-primary: #a67c2e;
+      --gold-dark: #7d5b18;
+      --gold-bright: #c5a059;
+      --gold-light: #f5eedb;
+      --border-gold: rgba(166, 124, 46, 0.45);
+      --border-gold-subtle: rgba(166, 124, 46, 0.22);
+      
+      --emerald-dark: #143527;
+      --emerald-accent: #1e523d;
+      
+      --text-main: #141418;
+      --text-headings: #0d0d12;
+      --text-body: #3c3c4a;
+      --text-muted: #6a6a7c;
+      --text-gold: #8f671c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+
+    /* Print Controls Bar */
+    .print-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(20, 20, 26, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid var(--gold-primary);
+      padding: 12px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 9999;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.35);
+    }
+
+    .btn-action {
+      background: linear-gradient(135deg, #dfb76c, #fef0cd, #b38b3c);
+      color: #0d0d12;
+      font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+      font-size: 12.5px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      padding: 10px 22px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.2s;
+      box-shadow: 0 2px 10px rgba(166, 124, 46, 0.3);
+    }
+    .btn-action:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fef0cd;
+      border: 1px solid rgba(223, 183, 108, 0.5);
+      font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-outline:hover {
+      background: rgba(223, 183, 108, 0.18);
+    }
+
+    /* Multi-Page Container */
+    .menu-document {
+      width: 8.5in;
+      margin: 75px auto 40px auto;
+    }
+
+    /* Single A4 / Letter Page */
+    .menu-page {
+      width: 8.5in;
+      height: 11in;
+      background: var(--bg-page);
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+      padding: 0.52in 0.58in;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+      margin-bottom: 30px;
+    }
+
+    /* Editorial Double Ornamental Border */
+    .page-border {
+      position: absolute;
+      top: 0.25in;
+      left: 0.25in;
+      right: 0.25in;
+      bottom: 0.25in;
+      border: 1.5px solid var(--gold-primary);
+      pointer-events: none;
+    }
+
+    .page-border-inner {
+      position: absolute;
+      top: 0.29in;
+      left: 0.29in;
+      right: 0.29in;
+      bottom: 0.29in;
+      border: 0.6px solid rgba(166, 124, 46, 0.35);
+      pointer-events: none;
+    }
+
+    .corner-diamond {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: var(--gold-primary);
+      transform: rotate(45deg);
+    }
+    .c-tl { top: 0.235in; left: 0.235in; }
+    .c-tr { top: 0.235in; right: 0.235in; }
+    .c-bl { bottom: 0.235in; left: 0.235in; }
+    .c-br { bottom: 0.235in; right: 0.235in; }
+
+    /* Typography Hierarchy (Clean, Ultra-Legible Sans-Serif) */
+    .font-cinzel,
+    .font-playfair,
+    .font-sans,
+    .font-cormorant {
+      font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #7d5b18 0%, #a67c2e 50%, #593f0d 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .page-category-tag {
+      font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold-dark);
+      font-weight: 800;
+      margin-bottom: 2px;
+      display: block;
+    }
+
+    .page-title {
+      font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--text-headings);
+    }
+
+    .header-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 4px;
+      margin-bottom: 8px;
+    }
+    .header-divider .line {
+      width: 50px;
+      height: 1.2px;
+      background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+    }
+    .header-divider .dot {
+      width: 5px;
+      height: 5px;
+      background: var(--gold-primary);
+      transform: rotate(45deg);
+    }
+
+    /* Dishes Container */
+    .dishes-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    .dish-row {
+      margin-bottom: 9px;
+      position: relative;
+    }
+
+    .dish-row-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .dish-name {
+      font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-headings);
+    }
+
+    .dish-dots {
+      flex: 1;
+      border-bottom: 1px dotted rgba(166, 124, 46, 0.45);
+      margin: 0 5px 4px 5px;
+    }
+
+    .dish-tag-pill {
+      font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--gold-dark);
+      background: var(--gold-light);
+      padding: 2.5px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(166, 124, 46, 0.35);
+      white-space: nowrap;
+    }
+
+    .dish-tag-pill.emerald {
+      color: #0f402c;
+      background: #e8f4ed;
+      border: 1px solid rgba(20, 82, 58, 0.3);
+    }
+
+    .dish-desc {
+      font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+      font-size: 12.8px;
+      line-height: 1.45;
+      color: var(--text-body);
+      font-weight: 400;
+      margin-top: 2.5px;
+    }
+
+    .section-subtitle-pill {
+      font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+      font-size: 12px;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-subtitle-pill::before, .section-subtitle-pill::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(166, 124, 46, 0.35);
+    }
+
+    /* Two-Column Grid */
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    /* Page Image Banner */
+    .page-img-banner {
+      width: 100%;
+      height: 96px;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1.2px solid var(--gold-primary);
+      margin: 8px 0;
+      position: relative;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+    .page-img-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Page Footer */
+    .page-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(166, 124, 46, 0.3);
+      padding-top: 6px;
+      font-size: 9.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--gold-dark);
+    }
+
+    /* ================= COVER PAGE EDITORIAL MASTERPIECE ================= */
+    .cover-page {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75in 0.65in;
+      background: radial-gradient(circle at 50% 30%, #ffffff 0%, #faf6ec 100%);
+    }
+
+    .cover-hero-img {
+      width: 100%;
+      max-width: 5.8in;
+      height: 3.3in;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1.5px solid var(--gold-primary);
+      box-shadow: 0 14px 35px rgba(125, 91, 24, 0.18), 0 4px 12px rgba(0,0,0,0.08);
+      margin: 14px 0;
+    }
+    .cover-hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Print Media Query */
+    @media print {
+      body {
+        background: none;
+      }
+      .print-bar {
+        display: none !important;
+      }
+      .menu-document {
+        width: 100%;
+        margin: 0;
+      }
+      .menu-page {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+        break-after: page;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= PRINT CONTROLS TOP BAR ================= -->
+  <div class="print-bar">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <img src="assets/images/chef_marcos_avatar.jpg" alt="Chef Marcos" style="width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid #dfb76c; object-fit: cover;">
+      <div>
+        <span style="font-family: 'Inter', sans-serif; font-size: 14px; color: #ffffff; font-weight: 800; display: block;">
+          Chef Marcos Mena Viales
+        </span>
+        <span style="color: #dfb76c; font-size: 11px; font-weight: 600;">
+          Gastronomic Menu Collection for Download & Print (PDF)
+        </span>
+      </div>
+    </div>
+    <div style="display: flex; gap: 10px;">
+      <a href="index.html" class="btn-outline">
+        <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i>
+        <span>Back to Website</span>
+      </a>
+      <button onclick="window.print()" class="btn-action">
+        <i data-lucide="printer" style="width: 15px; height: 15px;"></i>
+        <span>Download / Print PDF</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="menu-document">
+
+    <!-- ================= PAGE 1: COVER PAGE (CLEAN SANS & GOLD) ================= -->
+    <div class="menu-page cover-page">
+      <div class="page-border"></div>
+      <div class="page-border-inner"></div>
+      <div class="corner-diamond c-tl"></div>
+      <div class="corner-diamond c-tr"></div>
+      <div class="corner-diamond c-bl"></div>
+      <div class="corner-diamond c-br"></div>
+
+      <!-- Top Branding -->
+      <div>
+        <div style="width: 100px; height: 100px; margin: 0 auto 12px auto; border-radius: 50%; overflow: hidden; border: 3px solid var(--gold-primary); box-shadow: 0 4px 16px rgba(166,124,46,0.25);">
+          <img src="assets/images/chef_marcos_avatar.jpg" alt="Chef Marcos" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <span style="font-family: 'Inter', sans-serif; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--gold-dark); font-weight: 800; display: block;">
+          Executive Private Chef Service · Costa Rica
+        </span>
+        <h1 style="font-family: 'Inter', sans-serif; font-size: 38px; font-weight: 900; letter-spacing: -0.02em; color: var(--text-headings); margin-top: 4px;">
+          Chef Marcos Mena Viales
+        </h1>
+        <div style="font-family: 'Inter', sans-serif; font-size: 15px; color: var(--gold-primary); font-weight: 700; margin-top: 2px;">
+          Exclusive Gastronomic Menu Collection
+        </div>
+      </div>
+
+      <!-- Hero Photo Frame -->
+      <div class="cover-hero-img">
+        <img src="assets/images/raw_seafood_champagne.jpg" alt="Chef Marcos Private Villa Dining">
+      </div>
+
+      <!-- Bottom Details -->
+      <div style="max-width: 5.8in;">
+        <p style="font-family: 'Inter', sans-serif; font-size: 15px; color: var(--text-body); line-height: 1.6; margin-bottom: 14px; font-weight: 500;">
+          Bespoke private dining experiences in the comfort of your luxury villa. Fresh Pacific ocean seafood and customized multi-course menus tailored to your group.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 16px; font-size: 12px; font-weight: 700; color: var(--gold-dark);">
+          <span>WhatsApp Concierge: +506 6081-1676</span>
+          <span>•</span>
+          <span>bookingschefmarcoscr@gmail.com</span>
+        </div>
+        <div style="margin-top: 10px; font-size: 10.5px; color: var(--text-muted); font-weight: 600;">
+          Serving Luxury Villas, Private Residences & Yachts Across Costa Rica
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= PAGE 2: BREAKFAST COLLECTION ================= -->
+    <div class="menu-page">
+      <div class="page-border"></div>
+      <div class="page-border-inner"></div>
+      <div class="corner-diamond c-tl"></div>
+      <div class="corner-diamond c-tr"></div>
+      <div class="corner-diamond c-bl"></div>
+      <div class="corner-diamond c-br"></div>
+
+      <!-- Header -->
+      <div class="page-header">
+        <div style="width: 30px; height: 30px; margin: 0 auto 3px auto; border-radius: 50%; overflow: hidden; border: 1.5px solid var(--gold-primary);">
+          <img src="assets/images/chef_marcos_avatar.jpg" alt="Chef Marcos" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <span class="page-category-tag">Breakfast Collection</span>
+        <h2 class="page-title">Breakfast & Morning Specialties</h2>
+        <div class="header-divider">
+          <div class="line"></div>
+          <div class="dot"></div>
+          <div class="line"></div>
+        </div>
+        <p style="font-size: 11.5px; color: var(--text-muted); font-weight: 500;">
+          All breakfast selections include fresh-brewed Costa Rican coffee, milk, fresh fruit juices, and seasonal tropical fruit platter.
+        </p>
+      </div>
+
+      <!-- Dishes -->
+      <div class="dishes-container">
+        
+        <div class="dish-row">
+          <div class="dish-row-header">
+            <span class="dish-name">Costa Rican Heritage Breakfast ("Típico")</span>
+            <div class="dish-dots"></div>
+            <span class="dish-tag-pill emerald">Signature</span>
+          </div>
+          <p class="dish-desc">
+            Traditional gallo pinto paired with farm-fresh eggs cooked to order, caramelized sweet plantains, artisanal Costa Rican cheese, warm toast or tortillas, and seasonal fruit platter.
+          </p>
+        </div>
+
+        <div class="dish-row">
+          <div class="dish-row-header">
+            <span class="dish-name">Classic American Morning</span>
+            <div class="dish-dots"></div>
+            <span class="dish-tag-pill">Classic</span>
+          </div>
+          <p class="dish-desc">
+            Farm eggs prepared to your preference, crispy smoked bacon, golden breakfast potatoes, artisan toasted bread, and a vibrant fresh fruit medley.
+          </p>
+        </div>
+
+        <div class="dish-row">
+          <div class="dish-row-header">
+            <span class="dish-name">Fluffy Golden Buttermilk Pancakes</span>
+            <div class="dish-dots"></div>
+            <span class="dish-tag-pill">Guest Favorite</span>
+          </div>
+          <p class="dish-desc">
+            Stack of light, fluffy golden pancakes drizzled with pure maple syrup, served with crispy bacon, eggs cooked to order, and fresh tropical berries.
+          </p>
+        </div>
+
+        <div class="dish-row">
+          <div class="dish-row-header">
+            <span class="dish-name">Brioche French Toast Platter</span>
+            <div class="dish-dots"></div>
+            <span class="dish-tag-pill">Artisanal</span>
+          </div>
+          <p class="dish-desc">
+            Cinnamon-vanilla dipped artisan brioche dusted with powdered sugar, accompanied by crisp bacon strips, eggs to order, and sliced tropical fruits.
+          </p>
+        </div>
+
+        <div class="dish-row">
+          <div class="dish-row-header">
+            <span class="dish-name">Gourmet Ham & Cheese Omelet</span>
+            <div class="dish-dots"></div>
+            <span class="dish-tag-pill">Chef's Choice</span>
+          </div>
+          <p class="dish-desc">
+            Fluffy three-egg omelet folded with select smoked ham and melted cheeses, served with golden breakfast potatoes and artisan toast.
+          </p>
+        </div>
+
+        <div class="dish-row">
+          <div class="dish-row-header">
+            <span class="dish-name">Huevos Rancheros</span>
+            <div class="dish-dots"></div>
+            <span class="dish-tag-pill emerald">Traditional</span>
+          </div>
+          <p class="dish-desc">
+            Farm eggs over warm corn tortillas with zesty Mexican ranchero sauce, diced vine tomatoes, ripe avocado, fresh jalapeños, and melted mozzarella.
+          </p>
+        </div>
+
+        <div class="dish-row">
+          <div class="dish-row-header">
+            <span class="dish-name">Continental Morning Spread</span>
+            <div class="dish-dots"></div>
+            <span class="dish-tag-pill">Light & Fresh</span>
+          </div>
+          <p class="dish-desc">
+            Toasted artisan breads with homemade tropical preserves and butter, creamy natural yogurt, crunchy granola, and chilled sliced fruits.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Banner Photo -->
+      <div class="page-img-banner">
+        <img src="assets/images/luxury_breakfast_spread.jpg" alt="Breakfast Spread">
+      </div>
+
+      <!-- Footer -->
+      <div class="page-footer">
+        <span>Chef Marcos Mena Viales</span>
+        <span>Page 02 · Breakfast Collection</span>
+        <span>WhatsApp: +506 6081-1676</span>
+      </div>
+    </div>
+
+    <!-- ================= PAGE 3: APPETIZERS & SALADS ================= -->
+    <div class="menu-page">
+      <div class="page-border"></div>
+      <div class="page-border-inner"></div>
+      <div class="corner-diamond c-tl"></div>
+      <div class="corner-diamond c-tr"></div>
+      <div class="corner-diamond c-bl"></div>
+      <div class="corner-diamond c-br"></div>
+
+      <!-- Header -->
+      <div class="page-header">
+        <div style="width: 30px; height: 30px; margin: 0 auto 3px auto; border-radius: 50%; overflow: hidden; border: 1.5px solid var(--gold-primary);">
+          <img src="assets/images/chef_marcos_avatar.jpg" alt="Chef Marcos" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <span class="page-category-tag">Appetizers & Salads</span>
+        <h2 class="page-title">Fresh Appetizers & Signature Salads</h2>
+        <div class="header-divider">
+          <div class="line"></div>
+          <div class="dot"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+
+      <!-- Dishes Two Sections -->
+      <div class="dishes-container">
+        
+        <!-- Appetizers -->
+        <div>
+          <div class="section-subtitle-pill">
+            Pacific Starters & Small Plates
+          </div>
+
+          <div class="dish-row">
+            <div class="dish-row-header">
+              <span class="dish-name">House Fresh Pacific Ceviche</span>
+              <div class="dish-dots"></div>
+              <span class="dish-tag-pill emerald">Chef Signature</span>
+            </div>
+            <p class="dish-desc">Catch of the day cured in fresh lime and citrus juices with minced cilantro, sweet peppers, and red onion, with crispy tortilla chips.</p>
+          </div>
+
+          <div class="dish-row">
+            <div class="dish-row-header">
+              <span class="dish-name">Yellowfin Tuna Tartare with Crispy Plantain</span>
+              <div class="dish-dots"></div>
+              <span class="dish-tag-pill">Guest Favorite</span>
+            </div>
+            <p class="dish-desc">Sashimi-grade yellowfin tuna with toasted sesame, scallions, ripe avocado, and sweet mango over crunchy artisan plantain chips.</p>
+          </div>
+
+          <div class="dish-row">
+            <div class="dish-row-header">
+              <span class="dish-name">Ahi Tuna Sashimi</span>
+              <div class="dish-dots"></div>
+              <span class="dish-tag-pill emerald">Ultra Fresh</span>
+            </div>
+            <p class="dish-desc">Precision-sliced yellowfin tuna with microgreens, roasted sesame, pickled ginger, wasabi, and aged soy reduction.</p>
+          </div>
+
+          <div class="dish-row">
+            <div class="dish-row-header">
+              <span class="dish-name">Crispy Golden Calamari Rings</span>
+              <div class="dish-dots"></div>
+              <span class="dish-tag-pill">Crispy</span>
+            </div>
+            <p class="dish-desc">Tender calamari lightly dusted and fried to golden perfection, served with citrus wedges and homemade dipping sauces.</p>
+          </div>
+
+          <div class="dish-row">
+            <div class="dish-row-header">
+              <span class="dish-name">Artisanal Guacamole & Pico de Gallo</span>
+              <div class="dish-dots"></div>
+              <span class="dish-tag-pill">Artisanal</span>
+            </div>
+            <p class="dish-desc">Crushed Hass avocado with citrus and sea salt, served with fresh diced tomato pico de gallo and warm tortilla chips.</p>
+          </div>
+        </div>
+
+        <!-- Salads -->
+        <div style="margin-top: 6px;">
+          <div class="section-subtitle-pill">
+            Signature Fresh Salads
+          </div>
+
+          <div class="dish-row">
+            <div class="dish-row-header">
+              <span class="dish-name">Tropical Paradise Salad</span>
+              <div class="dish-dots"></div>
+              <span class="dish-tag-pill">Tropical</span>
+            </div>
+            <p class="dish-desc">Garden greens, cherry tomatoes, cucumber, carrots, sweet mango cubes, and red onion in passionfruit citrus dressing.</p>
+          </div>
+
+          <div class="dish-row">
+            <div class="dish-row-header">
+              <span class="dish-name">Mediterranean Sun Salad</span>
+              <div class="dish-dots"></div>
+              <span class="dish-tag-pill">Refreshing</span>
+            </div>
+            <p class="dish-desc">Fresh arugula, cucumber, red onion, cherry tomatoes, watermelon cubes, and Kalamata olives with shaved Parmesan.</p>
+          </div>
+
+          <div class="dish-row">
+            <div class="dish-row-header">
+              <span class="dish-name">Caprese Salad</span>
+              <div class="dish-dots"></div>
+              <span class="dish-tag-pill">Classic</span>
+            </div>
+            <p class="dish-desc">Vine-ripened tomatoes layered with artisanal mozzarella and sweet basil, drizzled with olive oil and aged Modena balsamic.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Banner Photo -->
+      <div class="page-img-banner">
+        <img src="assets/images/tuna_tartare_stack.jpg" alt="Tuna Tartare">
+      </div>
+
+      <!-- Footer -->
+      <div class="page-footer">
+        <span>Chef Marcos Mena Viales</span>
+        <span>Page 03 · Appetizers & Salads</span>
+        <span>WhatsApp: +506 6081-1676</span>
+      </div>
+    </div>
+
+    <!-- ================= PAGE 4: SEAFOOD & CATCH OF THE DAY ================= -->
+    <div class="menu-page">
+      <div class="page-border"></div>
+      <div class="page-border-inner"></div>
+      <div class="corner-diamond c-tl"></div>
+      <div class="corner-diamond c-tr"></div>
+      <div class="corner-diamond c-bl"></div>
+      <div class="corner-diamond c-br"></div>
+
+      <!-- Header -->
+      <div class="page-header">
+        <div style="width: 30px; height: 30px; margin: 0 auto 3px auto; border-radius: 50%; overflow: hidden; border: 1.5px solid var(--gold-primary);">
+          <img src="assets/images/chef_marcos_avatar.jpg" alt="Chef Marcos" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <span class="page-category-tag">Main Courses</span>
+        <h2 class="page-title">Pacific Seafood & Fresh Catch of the Day</h2>
+        <div class="header-divider">
+          <div class="line"></div>
+          <div class="dot"></div>
+          <div class="line"></div>
+        </div>
+        <div style="background: #faf6ec; border: 1.5px solid rgba(166, 124, 46, 0.4); border-radius: 6px; padding: 5px 14px; margin-top: 1px; margin-bottom: 6px; display: inline-block;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-dark);">Choice of Accompaniments:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 10px; color: var(--text-body); font-weight: 600; margin-left: 4px;">Roasted Baby Herb Potatoes • Steamed White Rice • Seasonal Sautéed Garden Vegetables</span>
+        </div>
+      </div>
+
+      <!-- Dishes -->
+      <div class="dishes-container">
+        
+        <div class="dish-row">
+          <div class="dish-row-header">
+            <span class="dish-name">Garlic Butter Caribbean Spiny Lobster</span>
+            <div class="dish-dots"></div>
+            <span class="dish-tag-pill emerald">Chef Signature</span>
+          </div>
+          <p class="dish-desc">
+            Flame-grilled spiny lobster tails brushed generously with garlic herb butter, parsley, and sea salt, served with your choice of side.
+          </p>
+        </div>
+
+        <div class="dish-row">
+          <div class="dish-row-header">
+            <span class="dish-name">Jumbo Pacific Citrus Butter Shrimp</span>
+            <div class="dish-dots"></div>
+            <span class="dish-tag-pill">Classic</span>
+          </div>
+          <p class="dish-desc">
+            Succulent jumbo prawns sautéed with garlic, white wine, lime butter reduction, and fresh herbs, served with your choice of side.
+          </p>
+        </div>
+
+        <div class="dish-row">
+          <div class="dish-row-header">
+            <span class="dish-name">Grilled Yellowfin Tuna in Chipotle Glaze</span>
+            <div class="dish-dots"></div>
+            <span class="dish-tag-pill">Catch of the Day</span>
+          </div>
+          <p class="dish-desc">
+            Pan-seared yellowfin tuna steak finished with a mild, fresh smoky chipotle glaze, served rare or medium-rare with your choice of side.
+          </p>
+        </div>
+
+        <div class="dish-row">
+          <div class="dish-row-header">
+            <span class="dish-name">Tuscan Style Atlantic Salmon</span>
+            <div class="dish-dots"></div>
+            <span class="dish-tag-pill">Gourmet</span>
+          </div>
+          <p class="dish-desc">
+            Pan-seared salmon fillet bathed in a velvety garlic, sun-dried tomato, baby spinach, white wine, and sweet cream reduction.
+          </p>
+        </div>
+
+        <div class="dish-row">
+          <div class="dish-row-header">
+            <span class="dish-name">Pan-Seared Red Snapper (Pargo)</span>
+            <div class="dish-dots"></div>
+            <span class="dish-tag-pill emerald">Local Catch</span>
+          </div>
+          <p class="dish-desc">
+            Fresh wild Pacific red snapper finished in a delicate emulsion of capers, fresh lime juice, white wine, butter, and cream.
+          </p>
+        </div>
+
+        <div class="dish-row">
+          <div class="dish-row-header">
+            <span class="dish-name">Crispy Golden Dorado (Mahi-Mahi)</span>
+            <div class="dish-dots"></div>
+            <span class="dish-tag-pill">Golden Crisp</span>
+          </div>
+          <p class="dish-desc">
+            Panko-crusted fresh Dorado fillet fried golden, accompanied by Chef Marcos' homemade tartar sauce, citrus wedges, and choice of side.
+          </p>
+        </div>
+
+        <div class="dish-row">
+          <div class="dish-row-header">
+            <span class="dish-name">Garlic Sautéed Pacific Octopus ("Pulpo al Ajillo")</span>
+            <div class="dish-dots"></div>
+            <span class="dish-tag-pill emerald">Signature</span>
+          </div>
+          <p class="dish-desc">
+            Tender Pacific octopus sautéed with golden roasted garlic, extra virgin olive oil, white wine, sweet Spanish paprika, fresh parsley, and choice of side.
+          </p>
+        </div>
+
+        <div class="dish-row">
+          <div class="dish-row-header">
+            <span class="dish-name">Grand Seafood Feast (Mariscada • Groups 6-10)</span>
+            <div class="dish-dots"></div>
+            <span class="dish-tag-pill emerald">Family & Groups</span>
+          </div>
+          <p class="dish-desc">
+            An opulent centerpiece feast featuring whole lobster, tender grilled octopus, jumbo prawns, blue mussels, catch of the day fish, calamari, mini potatoes, and rice.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Banner Photo -->
+      <div class="page-img-banner" style="height: 82px;">
+        <img src="assets/images/grand_seafood_feast.jpg" alt="Pacific Grand Seafood Feast">
+      </div>
+
+      <!-- Footer -->
+      <div class="page-footer">
+        <span>Chef Marcos Mena Viales</span>
+        <span>Page 04 · Seafood & Fresh Catch</span>
+        <span>WhatsApp: +506 6081-1676</span>
+      </div>
+    </div>
+
+    <!-- ================= PAGE 5: MEATS, DESSERTS & CHEF BIO ================= -->
+    <div class="menu-page">
+      <div class="page-border"></div>
+      <div class="page-border-inner"></div>
+      <div class="corner-diamond c-tl"></div>
+      <div class="corner-diamond c-tr"></div>
+      <div class="corner-diamond c-bl"></div>
+      <div class="corner-diamond c-br"></div>
+
+      <!-- Header -->
+      <div class="page-header">
+        <div style="width: 30px; height: 30px; margin: 0 auto 3px auto; border-radius: 50%; overflow: hidden; border: 1.5px solid var(--gold-primary);">
+          <img src="assets/images/chef_marcos_avatar.jpg" alt="Chef Marcos" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <span class="page-category-tag">Main Courses & Desserts</span>
+        <h2 class="page-title">Prime Meats & Artisanal Desserts</h2>
+        <div class="header-divider">
+          <div class="line"></div>
+          <div class="dot"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="dishes-container">
+        
+        <!-- Meats / Platos Fuertes -->
+        <div>
+          <div class="section-subtitle-pill">
+            Main Courses · Prime Meats & Poultry
+          </div>
+          <div style="background: #faf6ec; border: 1.5px solid rgba(166, 124, 46, 0.4); border-radius: 6px; padding: 4.5px 12px; margin-top: -3px; margin-bottom: 7px; text-align: center;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-dark);">Choice of Accompaniments:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 9.5px; color: var(--text-body); font-weight: 600; margin-left: 3px;">Roasted Baby Herb Potatoes • Steamed White Rice • Seasonal Sautéed Garden Vegetables</span>
+          </div>
+
+          <div class="dish-row">
+            <div class="dish-row-header">
+              <span class="dish-name">Marinated Chimichurri Churrasco Steak</span>
+              <div class="dish-dots"></div>
+              <span class="dish-tag-pill emerald">Prime Cut</span>
+            </div>
+            <p class="dish-desc">Prime churrasco steak marinated with mountain herbs and sea salt, flame-grilled and served with house chimichurri and choice of side.</p>
+          </div>
+
+          <div class="dish-row">
+            <div class="dish-row-header">
+              <span class="dish-name">Surf & Turf (Prime Beef & Jumbo Prawns)</span>
+              <div class="dish-dots"></div>
+              <span class="dish-tag-pill emerald">Chef Signature</span>
+            </div>
+            <p class="dish-desc">Prime beef tenderloin (lomito) paired with catch of the day or jumbo prawns, with wild mushroom sauce, chimichurri, and choice of side.</p>
+          </div>
+
+          <div class="dish-row">
+            <div class="dish-row-header">
+              <span class="dish-name">Tropical Mango Glazed Chicken</span>
+              <div class="dish-dots"></div>
+              <span class="dish-tag-pill">Tropical</span>
+            </div>
+            <p class="dish-desc">Pan-roasted tender chicken breast glazed in a luscious sweet-and-tangy fresh mango reduction with buttered vegetables and choice of side.</p>
+          </div>
+        </div>
+
+        <!-- Desserts -->
+        <div style="margin-top: 6px;">
+          <div class="section-subtitle-pill">
+            Artisanal Handcrafted Desserts
+          </div>
+
+          <div class="two-col-grid">
+            <div class="dish-row">
+              <div class="dish-row-header">
+                <span class="dish-name" style="font-size: 13px;">Warm Fudge Brownie</span>
+                <span class="dish-tag-pill">Decadent</span>
+              </div>
+              <p class="dish-desc" style="font-size: 12px;">Served warm with vanilla bean ice cream & berry coulis.</p>
+            </div>
+
+            <div class="dish-row">
+              <div class="dish-row-header">
+                <span class="dish-name" style="font-size: 13px;">Costa Rican Tres Leches</span>
+                <span class="dish-tag-pill emerald">Traditional</span>
+              </div>
+              <p class="dish-desc" style="font-size: 12px;">Three-milk soaked sponge with whipped meringue.</p>
+            </div>
+
+            <div class="dish-row">
+              <div class="dish-row-header">
+                <span class="dish-name" style="font-size: 13px;">Spiced Carrot Cake</span>
+                <span class="dish-tag-pill">Artisanal</span>
+              </div>
+              <p class="dish-desc" style="font-size: 12px;">Moist spiced cake with cream glaze & ice cream.</p>
+            </div>
+
+            <div class="dish-row">
+              <div class="dish-row-header">
+                <span class="dish-name" style="font-size: 13px;">Tropical Key Lime Pie</span>
+                <span class="dish-tag-pill">Citrus</span>
+              </div>
+              <p class="dish-desc" style="font-size: 12px;">Zesty lime curd in golden buttery graham crust.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chef Signature Concierge Card -->
+        <div style="background: linear-gradient(135deg, #fbf8f0 0%, #f4ede0 100%); border: 1.5px solid var(--gold-primary); border-radius: 6px; padding: 12px 18px; margin-top: 8px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 12px rgba(166,124,46,0.1);">
+          <div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 800; color: var(--text-headings);">
+              Private Villa Inquiries & Booking Concierge
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 12px; color: var(--gold-dark); margin-top: 3px; font-weight: 700;">
+              WhatsApp: +506 6081-1676 • Email: bookingschefmarcoscr@gmail.com
+            </div>
+          </div>
+          <div style="text-align: right; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-headings);">
+            Costa Rica<br><span style="color: var(--gold-primary);">Executive Private Chef</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <div class="page-footer">
+        <span>Chef Marcos Mena Viales</span>
+        <span>Page 05 · Prime Meats & Desserts</span>
+        <span>WhatsApp: +506 6081-1676</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

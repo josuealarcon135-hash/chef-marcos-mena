@@ -1,0 +1,216 @@
+/* ==========================================================================
+   Chef Marcos Mena Viales — Modern Clean & Legible Design System
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-primary: #faf8f5;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f4efe4;
+  --bg-surface-warm: #fdfbf7;
+  --bg-card: #ffffff;
+  
+  --border-gold: rgba(166, 124, 46, 0.35);
+  --border-gold-subtle: rgba(166, 124, 46, 0.18);
+  --border-gold-bright: #c5a059;
+  
+  --gold-primary: #a67c2e;
+  --gold-dark: #7d5b18;
+  --gold-light: #f7f2e4;
+  --gold-bright: #dfb76c;
+  --gold-gradient: linear-gradient(135deg, #dfb76c 0%, #fef0cd 50%, #b38b3c 100%);
+  --gold-gradient-btn: linear-gradient(135deg, #d8b467 0%, #faecc8 50%, #b89144 100%);
+  
+  --emerald-primary: #143527;
+  --emerald-light: #e8f4ed;
+  
+  --text-main: #141418;
+  --text-headings: #0d0d12;
+  --text-body: #3c3c4a;
+  --text-muted: #6b6b7c;
+  --text-gold: #8f671c;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #f0ece1;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9bca6;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-primary);
+}
+
+/* Typography Utilities - Clean, Ultra-Legible Sans-Serif */
+.font-serif-title,
+.font-editorial,
+.font-display,
+.font-serif,
+.font-body {
+  font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.gold-text-gradient {
+  background: linear-gradient(135deg, #7d5b18 0%, #a67c2e 50%, #593f0d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism & Cards */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 10px 30px rgba(166, 124, 46, 0.08);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1.5px solid var(--border-gold);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.dish-card {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1.2px solid rgba(166, 124, 46, 0.28);
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+}
+
+.dish-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-primary);
+  box-shadow: 0 20px 40px -10px rgba(125, 91, 24, 0.16), 0 0 24px -2px rgba(197, 171, 107, 0.25);
+}
+
+/* Decorative Dividers */
+.gold-divider {
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold-primary) 50%, transparent 100%);
+  width: 100%;
+}
+
+.gold-diamond {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--gold-primary);
+  transform: rotate(45deg);
+}
+
+/* High-Legibility Badges (Editorial Light) */
+.badge-gold {
+  background: var(--gold-light);
+  color: var(--gold-dark);
+  border: 1px solid rgba(166, 124, 46, 0.38);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding: 4px 10px;
+}
+
+.badge-tag {
+  background: #f0edf4;
+  color: #383848;
+  border: 1px solid #d8d3e2;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  padding: 3px 9px;
+}
+
+.badge-emerald {
+  background: var(--emerald-light);
+  color: var(--emerald-primary);
+  border: 1px solid rgba(20, 53, 39, 0.3);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 9px;
+}
+
+/* Category Filter Tabs (Light Editorial) */
+.tab-btn {
+  transition: all 0.25s ease;
+  position: relative;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: #ffffff;
+  color: #555566;
+  border: 1px solid rgba(166, 124, 46, 0.28);
+}
+
+.tab-btn:hover {
+  color: var(--gold-dark);
+  border-color: var(--gold-primary);
+  background: #fcf9f2;
+}
+
+.tab-btn.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, #a67c2e 0%, #7d5b18 100%);
+  border-color: var(--gold-dark);
+  box-shadow: 0 4px 14px rgba(125, 91, 24, 0.25);
+}
+
+/* Image Hover Zoom */
+.dish-img-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.dish-img-container img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dish-card:hover .dish-img-container img {
+  transform: scale(1.07);
+}
+
+/* Floating Action Button */
+.fab-btn {
+  background: linear-gradient(135deg, #a67c2e 0%, #7d5b18 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(125, 91, 24, 0.35);
+  transition: all 0.3s ease;
+}
+
+.fab-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(125, 91, 24, 0.5);
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  background: rgba(15, 15, 20, 0.75);
+  backdrop-filter: blur(10px);
+}

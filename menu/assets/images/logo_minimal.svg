@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldPure" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf5e0"/>
+      <stop offset="40%" stop-color="#dbb76c"/>
+      <stop offset="80%" stop-color="#c5a059"/>
+      <stop offset="100%" stop-color="#9a7630"/>
+    </linearGradient>
+    <linearGradient id="goldPureStroke" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a88438"/>
+      <stop offset="50%" stop-color="#f8e5ad"/>
+      <stop offset="100%" stop-color="#be994d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Clean Dark Background Frame -->
+  <rect width="400" height="400" rx="30" fill="#09090d"/>
+
+  <!-- Minimalist Geometric Diamond Frame -->
+  <g transform="translate(200, 160)">
+    <!-- Fine Diamond Accent -->
+    <polygon points="0,-100 100,0 0,100 -100,0" fill="none" stroke="url(#goldPureStroke)" stroke-width="1.2" stroke-opacity="0.75"/>
+    <polygon points="0,-92 92,0 0,92 -92,0" fill="none" stroke="url(#goldPure)" stroke-width="0.5" stroke-opacity="0.4"/>
+
+    <!-- Subtle Apex Star -->
+    <polygon points="0,-112 3,-104 11,-101 3,-98 0,-90 -3,-98 -11,-101 -3,-104" fill="url(#goldPure)"/>
+
+    <!-- Sleek Monogram MM in Center -->
+    <g fill="url(#goldPure)">
+      <path d="M -48,28 L -48,-36 L -34,-36 L -15,2 L -4,2 L -4,28 L -14,28 L -14,-12 L -30,16 L -36,16 L -39,-18 L -39,28 Z"/>
+      <path d="M 4,-36 L 15,-36 L 34,2 L 39,-18 L 39,28 L 30,28 L 30,-12 L 14,16 L 4,16 L 4,-36 Z"/>
+      <path d="M 39,-36 L 48,-36 L 48,28 L 39,28 Z"/>
+    </g>
+
+    <!-- Bottom Fine Accent Dot -->
+    <circle cx="0" cy="112" r="2" fill="url(#goldPure)"/>
+  </g>
+
+  <!-- Clean Typography below Frame -->
+  <text x="200" y="300" text-anchor="middle" fill="url(#goldPure)" font-family="'Cinzel', serif" font-size="21" font-weight="700" letter-spacing="6" text-transform="uppercase">
+    CHEF MARCOS
+  </text>
+  
+  <text x="200" y="325" text-anchor="middle" fill="#ffffff" font-family="'Cormorant Garamond', Georgia, serif" font-size="16" font-style="italic" font-weight="400" letter-spacing="2.5">
+    Mena Viales
+  </text>
+
+  <line x1="140" y1="344" x2="260" y2="344" stroke="url(#goldPure)" stroke-width="0.7" stroke-opacity="0.5"/>
+
+  <text x="200" y="362" text-anchor="middle" fill="url(#goldPure)" font-family="'Montserrat', sans-serif" font-size="8" font-weight="500" letter-spacing="4.5" text-transform="uppercase" opacity="0.85">
+    PRIVATE CHEF • COSTA RICA
+  </text>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldCloche" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff0cc"/>
+      <stop offset="35%" stop-color="#dfb76c"/>
+      <stop offset="70%" stop-color="#c5a059"/>
+      <stop offset="100%" stop-color="#916c27"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Clean Dark Base -->
+  <circle cx="250" cy="250" r="236" fill="#09090d" stroke="url(#goldCloche)" stroke-width="2"/>
+  <circle cx="250" cy="250" r="226" fill="none" stroke="url(#goldCloche)" stroke-width="0.75" opacity="0.4"/>
+
+  <!-- ================= GOURMET CLOCHE DOME & KNIFE / FORK ================= -->
+  <g transform="translate(250, 195)">
+    <!-- Cloche Handle -->
+    <ellipse cx="0" cy="-90" rx="14" ry="7" fill="url(#goldCloche)"/>
+    <circle cx="0" cy="-98" r="6" fill="url(#goldCloche)"/>
+
+    <!-- Cloche Dome -->
+    <path d="M -90,-20 C -90,-80 -55,-90 0,-90 C 55,-90 90,-80 90,-20 Z" fill="url(#goldCloche)" fill-opacity="0.12" stroke="url(#goldCloche)" stroke-width="3"/>
+    
+    <!-- Steam / Aroma Swirls -->
+    <path d="M -25,-105 C -35,-120 -15,-130 -20,-145" fill="none" stroke="url(#goldCloche)" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+    <path d="M 0,-108 C -5,-125 15,-135 5,-155" fill="none" stroke="url(#goldCloche)" stroke-width="2.5" stroke-linecap="round" opacity="0.85"/>
+    <path d="M 25,-105 C 15,-120 35,-130 30,-145" fill="none" stroke="url(#goldCloche)" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+
+    <!-- Serving Platter Rim -->
+    <rect x="-105" y="-20" width="210" height="10" rx="3" fill="url(#goldCloche)"/>
+    
+    <!-- Crossed Fork & Knife below Platter -->
+    <g transform="translate(0, 30)">
+      <!-- Knife -->
+      <path d="M -40,40 L 30,-30 L 36,-24 L -34,46 Z" fill="url(#goldCloche)"/>
+      <path d="M 30,-30 C 40,-40 45,-30 42,-20 L 36,-24 Z" fill="url(#goldCloche)"/>
+      <!-- Fork -->
+      <path d="M 40,40 L -30,-30 L -36,-24 L 34,46 Z" fill="url(#goldCloche)"/>
+      <path d="M -30,-30 C -40,-40 -45,-30 -42,-20 L -36,-24 Z" fill="url(#goldCloche)"/>
+    </g>
+  </g>
+
+  <!-- Typography -->
+  <text x="250" y="360" text-anchor="middle" fill="url(#goldCloche)" font-family="'Cinzel', serif" font-size="28" font-weight="700" letter-spacing="6" text-transform="uppercase">
+    CHEF MARCOS
+  </text>
+  
+  <text x="250" y="394" text-anchor="middle" fill="#ffffff" font-family="'Cormorant Garamond', Georgia, serif" font-size="19" font-style="italic" font-weight="400" letter-spacing="3">
+    Private Culinary Experience
+  </text>
+
+  <text x="250" y="420" text-anchor="middle" fill="url(#goldCloche)" font-family="'Montserrat', sans-serif" font-size="9" font-weight="600" letter-spacing="5" text-transform="uppercase" opacity="0.85">
+    COSTA RICA
+  </text>
+</svg>

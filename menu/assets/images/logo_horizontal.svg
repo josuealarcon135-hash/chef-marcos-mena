@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldHChef2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff2d4"/>
+      <stop offset="30%" stop-color="#dfb76c"/>
+      <stop offset="70%" stop-color="#c5a059"/>
+      <stop offset="100%" stop-color="#916c27"/>
+    </linearGradient>
+    <linearGradient id="goldLineChef2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ab873c"/>
+      <stop offset="50%" stop-color="#faecc8"/>
+      <stop offset="100%" stop-color="#ab873c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left: Perfectly Symmetrical Culinary Icon -->
+  <g transform="translate(100, 100) scale(0.38)">
+    <circle cx="0" cy="0" r="236" fill="#08080b" stroke="url(#goldHChef2)" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="226" fill="none" stroke="url(#goldLineChef2)" stroke-width="0.8" opacity="0.4"/>
+
+    <!-- Symmetrical Hat & Crossed Knife/Fork centered at (0, -20) -->
+    <g transform="translate(0, -30)">
+      <!-- Hat -->
+      <path d="M -58, -14 C -78, -44 -55, -86 -22, -78 C -12, -98 12, -98 22, -78 C 55, -86 78, -44 58, -14 Z" fill="url(#goldHChef2)" fill-opacity="0.15" stroke="url(#goldHChef2)" stroke-width="3"/>
+      <path d="M -22, -76 C -18, -48 -14, -24 -14, -14" stroke="url(#goldHChef2)" stroke-width="2" stroke-opacity="0.6"/>
+      <path d="M 0, -94 C 0, -60 0, -30 0, -14" stroke="url(#goldHChef2)" stroke-width="2" stroke-opacity="0.6"/>
+      <path d="M 22, -76 C 18, -48 14, -24 14, -14" stroke="url(#goldHChef2)" stroke-width="2" stroke-opacity="0.6"/>
+      <rect x="-60" y="-14" width="120" height="14" rx="3" fill="url(#goldHChef2)"/>
+
+      <!-- Knife (+40deg) -->
+      <g transform="translate(0, 36) rotate(40) translate(0, -36)">
+        <path d="M -6, -45 C 8, -42 16, -20 14, 20 L -6, 20 Z" fill="url(#goldHChef2)"/>
+        <rect x="-7" y="20" width="14" height="4" rx="1" fill="url(#goldHChef2)"/>
+        <path d="M -5, 24 L -5, 80 C -5, 84 -2, 87 0, 87 C 2, 87 5, 84 5, 80 L 5, 24 Z" fill="url(#goldHChef2)"/>
+      </g>
+
+      <!-- Fork (-40deg) -->
+      <g transform="translate(0, 36) rotate(-40) translate(0, -36)">
+        <path d="M -13, -15 C -13, 5 -8, 20 -4, 20 L 4, 20 C 8, 20 13, 5 13, -15 Z" fill="url(#goldHChef2)"/>
+        <rect x="-12" y="-45" width="3" height="32" rx="1" fill="url(#goldHChef2)"/>
+        <rect x="-4" y="-45" width="2.5" height="32" rx="1" fill="url(#goldHChef2)"/>
+        <rect x="1.5" y="-45" width="2.5" height="32" rx="1" fill="url(#goldHChef2)"/>
+        <rect x="9" y="-45" width="3" height="32" rx="1" fill="url(#goldHChef2)"/>
+        <rect x="-5" y="20" width="10" height="4" rx="1" fill="url(#goldHChef2)"/>
+        <path d="M -4, 24 L -4, 80 C -4, 84 -2, 87 0, 87 C 2, 87 4, 84 4, 80 L 4, 24 Z" fill="url(#goldHChef2)"/>
+      </g>
+
+      <!-- Center Star -->
+      <polygon points="0,26 3.2,33.5 10.5,34.5 5,39.5 6.5,46.5 0,43 -6.5,46.5 -5,39.5 -10.5,34.5 -3.2,33.5" fill="url(#goldHChef2)" stroke="#08080b" stroke-width="1.5"/>
+    </g>
+
+    <!-- Bottom Star Trio -->
+    <g fill="url(#goldHChef2)" transform="translate(0, 145)">
+      <polygon points="0,-12 3.6,-4 12,-3 6,3 7.5,12 0,7 -7.5,12 -6,3 -12,-3 -3.6,-4"/>
+      <polygon points="-32,-9 -29,-3 -23,-2 -27.5,2.5 -26,9 -32,5 -38,9 -36.5,2.5 -41,-2 -35,-3" opacity="0.75"/>
+      <polygon points="32,-9 35,-3 41,-2 36.5,2.5 38,9 32,5 26,9 27.5,2.5 23,-2 29,-3" opacity="0.75"/>
+    </g>
+  </g>
+
+  <!-- Right: Balanced Typography Hierarchy -->
+  <g transform="translate(225, 0)">
+    <!-- Category Subtitle -->
+    <text x="0" y="58" fill="url(#goldHChef2)" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="600" letter-spacing="7" text-transform="uppercase" opacity="0.9">
+      EXECUTIVE PRIVATE CHEF
+    </text>
+
+    <!-- Name -->
+    <text x="0" y="112" fill="url(#goldHChef2)" font-family="'Cinzel', serif" font-size="46" font-weight="800" letter-spacing="5" text-transform="uppercase">
+      CHEF MARCOS
+    </text>
+
+    <!-- Serif Subtitle -->
+    <text x="0" y="152" fill="#ffffff" font-family="'Cormorant Garamond', Georgia, serif" font-size="30" font-style="italic" font-weight="400" letter-spacing="3">
+      Mena Viales
+    </text>
+
+    <!-- Base Location Line -->
+    <g transform="translate(0, 172)">
+      <line x1="0" y1="0" x2="520" y2="0" stroke="url(#goldHChef2)" stroke-width="0.8" stroke-opacity="0.4"/>
+      <text x="0" y="16" fill="url(#goldHChef2)" font-family="'Montserrat', sans-serif" font-size="9.5" font-weight="600" letter-spacing="4.5" text-transform="uppercase" opacity="0.85">
+        BESPOKE CULINARY EXPERIENCES • COSTA RICA
+      </text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chef Marcos Mena Viales — Official Private Chef in Costa Rica | Manuel Antonio & Quepos</title>
+  <meta name="description" content="Official website of Chef Marcos Mena Viales. Over 27 years of culinary excellence in luxury hotels and private villas across Manuel Antonio. Private chef experiences, fresh Pacific seafood, prime meats, and all-inclusive villa dining.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              50: '#fcfaf5',
+              100: '#f8f3e8',
+              200: '#f0dfa8',
+              300: '#e5cd85',
+              400: '#dfb76c',
+              500: '#c5a059',
+              600: '#a67c2e',
+              700: '#7d5b18',
+              800: '#593f0d',
+              900: '#3d2b07',
+            },
+            ivory: {
+              50: '#fdfcf9',
+              100: '#faf8f5',
+              200: '#f4efe4',
+              300: '#ece3d2',
+              400: '#dfcca0',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', '"Inter"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter (Ultra Clean, Highly Legible Sans-Serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/jpeg" href="assets/images/chef_marcos_avatar.jpg">
+</head>
+<body class="bg-[#faf8f5] text-[#141418] font-sans antialiased selection:bg-gold-500 selection:text-white">
+
+  <!-- ================= TOP NAVIGATION ================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+    <div class="w-full px-4 sm:px-8 lg:px-10 xl:px-12 2xl:px-14 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Photo Avatar -->
+      <a href="#" class="flex items-center space-x-3.5 group">
+        <div class="w-11 h-11 rounded-full overflow-hidden border-2 border-gold-600 shadow-sm shrink-0 group-hover:scale-105 transition-transform">
+          <img src="assets/images/chef_marcos_avatar.jpg" alt="Chef Marcos Mena" class="w-full h-full object-cover">
+        </div>
+        <div class="flex flex-col">
+          <span class="text-base text-[#0d0d12] font-extrabold group-hover:text-gold-600 transition-colors">Chef Marcos Mena</span>
+          <span class="text-xs text-gold-700 font-semibold tracking-wide">Executive Private Chef · Costa Rica</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden xl:flex items-center space-x-7 2xl:space-x-9 text-sm font-bold text-[#3c3c4a]">
+        <a href="#servicios" class="hover:text-gold-600 transition-colors py-1">Services</a>
+        <a href="#paquetes" class="hover:text-gold-600 transition-colors py-1">Packages</a>
+        <a href="#menu-section" class="hover:text-gold-600 transition-colors py-1">Full Menu</a>
+        <a href="#chef-section" class="hover:text-gold-600 transition-colors py-1">About Chef</a>
+        <a href="#proceso" class="hover:text-gold-600 transition-colors py-1">How It Works</a>
+        <a href="#gallery-section" class="hover:text-gold-600 transition-colors py-1">Gallery</a>
+        <a href="#cotizador" class="hover:text-gold-600 transition-colors py-1">Instant Quote</a>
+        <a href="#faq" class="hover:text-gold-600 transition-colors py-1">FAQ</a>
+      </nav>
+
+      <!-- Action Buttons & Mobile Menu Toggle -->
+      <div class="flex items-center space-x-3.5">
+        <a href="pdf-menu.html" target="_blank" class="hidden sm:inline-flex items-center space-x-2 px-4 py-2.5 rounded-lg border border-gold-600/40 text-gold-800 font-bold text-xs hover:bg-gold-50 transition-all shadow-sm">
+          <i data-lucide="printer" class="w-4 h-4 text-gold-600"></i>
+          <span>PDF Menu</span>
+        </a>
+        <a href="https://wa.me/50660811676?text=Hello,%20I%20would%20like%20to%20inquire%20about%20private%20chef%20availability%20for%20our%20villa." target="_blank" class="inline-flex items-center space-x-2 px-4.5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md transition-all">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>WhatsApp (+506 6081-1676)</span>
+        </a>
+        <button onclick="toggleMobileNav()" class="xl:hidden p-2 rounded-lg text-gray-700 hover:text-gold-700 hover:bg-gold-50 focus:outline-none" aria-label="Open navigation menu">
+          <i data-lucide="menu" id="mobile-menu-icon" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav" class="hidden xl:hidden bg-white border-b border-gold-600/20 px-6 py-5 shadow-xl animate-fade-in">
+      <div class="flex flex-col space-y-3.5 text-sm font-bold text-[#2d2d38]">
+        <a href="#servicios" onclick="toggleMobileNav()" class="hover:text-gold-600 py-1 flex items-center justify-between">
+          <span>Exclusive Services</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-gold-600"></i>
+        </a>
+        <a href="#paquetes" onclick="toggleMobileNav()" class="hover:text-gold-600 py-1 flex items-center justify-between">
+          <span>Popular Packages ($110 - $140)</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-gold-600"></i>
+        </a>
+        <a href="#menu-section" onclick="toggleMobileNav()" class="hover:text-gold-600 py-1 flex items-center justify-between">
+          <span>Gastronomic Menu (32 Dishes)</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-gold-600"></i>
+        </a>
+        <a href="#chef-section" onclick="toggleMobileNav()" class="hover:text-gold-600 py-1 flex items-center justify-between">
+          <span>About Chef Marcos (27+ Years)</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-gold-600"></i>
+        </a>
+        <a href="#proceso" onclick="toggleMobileNav()" class="hover:text-gold-600 py-1 flex items-center justify-between">
+          <span>How The Service Works</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-gold-600"></i>
+        </a>
+        <a href="#gallery-section" onclick="toggleMobileNav()" class="hover:text-gold-600 py-1 flex items-center justify-between">
+          <span>Villa Moments Gallery</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-gold-600"></i>
+        </a>
+        <a href="#cotizador" onclick="toggleMobileNav()" class="hover:text-gold-600 py-1 flex items-center justify-between">
+          <span>Instant WhatsApp Calculator</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-gold-600"></i>
+        </a>
+        <a href="#faq" onclick="toggleMobileNav()" class="hover:text-gold-600 py-1 flex items-center justify-between">
+          <span>Frequently Asked Questions</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-gold-600"></i>
+        </a>
+        <div class="pt-3 border-t border-gray-100 flex flex-col gap-2">
+          <a href="pdf-menu.html" target="_blank" class="w-full text-center py-2.5 rounded-lg border border-gold-600/40 text-gold-800 font-bold text-xs bg-gold-50/50">
+            Download PDF Menu
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative min-h-[85vh] flex items-center justify-center pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <!-- Radiant Warm Glow Background -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(223,183,108,0.25),rgba(250,248,245,1))] z-0"></div>
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[850px] h-[500px] bg-gold-400/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+      
+      <!-- Chef Photo Avatar Badge -->
+      <div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gold-600 shadow-xl ring-4 ring-gold-200/60 relative">
+        <img src="assets/images/chef_marcos_avatar.jpg" alt="Chef Marcos Mena Viales" class="w-full h-full object-cover">
+      </div>
+
+      <!-- Experience & Location Badge -->
+      <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-gold-600/35 bg-white/95 shadow-sm mb-6">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
+        <span class="text-xs sm:text-sm font-bold text-gold-800">27+ Years of Culinary Excellence · Manuel Antonio & Costa Rica</span>
+      </div>
+
+      <!-- Main Headline - Bold, direct, ultra-legible -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-[#0d0d12] tracking-tight leading-[1.1] mb-6">
+        Chef Marcos Mena Viales
+      </h1>
+
+      <p class="text-lg sm:text-2xl font-bold text-gold-700 mb-4">
+        Exclusive Private Chef Experiences in the Comfort of Your Villa
+      </p>
+
+      <p class="text-base sm:text-lg text-[#3c3c4a] max-w-2xl mx-auto font-normal leading-relaxed mb-8">
+        Savor the finest Pacific seafood and fresh catch, prime cuts, and artisanal breakfasts. A complete, seamless private service where we hand-select the day's freshest ingredients, cook live in your villa kitchen, and leave everything spotless.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-3.5 mb-12">
+        <a href="#cotizador" class="px-8 py-4 rounded-xl bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-white font-extrabold text-sm sm:text-base shadow-lg hover:brightness-105 hover:scale-[1.02] transition-all">
+          Get Villa Quote
+        </a>
+        <a href="#paquetes" class="px-7 py-4 rounded-xl bg-white border border-gold-600/40 text-gold-800 hover:bg-gold-50 font-bold text-sm sm:text-base shadow-sm transition-all flex items-center space-x-2">
+          <span>View Packages ($110 - $140)</span>
+          <i data-lucide="arrow-down" class="w-4 h-4 text-gold-600"></i>
+        </a>
+        <a href="https://wa.me/50660811676?text=Hello,%20I%20would%20like%20to%20inquire%20about%20private%20chef%20availability%20for%20our%20villa." target="_blank" class="px-6 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base shadow-md transition-all flex items-center space-x-2">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Direct WhatsApp (+506 6081-1676)</span>
+        </a>
+      </div>
+
+      <!-- Trust & Key Stats Ribbon -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 sm:p-6 rounded-2xl bg-white/90 border border-gold-600/30 shadow-sm text-left">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-gold-50 border border-gold-200 flex items-center justify-center shrink-0">
+            <i data-lucide="award" class="w-5 h-5 text-gold-700"></i>
+          </div>
+          <div>
+            <div class="text-base sm:text-lg font-extrabold text-[#0d0d12]">27+ Years</div>
+            <div class="text-xs text-[#555566]">Hotel Mariposa & Escape Villas</div>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-gold-50 border border-gold-200 flex items-center justify-center shrink-0">
+            <i data-lucide="fish" class="w-5 h-5 text-gold-700"></i>
+          </div>
+          <div>
+            <div class="text-base sm:text-lg font-extrabold text-[#0d0d12]">100% Fresh</div>
+            <div class="text-xs text-[#555566]">Daily local Quepos catch</div>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-gold-50 border border-gold-200 flex items-center justify-center shrink-0">
+            <i data-lucide="sparkles" class="w-5 h-5 text-gold-700"></i>
+          </div>
+          <div>
+            <div class="text-base sm:text-lg font-extrabold text-[#0d0d12]">All-Inclusive</div>
+            <div class="text-xs text-[#555566]">Groceries, service & cleanup</div>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-gold-50 border border-gold-200 flex items-center justify-center shrink-0">
+            <i data-lucide="star" class="w-5 h-5 text-amber-500 fill-amber-500"></i>
+          </div>
+          <div>
+            <div class="text-base sm:text-lg font-extrabold text-[#0d0d12]">5 Stars</div>
+            <div class="text-xs text-[#555566]">In Manuel Antonio luxury villas</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION: SERVICIOS EXCLUSIVOS ================= -->
+  <section id="servicios" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="text-xs sm:text-sm font-extrabold text-gold-700 uppercase tracking-widest bg-gold-50 border border-gold-200 px-4 py-1.5 rounded-full inline-block mb-3">
+        Culinary Services
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0d0d12] tracking-tight mb-4">
+        Private Chef Experiences in Your Villa
+      </h2>
+      <p class="text-base sm:text-lg text-[#555566]">
+        Each dining experience is custom-tailored to your palate and schedule, featuring the freshest local ingredients and attentive five-star hospitality.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Service 1: In-Villa Fine Dining -->
+      <div class="bg-white rounded-2xl border border-gold-600/30 p-7 shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-gold-50 border border-gold-200 flex items-center justify-center text-gold-700 mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="utensils-crossed" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#0d0d12] mb-2.5">In-Villa Fine Dining (3 & 4-Course Dinners)</h3>
+          <p class="text-sm text-[#444455] leading-relaxed mb-4">
+            Multi-course gourmet menus prepared fresh before you in your villa kitchen. Flame-grilled garlic butter lobsters, high-altitude coffee-crusted steaks, and pristine Pacific seafood.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+          <span class="text-xs font-bold text-gold-800">3 & 4-Course Menus</span>
+          <a href="#paquetes" class="text-xs font-bold text-gold-700 hover:text-gold-600 flex items-center space-x-1">
+            <span>View Packages</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 2: Sunrise Breakfast & Brunch -->
+      <div class="bg-white rounded-2xl border border-gold-600/30 p-7 shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-gold-50 border border-gold-200 flex items-center justify-center text-gold-700 mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="coffee" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#0d0d12] mb-2.5">Tropical Breakfasts & Villa Brunches</h3>
+          <p class="text-sm text-[#444455] leading-relaxed mb-4">
+            Awaken to the aroma of freshly brewed Costa Rican specialty coffee, tropical fruit platters, traditional gallo pinto, golden pancakes, brioche French toast, and farm eggs to order.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+          <span class="text-xs font-bold text-gold-800">From $50 USD / person</span>
+          <a href="https://wa.me/50660811676?text=Hello,%20I%20would%20like%20to%20quote%20a%20Breakfast%20or%20Brunch%20service%20for%20our%20villa." target="_blank" class="text-xs font-bold text-gold-700 hover:text-gold-600 flex items-center space-x-1">
+            <span>Inquire</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 3: Catch & Cook -->
+      <div class="bg-white rounded-2xl border border-gold-600/30 p-7 shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-gold-50 border border-gold-200 flex items-center justify-center text-gold-700 mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="anchor" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#0d0d12] mb-2.5">Catch & Cook Experience (Marina Pez Vela)</h3>
+          <p class="text-sm text-[#444455] leading-relaxed mb-4">
+            Returning from sportfishing in Quepos? Chef Marcos will transform your fresh catch (Tuna, Mahi-Mahi, Red Snapper) into citrus ceviches, sesame-seared sashimi, and signature grilled entrées.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+          <span class="text-xs font-bold text-gold-800">Quepos Sportfishing</span>
+          <a href="https://wa.me/50660811676?text=Hello,%20we%20are%20fishing%20at%20Marina%20Pez%20Vela%20and%20want%20to%20book%20the%20Catch%20%26%20Cook%20service." target="_blank" class="text-xs font-bold text-gold-700 hover:text-gold-600 flex items-center space-x-1">
+            <span>Book Experience</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 4: Sunset Cocktails & Tapas -->
+      <div class="bg-white rounded-2xl border border-gold-600/30 p-7 shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-gold-50 border border-gold-200 flex items-center justify-center text-gold-700 mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="glass-water" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#0d0d12] mb-2.5">Sunset Cocktails & Signature Tapas</h3>
+          <p class="text-sm text-[#444455] leading-relaxed mb-4">
+            Artisanal wooden boards served on the terrace or poolside: fresh sea bass ceviche, yellowfin tuna tartare over crispy plantains, golden calamari, and freshly mashed guacamole.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+          <span class="text-xs font-bold text-gold-800">Ideal for Sunset & Poolside</span>
+          <a href="#gallery-section" class="text-xs font-bold text-gold-700 hover:text-gold-600 flex items-center space-x-1">
+            <span>View Photos</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 5: Family Style BBQ & Celebrations -->
+      <div class="bg-white rounded-2xl border border-gold-600/30 p-7 shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-gold-50 border border-gold-200 flex items-center justify-center text-gold-700 mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="flame" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#0d0d12] mb-2.5">Family-Style Feasts & Celebrations</h3>
+          <p class="text-sm text-[#444455] leading-relaxed mb-4">
+            Generous centerpiece platters served family-style: whole grilled catch, marinated chimichurri churrasco, mango chicken, roasted potatoes, and sweet plantains. Perfect for groups of 6 to 25.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+          <span class="text-xs font-bold text-gold-800">For Groups & Families</span>
+          <a href="#paquetes" class="text-xs font-bold text-gold-700 hover:text-gold-600 flex items-center space-x-1">
+            <span>View $110 Menu</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service 6: Dietas Especiales y Alergias -->
+      <div class="bg-gradient-to-br from-gold-50 to-white rounded-2xl border-2 border-dashed border-gold-600/40 p-7 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 border border-emerald-300 flex items-center justify-center text-emerald-800 mb-5">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#0d0d12] mb-2.5">100% Dietary & Allergy Friendly</h3>
+          <p class="text-sm text-[#444455] leading-relaxed mb-4">
+            Gluten-free, vegetarian, vegan, dairy-free, and severe allergy accommodations prepared with dedicated utensils and pristine care at no extra charge.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-gold-200 flex items-center justify-between">
+          <span class="text-xs font-bold text-emerald-800">No extra charge</span>
+          <a href="#cotizador" class="text-xs font-bold text-gold-800 underline">Customize Menu</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION: PAQUETES POPULARES ================= -->
+  <section id="paquetes" class="py-20 bg-[#f4efe4] border-y border-gold-600/25">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs sm:text-sm font-extrabold text-gold-800 uppercase tracking-widest bg-white border border-gold-300 px-4 py-1.5 rounded-full inline-block mb-3">
+          Recommended Experiences
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0d0d12] tracking-tight mb-4">
+          Popular Villa Dinner Packages
+        </h2>
+        <p class="text-base sm:text-lg text-[#555566]">
+          All-inclusive fixed per-person pricing: morning grocery sourcing of pristine ingredients, live on-site cooking, attentive table service, and complete spotless kitchen cleanup.
+        </p>
+      </div>
+
+      <div class="space-y-10">
+
+        <!-- PAQUETE 1: GRAN MARISCADA & LANGOSTA ($140) -->
+        <div class="bg-white rounded-3xl border-2 border-gold-600/40 overflow-hidden shadow-lg">
+          <div class="bg-gradient-to-r from-gold-50 via-white to-gold-50 p-6 sm:p-8 border-b border-gold-600/20 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <span class="text-xs font-extrabold text-gold-800 uppercase tracking-wider block mb-1">Option 1 · Most Requested</span>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-[#0d0d12]">Grand Seafood Feast & Caribbean Lobster</h3>
+              <p class="text-sm text-[#555566] mt-1 font-medium">
+                Quepos fresh catch of the day and succulent Caribbean spiny lobster tail flame-basted live with garlic herb butter.
+              </p>
+            </div>
+            <div class="bg-white px-6 py-3.5 rounded-2xl border border-gold-300 shadow-sm text-right shrink-0">
+              <span class="text-xs font-bold text-gray-500 uppercase block">Price per person</span>
+              <span class="text-3xl sm:text-4xl font-black text-gold-800">$140 <span class="text-xs text-gray-500 font-bold uppercase">USD</span></span>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              
+              <!-- Dish 1 -->
+              <div class="bg-[#faf8f5] rounded-xl p-4 border border-gold-200 flex flex-col justify-between cursor-pointer group" onclick="openLightbox('assets/images/tuna_tartare_stack.jpg', 'Pacific Yellowfin Tuna Tartare', 'Hand-cut fresh yellowfin tuna tossed with toasted sesame, ripe avocado, scallions, and mango glaze over crispy artisan plantain chips.')">
+                <div>
+                  <span class="text-xs font-bold text-gold-700 uppercase block mb-2">1. Starter</span>
+                  <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3 bg-gray-200">
+                    <img src="assets/images/tuna_tartare_stack.jpg" alt="Pacific Tuna Tartare" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <h4 class="text-base font-bold text-[#0d0d12] mb-1">Pacific Tuna Tartare</h4>
+                  <p class="text-xs text-[#555566] leading-relaxed">With fresh avocado, sweet mango, and artisan plantain chips.</p>
+                </div>
+                <div class="mt-3 pt-2 border-t border-gray-200 text-xs font-bold text-gold-800 flex justify-between">
+                  <span>Gluten-Free</span>
+                  <span class="underline">View photo</span>
+                </div>
+              </div>
+
+              <!-- Dish 2 -->
+              <div class="bg-[#faf8f5] rounded-xl p-4 border border-gold-200 flex flex-col justify-between cursor-pointer group" onclick="openLightbox('assets/images/sunset_appetizers_ocean.jpg', 'Quepos Fresh Sea Bass Ceviche', 'Fresh Pacific sea bass cured in fresh lime and passionfruit juices with sweet bell peppers, red onion, avocado, and yuca chips.')">
+                <div>
+                  <span class="text-xs font-bold text-gold-700 uppercase block mb-2">2. Ceviche</span>
+                  <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3 bg-gray-200">
+                    <img src="assets/images/sunset_appetizers_ocean.jpg" alt="Quepos Sea Bass Ceviche" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <h4 class="text-base font-bold text-[#0d0d12] mb-1">Quepos Sea Bass Ceviche</h4>
+                  <p class="text-xs text-[#555566] leading-relaxed">Citrus and passionfruit cured with avocado and artisan yuca chips.</p>
+                </div>
+                <div class="mt-3 pt-2 border-t border-gray-200 text-xs font-bold text-gold-800 flex justify-between">
+                  <span>Catch of the Day</span>
+                  <span class="underline">View photo</span>
+                </div>
+              </div>
+
+              <!-- Dish 3 -->
+              <div class="bg-gold-50/80 rounded-xl p-4 border-2 border-gold-400 flex flex-col justify-between cursor-pointer group" onclick="openLightbox('assets/images/grilled_lobster_tails.jpg', 'Flame-Grilled Garlic Butter Lobster', 'Spiny lobster tail basted with roasted garlic herb butter, accompanied by roasted mini herb potatoes or rice and fresh vegetables.')">
+                <div>
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="text-xs font-bold text-gold-900 uppercase">3. Main Course</span>
+                    <span class="text-[10px] bg-gold-200 text-gold-900 px-2 py-0.5 rounded font-extrabold uppercase">Specialty</span>
+                  </div>
+                  <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3 bg-gray-200">
+                    <img src="assets/images/grilled_lobster_tails.jpg" alt="Garlic Butter Lobster" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <h4 class="text-base font-bold text-[#0d0d12] mb-1">Garlic Butter Lobster</h4>
+                  <p class="text-xs text-[#555566] leading-relaxed">Flambéed live with garlic butter, served with mini potatoes or rice.</p>
+                </div>
+                <div class="mt-3 pt-2 border-t border-gold-200 text-xs font-bold text-gold-900 flex justify-between">
+                  <span>Star Dish</span>
+                  <span class="underline">View photo</span>
+                </div>
+              </div>
+
+              <!-- Dish 4 -->
+              <div class="bg-[#faf8f5] rounded-xl p-4 border border-gold-200 flex flex-col justify-between cursor-pointer group" onclick="openLightbox('assets/images/french_toast_detail.jpg', 'Centenario Rum Flambé Bananas', 'Bananas sautéed and flambéed live with Costa Rican Ron Centenario, served with artisanal coconut ice cream and toasted macadamias.')">
+                <div>
+                  <span class="text-xs font-bold text-gold-700 uppercase block mb-2">4. Flambé Dessert</span>
+                  <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3 bg-gray-200">
+                    <img src="assets/images/french_toast_detail.jpg" alt="Centenario Rum Flambé" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <h4 class="text-base font-bold text-[#0d0d12] mb-1">Centenario Rum Flambé</h4>
+                  <p class="text-xs text-[#555566] leading-relaxed">Caramelized rum bananas with vanilla ice cream and macadamia.</p>
+                </div>
+                <div class="mt-3 pt-2 border-t border-gray-200 text-xs font-bold text-gold-800 flex justify-between">
+                  <span>Live Flambé Show</span>
+                  <span class="underline">View photo</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="pt-5 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <span class="text-xs text-[#666677] font-medium">
+                ✓ Includes morning sourcing, table setup, courses service, and 100% spotless kitchen cleanup.
+              </span>
+              <a href="https://wa.me/50660811676?text=Hello%20Chef%20Marcos,%20I%20would%20like%20to%20reserve%20Package%201:%20Grand%20Seafood%20%26%20Lobster%20($140/person)%20for%20our%20villa.%20Date:%20[%20]%20Villa:%20[%20]%20Guests:%20[%20]" target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gold-600 hover:bg-gold-700 text-white font-extrabold text-xs uppercase tracking-wider flex items-center justify-center space-x-2 shadow-md transition-all">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Reserve Lobster Menu ($140 / person)</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PAQUETE 2: SURF & TURF PRIME ($125) -->
+        <div class="bg-white rounded-3xl border border-gold-600/30 overflow-hidden shadow-lg">
+          <div class="bg-gradient-to-r from-gray-50 via-white to-gray-50 p-6 sm:p-8 border-b border-gray-200 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <span class="text-xs font-extrabold text-gold-800 uppercase tracking-wider block mb-1">Option 2 · Prime Land & Sea</span>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-[#0d0d12]">Surf & Turf: Prime Tenderloin & Jumbo Shrimp</h3>
+              <p class="text-sm text-[#555566] mt-1 font-medium">
+                Flame-grilled prime beef tenderloin with house chimichurri, white wine jumbo prawns, and warm molten chocolate cake.
+              </p>
+            </div>
+            <div class="bg-white px-6 py-3.5 rounded-2xl border border-gray-300 shadow-sm text-right shrink-0">
+              <span class="text-xs font-bold text-gray-500 uppercase block">Price per person</span>
+              <span class="text-3xl sm:text-4xl font-black text-gold-800">$125 <span class="text-xs text-gray-500 font-bold uppercase">USD</span></span>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              
+              <!-- Dish 1 -->
+              <div class="bg-[#faf8f5] rounded-xl p-4 border border-gray-200 flex flex-col justify-between cursor-pointer group" onclick="openLightbox('assets/images/gourmet_vegetable_stacks.jpg', 'Artisanal Watermelon & Local Goat Cheese', 'Compressed sweet watermelon cubes with local artisanal goat cheese, fresh garden mint, and Modena balsamic glaze.')">
+                <div>
+                  <span class="text-xs font-bold text-gold-700 uppercase block mb-2">1. Starter</span>
+                  <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3 bg-gray-200">
+                    <img src="assets/images/gourmet_vegetable_stacks.jpg" alt="Watermelon & Goat Cheese" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <h4 class="text-base font-bold text-[#0d0d12] mb-1">Watermelon & Goat Cheese</h4>
+                  <p class="text-xs text-[#555566] leading-relaxed">Fresh garden mint and aged Modena balsamic glaze.</p>
+                </div>
+                <div class="mt-3 pt-2 border-t border-gray-200 text-xs font-bold text-gold-800 flex justify-between">
+                  <span>Vegetarian</span>
+                  <span class="underline">View photo</span>
+                </div>
+              </div>
+
+              <!-- Dish 2 -->
+              <div class="bg-[#faf8f5] rounded-xl p-4 border border-gray-200 flex flex-col justify-between cursor-pointer group" onclick="openLightbox('assets/images/crispy_calamari.jpg', 'Crispy Golden Calamari Rings', 'Tender Pacific calamari lightly crusted in panko and flash-fried, served with roasted garlic aioli and citrus.')">
+                <div>
+                  <span class="text-xs font-bold text-gold-700 uppercase block mb-2">2. Appetizer</span>
+                  <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3 bg-gray-200">
+                    <img src="assets/images/crispy_calamari.jpg" alt="Crispy Calamari" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <h4 class="text-base font-bold text-[#0d0d12] mb-1">Crispy Calamari</h4>
+                  <p class="text-xs text-[#555566] leading-relaxed">Light panko crust with roasted garlic aioli and citrus.</p>
+                </div>
+                <div class="mt-3 pt-2 border-t border-gray-200 text-xs font-bold text-gold-800 flex justify-between">
+                  <span>Guest Favorite</span>
+                  <span class="underline">View photo</span>
+                </div>
+              </div>
+
+              <!-- Dish 3 -->
+              <div class="bg-gold-50/80 rounded-xl p-4 border-2 border-gold-400 flex flex-col justify-between cursor-pointer group" onclick="openLightbox('assets/images/jumbo_garlic_shrimp.jpg', 'Jumbo Shrimp in Citrus Butter OR Prime Tenderloin', 'Large prawns sautéed with white wine and lime butter OR prime beef tenderloin in Tarrazú coffee crust. Accompanied by mini potatoes or rice.')">
+                <div>
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="text-xs font-bold text-gold-900 uppercase">3. Main Course</span>
+                    <span class="text-[10px] bg-gold-200 text-gold-900 px-2 py-0.5 rounded font-extrabold uppercase">Choice Of</span>
+                  </div>
+                  <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3 bg-gray-200">
+                    <img src="assets/images/jumbo_garlic_shrimp.jpg" alt="Jumbo Shrimp or Tenderloin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <h4 class="text-base font-bold text-[#0d0d12] mb-1">Jumbo Shrimp OR Tenderloin</h4>
+                  <p class="text-xs text-[#555566] leading-relaxed">White wine jumbo prawns OR Tarrazú coffee-crusted tenderloin.</p>
+                </div>
+                <div class="mt-3 pt-2 border-t border-gold-200 text-xs font-bold text-gold-900 flex justify-between">
+                  <span>Prime Selection</span>
+                  <span class="underline">View photo</span>
+                </div>
+              </div>
+
+              <!-- Dish 4 -->
+              <div class="bg-[#faf8f5] rounded-xl p-4 border border-gray-200 flex flex-col justify-between cursor-pointer group" onclick="openLightbox('assets/images/brownie_ice_cream_plated.jpg', 'Warm Molten Costa Rican Chocolate Lava Cake', 'Warm molten cake crafted from 70% Costa Rican organic cacao, served with vanilla bean ice cream and passionfruit coulis.')">
+                <div>
+                  <span class="text-xs font-bold text-gold-700 uppercase block mb-2">4. Dessert</span>
+                  <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3 bg-gray-200">
+                    <img src="assets/images/brownie_ice_cream_plated.jpg" alt="Warm Molten Lava Cake" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <h4 class="text-base font-bold text-[#0d0d12] mb-1">Warm Molten Lava Cake</h4>
+                  <p class="text-xs text-[#555566] leading-relaxed">Molten chocolate center with vanilla ice cream and passionfruit coulis.</p>
+                </div>
+                <div class="mt-3 pt-2 border-t border-gray-200 text-xs font-bold text-gold-800 flex justify-between">
+                  <span>Costa Rican Cacao</span>
+                  <span class="underline">View photo</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="pt-5 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <span class="text-xs text-[#666677] font-medium">
+                ✓ Steak doneness and accompanying sauces customized to each guest's preference.
+              </span>
+              <a href="https://wa.me/50660811676?text=Hello%20Chef%20Marcos,%20I%20would%20like%20to%20reserve%20Package%202:%20Surf%20%26%20Turf%20Prime%20($125/person)%20for%20our%20villa.%20Date:%20[%20]%20Villa:%20[%20]%20Guests:%20[%20]" target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gold-600 hover:bg-gold-700 text-white font-extrabold text-xs uppercase tracking-wider flex items-center justify-center space-x-2 shadow-md transition-all">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Reserve Surf & Turf ($125 / person)</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PAQUETE 3: PARRILLADA PURA VIDA FAMILIAR ($110) -->
+        <div class="bg-white rounded-3xl border border-gold-600/30 overflow-hidden shadow-lg">
+          <div class="bg-gradient-to-r from-gold-50/50 via-white to-gold-50/50 p-6 sm:p-8 border-b border-gray-200 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <span class="text-xs font-extrabold text-gold-800 uppercase tracking-wider block mb-1">Option 3 · For Families & Large Groups</span>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-[#0d0d12]">Pura Vida Family-Style BBQ Feast</h3>
+              <p class="text-sm text-[#555566] mt-1 font-medium">
+                Generous central platters for sharing poolside or on the terrace: whole grilled catch, churrasco skewers, marinated chicken, starters, and tres leches.
+              </p>
+            </div>
+            <div class="bg-white px-6 py-3.5 rounded-2xl border border-gray-300 shadow-sm text-right shrink-0">
+              <span class="text-xs font-bold text-gray-500 uppercase block">Price per person</span>
+              <span class="text-3xl sm:text-4xl font-black text-gold-800">$110 <span class="text-xs text-gray-500 font-bold uppercase">USD</span></span>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+              
+              <!-- Dish 1 -->
+              <div class="bg-[#faf8f5] rounded-xl p-4 border border-gray-200 flex flex-col justify-between cursor-pointer group" onclick="openLightbox('assets/images/sunset_appetizers_ocean.jpg', 'Sunset Shared Appetizer Board', 'Artisanal guacamole, fresh line-caught ceviche, pico de gallo, crispy calamari, and warm corn tortilla chips.')">
+                <div>
+                  <span class="text-xs font-bold text-gold-700 uppercase block mb-2">1. Sunset Shared Platter</span>
+                  <div class="aspect-[16/10] rounded-lg overflow-hidden mb-3 bg-gray-200">
+                    <img src="assets/images/sunset_appetizers_ocean.jpg" alt="Sunset Appetizer Board" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <h4 class="text-base font-bold text-[#0d0d12] mb-1">Sunset Appetizer Board</h4>
+                  <p class="text-xs text-[#555566] leading-relaxed">Fresh guacamole, citrus ceviche, crispy calamari, and warm chips.</p>
+                </div>
+                <div class="mt-3 pt-2 border-t border-gray-200 text-xs font-bold text-gold-800 flex justify-between">
+                  <span>Family Style</span>
+                  <span class="underline">View photo</span>
+                </div>
+              </div>
+
+              <!-- Dish 2 -->
+              <div class="bg-gold-50/80 rounded-xl p-4 border-2 border-gold-400 flex flex-col justify-between cursor-pointer group" onclick="openLightbox('assets/images/grand_seafood_feast.jpg', 'Surf & Turf Terrace Mixed Grill Platter', 'Whole grilled Pacific fish with chimichurri, grilled churrasco steak, citrus chicken, sweet plantains, and rosemary roasted potatoes.')">
+                <div>
+                  <span class="text-xs font-bold text-gold-900 uppercase block mb-2">2. Grand Centerpiece Grill</span>
+                  <div class="aspect-[16/10] rounded-lg overflow-hidden mb-3 bg-gray-200">
+                    <img src="assets/images/grand_seafood_feast.jpg" alt="Surf & Turf Mixed Grill Platter" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <h4 class="text-base font-bold text-[#0d0d12] mb-1">Surf & Turf Mixed Grill Platter</h4>
+                  <p class="text-xs text-[#555566] leading-relaxed">Whole grilled fish, churrasco steak, tender chicken, plantains, and potatoes.</p>
+                </div>
+                <div class="mt-3 pt-2 border-t border-gold-200 text-xs font-bold text-gold-900 flex justify-between">
+                  <span>Hearty & Generous</span>
+                  <span class="underline">View photo</span>
+                </div>
+              </div>
+
+              <!-- Dish 3 -->
+              <div class="bg-[#faf8f5] rounded-xl p-4 border border-gray-200 flex flex-col justify-between cursor-pointer group" onclick="openLightbox('assets/images/chocolate_brownies_platter.jpg', 'Traditional Costa Rican Tres Leches Cake', 'Fluffy sponge cake drenched in three milks with subtle passionfruit infusion and toasted coconut.')">
+                <div>
+                  <span class="text-xs font-bold text-gold-700 uppercase block mb-2">3. Traditional Dessert</span>
+                  <div class="aspect-[16/10] rounded-lg overflow-hidden mb-3 bg-gray-200">
+                    <img src="assets/images/chocolate_brownies_platter.jpg" alt="Classic Tres Leches Cake" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <h4 class="text-base font-bold text-[#0d0d12] mb-1">Classic Tres Leches Cake</h4>
+                  <p class="text-xs text-[#555566] leading-relaxed">Moist three-milk sponge cake with a tropical passionfruit essence.</p>
+                </div>
+                <div class="mt-3 pt-2 border-t border-gray-200 text-xs font-bold text-gold-800 flex justify-between">
+                  <span>Costa Rican Classic</span>
+                  <span class="underline">View photo</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="pt-5 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <span class="text-xs text-[#666677] font-medium">
+                ✓ The most festive and relaxed dining format for groups of 6 to 25 guests in private villas.
+              </span>
+              <a href="https://wa.me/50660811676?text=Hello%20Chef%20Marcos,%20I%20would%20like%20to%20reserve%20Package%203:%20Pura%20Vida%20Family%20BBQ%20($110/person)%20for%20our%20group.%20Date:%20[%20]%20Villa:%20[%20]%20Guests:%20[%20]" target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gold-600 hover:bg-gold-700 text-white font-extrabold text-xs uppercase tracking-wider flex items-center justify-center space-x-2 shadow-md transition-all">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Reserve Family BBQ ($110 / person)</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ADICIONAL: DESAYUNO Y BRUNCH DE VILLA ($50) -->
+        <div class="bg-white rounded-3xl border border-gold-600/30 p-6 sm:p-8 shadow-md flex flex-col md:flex-row items-center gap-8">
+          <div class="w-full md:w-1/3 aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 shrink-0 shadow-inner">
+            <img src="assets/images/luxury_breakfast_spread.jpg" alt="Tropical Villa Breakfast & Brunch" class="w-full h-full object-cover">
+          </div>
+          <div class="w-full md:w-2/3">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <span class="text-xs font-extrabold text-gold-800 uppercase tracking-widest bg-gold-50 px-3 py-1 rounded-full border border-gold-200">
+                Morning Add-On
+              </span>
+              <span class="text-2xl sm:text-3xl font-black text-gold-800">$50 <span class="text-xs text-gray-500 font-bold uppercase">USD / person</span></span>
+            </div>
+            <h3 class="text-2xl font-extrabold text-[#0d0d12] mb-3">
+              Tropical Villa Breakfast & Brunch
+            </h3>
+            <p class="text-sm sm:text-base text-[#444455] leading-relaxed mb-6 font-normal">
+              Begin your morning with the aroma of freshly brewed coffee, traditional Costa Rican gallo pinto, sweet plantains, Turrialba artisan cheese, farm eggs to order, fluffy pancakes, French toast, and an abundant fresh tropical fruit platter.
+            </p>
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="https://wa.me/50660811676?text=Hello%20Chef%20Marcos,%20I%20would%20like%20to%20add%20Tropical%20Villa%20Breakfast%20%26%20Brunch%20($50/person)%20to%20our%20stay." target="_blank" class="px-6 py-3 rounded-xl bg-gold-600 hover:bg-gold-700 text-white font-bold text-xs uppercase tracking-wider flex items-center space-x-2 shadow transition-all">
+                <i data-lucide="coffee" class="w-4 h-4"></i>
+                <span>Add Breakfast to My Stay ($50 / person)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION: MENU COMPLETO (32 PLATILLOS) ================= -->
+  <section id="menu-section" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    
+    <!-- Section Title -->
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <span class="text-xs sm:text-sm font-extrabold text-gold-700 uppercase tracking-widest bg-gold-50 border border-gold-200 px-4 py-1.5 rounded-full inline-block mb-3">
+        Full Culinary Menu
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0d0d12] tracking-tight mb-4">
+        Gastronomic Collection (32 Dishes)
+      </h2>
+      <p class="text-base sm:text-lg text-[#4a4a58]">
+        Explore our chef creations prepared with the finest fresh ingredients in Costa Rica.
+      </p>
+    </div>
+
+    <!-- Side Dishes Notice Banner (Destacado por solicitud del chef) -->
+    <div class="max-w-4xl mx-auto mb-8 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#fbf7ee] via-white to-[#fbf7ee] border-2 border-gold-600/40 flex items-center gap-4 shadow-sm">
+      <div class="w-12 h-12 rounded-xl bg-gold-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+        <i data-lucide="utensils" class="w-6 h-6"></i>
+      </div>
+      <div class="text-left">
+        <h4 class="text-base font-extrabold text-[#0d0d12] mb-0.5">Complimentary Accompaniments for Main Courses:</h4>
+        <p class="text-xs sm:text-sm text-[#444455] font-medium leading-relaxed">
+          All main courses (seafood and prime meats) include your choice of: <strong>Roasted Baby Herb Potatoes</strong>, <strong>Steamed White Rice</strong>, or <strong>Seasonal Sautéed Garden Vegetables</strong>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Search & Filter Controls -->
+    <div class="max-w-4xl mx-auto mb-8">
+      <div class="relative mb-5">
+        <i data-lucide="search" class="w-5 h-5 text-gold-600 absolute left-4 top-1/2 -translate-y-1/2"></i>
+        <input 
+          type="text" 
+          id="menu-search" 
+          placeholder="Search dishes (e.g. Lobster, Tuna, Octopus, Steak, Ceviche, Breakfast)..."
+          class="w-full pl-12 pr-4 py-3.5 rounded-xl bg-white border border-gold-600/35 text-base text-[#141418] placeholder-[#7d7d8e] focus:outline-none focus:border-gold-600 shadow-sm transition-all"
+        >
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-none text-xs sm:text-sm font-bold">
+        <button onclick="filterCategory('all')" class="tab-btn active px-4 py-2.5 rounded-full" data-cat="all">All (<span id="count-all">32</span>)</button>
+        <button onclick="filterCategory('breakfast')" class="tab-btn px-4 py-2.5 rounded-full" data-cat="breakfast">Breakfast</button>
+        <button onclick="filterCategory('appetizers')" class="tab-btn px-4 py-2.5 rounded-full" data-cat="appetizers">Appetizers</button>
+        <button onclick="filterCategory('salads')" class="tab-btn px-4 py-2.5 rounded-full" data-cat="salads">Salads</button>
+        <button onclick="filterCategory('seafood')" class="tab-btn px-4 py-2.5 rounded-full" data-cat="seafood">Seafood & Fresh Catch</button>
+        <button onclick="filterCategory('meats')" class="tab-btn px-4 py-2.5 rounded-full" data-cat="meats">Prime Meats</button>
+        <button onclick="filterCategory('desserts')" class="tab-btn px-4 py-2.5 rounded-full" data-cat="desserts">Desserts</button>
+      </div>
+    </div>
+
+    <!-- Dish Grid Container -->
+    <div id="dishes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Dishes rendered dynamically via JavaScript -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="hidden text-center py-16">
+      <i data-lucide="utensils" class="w-12 h-12 text-gold-500/50 mx-auto mb-3"></i>
+      <h3 class="text-lg text-[#0d0d12] font-bold mb-1">No dishes found</h3>
+      <p class="text-sm text-[#666677]">Try another keyword or select a different category.</p>
+    </div>
+
+  </section>
+
+  <!-- ================= SECTION: SOBRE EL CHEF MARCOS ================= -->
+  <section id="chef-section" class="py-20 bg-[#f4efe4] border-y border-gold-600/25">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-white border border-gold-600/35 p-8 sm:p-12 rounded-3xl shadow-sm flex flex-col lg:flex-row items-center gap-10">
+        
+        <!-- Chef Portrait -->
+        <div class="shrink-0 text-center flex flex-col items-center">
+          <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-gold-500/80 shadow-2xl mb-4 relative">
+            <img src="assets/images/chef_lobster_portrait.jpg" alt="Chef Marcos Mena Viales" class="w-full h-full object-cover">
+          </div>
+          <h3 class="text-xl font-black text-[#0d0d12]">Marcos Mena Viales</h3>
+          <span class="text-xs font-extrabold text-gold-700 tracking-wider uppercase">Executive & Private Chef</span>
+          <span class="text-xs text-[#555566] mt-0.5">Manuel Antonio · Quepos · Costa Rica</span>
+        </div>
+
+        <!-- Trajectory Bio -->
+        <div class="space-y-4 text-center lg:text-left">
+          <span class="text-xs font-extrabold text-gold-800 uppercase tracking-widest bg-gold-50 px-3 py-1 rounded-full border border-gold-200 inline-block">
+            27 Years of Culinary Passion
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0d0d12] tracking-tight">
+            A Lifetime Dedicated to Haute Cuisine in Manuel Antonio
+          </h2>
+          
+          <p class="text-base text-[#3c3c4a] leading-relaxed">
+            With more than <strong>27 continuous years</strong> leading culinary operations along Costa Rica’s Central Pacific coast, Chef Marcos Mena is one of the most respected private dining chefs in Manuel Antonio and Quepos.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2 text-left">
+            <div class="p-3.5 rounded-xl bg-gold-50/60 border border-gold-200">
+              <span class="text-xs font-bold text-gold-800 uppercase block">16 Years at Hotel Mariposa</span>
+              <p class="text-xs text-[#555566] mt-0.5">Executive head chef at the iconic hotel that pioneered luxury dining and oceanview hospitality in Manuel Antonio.</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-gold-50/60 border border-gold-200">
+              <span class="text-xs font-bold text-gold-800 uppercase block">10 Years at Escape Villas</span>
+              <p class="text-xs text-[#555566] mt-0.5">Head chef across premier luxury rental estates, private mansions, and elite residences in Tulemar.</p>
+            </div>
+          </div>
+
+          <p class="text-sm text-[#555566] leading-relaxed pt-1">
+            His cooking is distinguished by personal relationships with Quepos artisanal fishermen and local farmers, guaranteeing peerless freshness at every meal. Chef Marcos is also an expert in catering to gluten-free, vegan, kosher-style, and severe food allergy dietary needs.
+          </p>
+
+          <div class="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+            <a href="https://wa.me/50660811676?text=Hello%20Chef%20Marcos,%20I%20would%20like%20to%20discuss%20a%20private%20dinner%20for%20our%20villa." target="_blank" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider flex items-center space-x-2 shadow">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Message Concierge on WhatsApp</span>
+            </a>
+            <a href="pdf-menu.html" target="_blank" class="px-5 py-3 rounded-xl bg-white border border-gold-600/40 text-gold-800 hover:bg-gold-50 font-bold text-xs uppercase tracking-wider flex items-center space-x-2">
+              <i data-lucide="printer" class="w-4 h-4 text-gold-600"></i>
+              <span>Download PDF Menu</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION: CÓMO FUNCIONA EL SERVICIO ================= -->
+  <section id="proceso" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="text-xs sm:text-sm font-extrabold text-gold-700 uppercase tracking-widest bg-gold-50 border border-gold-200 px-4 py-1.5 rounded-full inline-block mb-3">
+        Effortless & Seamless
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0d0d12] tracking-tight mb-4">
+        How Does the Private Chef Service Work?
+      </h2>
+      <p class="text-base sm:text-lg text-[#555566]">
+        A stress-free culinary experience designed for you and your guests to simply relax and enjoy.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Step 1 -->
+      <div class="bg-white rounded-2xl border border-gold-600/30 p-6 shadow-sm relative">
+        <div class="w-10 h-10 rounded-full bg-gold-600 text-white font-black text-lg flex items-center justify-center mb-4 shadow">
+          1
+        </div>
+        <h3 class="text-lg font-bold text-[#0d0d12] mb-2">Inquiry & Custom Menu</h3>
+        <p class="text-xs sm:text-sm text-[#555566] leading-relaxed">
+          Share your dates, villa location, party size, and favorite dishes or dietary preferences.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="bg-white rounded-2xl border border-gold-600/30 p-6 shadow-sm relative">
+        <div class="w-10 h-10 rounded-full bg-gold-600 text-white font-black text-lg flex items-center justify-center mb-4 shadow">
+          2
+        </div>
+        <h3 class="text-lg font-bold text-[#0d0d12] mb-2">Morning Sourcing</h3>
+        <p class="text-xs sm:text-sm text-[#555566] leading-relaxed">
+          Chef Marcos personally selects line-caught seafood and organic local produce the morning of your service.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="bg-white rounded-2xl border border-gold-600/30 p-6 shadow-sm relative">
+        <div class="w-10 h-10 rounded-full bg-gold-600 text-white font-black text-lg flex items-center justify-center mb-4 shadow">
+          3
+        </div>
+        <h3 class="text-lg font-bold text-[#0d0d12] mb-2">Live Villa Cooking</h3>
+        <p class="text-xs sm:text-sm text-[#555566] leading-relaxed">
+          We arrive 2 hours prior to prepare and present each course with warm Costa Rican hospitality.
+        </p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="bg-white rounded-2xl border border-gold-600/30 p-6 shadow-sm relative">
+        <div class="w-10 h-10 rounded-full bg-emerald-600 text-white font-black text-lg flex items-center justify-center mb-4 shadow">
+          4
+        </div>
+        <h3 class="text-lg font-bold text-[#0d0d12] mb-2">Spotless Cleanup</h3>
+        <p class="text-xs sm:text-sm text-[#555566] leading-relaxed">
+          After dinner, we wash every dish, sanitize cookware, and leave your kitchen completely pristine.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION: GALERIA DE MOMENTOS EN VILLAS ================= -->
+  <section id="gallery-section" class="py-20 bg-[#f4efe4] border-y border-gold-600/25">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs sm:text-sm font-extrabold text-gold-800 uppercase tracking-widest bg-white border border-gold-300 px-4 py-1.5 rounded-full inline-block mb-3">
+          Real Moments
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0d0d12] tracking-tight mb-4">
+          In-Villa Dining Gallery
+        </h2>
+        <p class="text-base sm:text-lg text-[#555566]">
+          Authentic dishes crafted live in private luxury villas across Manuel Antonio and Costa Rica.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        
+        <!-- Gallery Item 1 -->
+        <div class="group relative aspect-square rounded-2xl overflow-hidden border border-gold-600/30 cursor-pointer shadow-md bg-white" onclick="openLightbox('assets/images/raw_seafood_champagne.jpg', 'Fresh Seafood & Champagne', 'Caribbean spiny lobsters, Pacific jumbo prawns, and fresh yellowfin tuna prepared for dinner.')">
+          <img src="assets/images/raw_seafood_champagne.jpg" alt="Seafood & Champagne" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="text-xs text-gold-300 font-semibold">Villa Dining</span>
+            <p class="text-sm text-white font-bold">Seafood & Champagne</p>
+          </div>
+        </div>
+
+        <!-- Gallery Item 2 -->
+        <div class="group relative aspect-square rounded-2xl overflow-hidden border border-gold-600/30 cursor-pointer shadow-md bg-white" onclick="openLightbox('assets/images/grilled_lobster_tails.jpg', 'Flame-Grilled Garlic Butter Lobsters', 'Grilled lobster tails basted with roasted garlic herb butter.')">
+          <img src="assets/images/grilled_lobster_tails.jpg" alt="Lobster Tails" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="text-xs text-gold-300 font-semibold">Chef Specialty</span>
+            <p class="text-sm text-white font-bold">Garlic Butter Lobsters</p>
+          </div>
+        </div>
+
+        <!-- Gallery Item 3 -->
+        <div class="group relative aspect-square rounded-2xl overflow-hidden border border-gold-600/30 cursor-pointer shadow-md bg-white" onclick="openLightbox('assets/images/tuna_tartare_stack.jpg', 'Yellowfin Tuna Tartare', 'Fresh sashimi-grade tuna with avocado, sweet mango, and toasted sesame over crispy plantain chips.')">
+          <img src="assets/images/tuna_tartare_stack.jpg" alt="Tuna Tartare" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="text-xs text-gold-300 font-semibold">Gourmet Starter</span>
+            <p class="text-sm text-white font-bold">Pacific Tuna Tartare</p>
+          </div>
+        </div>
+
+        <!-- Gallery Item 4 -->
+        <div class="group relative aspect-square rounded-2xl overflow-hidden border border-gold-600/30 cursor-pointer shadow-md bg-white" onclick="openLightbox('assets/images/sunset_appetizers_ocean.jpg', 'Sunset Starters Overlooking the Ocean', 'Fresh ceviche, calamari rings, and homemade dips on the terrace with Pacific views.')">
+          <img src="assets/images/sunset_appetizers_ocean.jpg" alt="Sunset Starters" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="text-xs text-gold-300 font-semibold">Sunset Hour</span>
+            <p class="text-sm text-white font-bold">Oceanview Starters</p>
+          </div>
+        </div>
+
+        <!-- Gallery Item 5 -->
+        <div class="group relative aspect-square rounded-2xl overflow-hidden border border-gold-600/30 cursor-pointer shadow-md bg-white" onclick="openLightbox('assets/images/grand_seafood_feast.jpg', 'Grand Family Seafood Feast', 'Centerpiece platter with whole roasted fish, lobster tails, jumbo prawns, and citrus.')">
+          <img src="assets/images/grand_seafood_feast.jpg" alt="Grand Seafood Feast" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="text-xs text-gold-300 font-semibold">For Groups</span>
+            <p class="text-sm text-white font-bold">Centerpiece Seafood Feast</p>
+          </div>
+        </div>
+
+        <!-- Gallery Item 6 -->
+        <div class="group relative aspect-square rounded-2xl overflow-hidden border border-gold-600/30 cursor-pointer shadow-md bg-white" onclick="openLightbox('assets/images/jumbo_garlic_shrimp.jpg', 'Garlic Butter Jumbo Shrimp', 'Large Pacific prawns sautéed with white wine, lemon herb butter, and fresh garlic.')">
+          <img src="assets/images/jumbo_garlic_shrimp.jpg" alt="Jumbo Garlic Shrimp" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="text-xs text-gold-300 font-semibold">Seafood Classics</span>
+            <p class="text-sm text-white font-bold">Garlic Butter Shrimp</p>
+          </div>
+        </div>
+
+        <!-- Gallery Item 7 -->
+        <div class="group relative aspect-square rounded-2xl overflow-hidden border border-gold-600/30 cursor-pointer shadow-md bg-white" onclick="openLightbox('assets/images/luxury_breakfast_spread.jpg', 'Complete Villa Breakfast Spread', 'Farm-fresh eggs to order, golden pancakes, French toast, and fresh tropical fruit platter.')">
+          <img src="assets/images/luxury_breakfast_spread.jpg" alt="Tropical Villa Breakfast" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="text-xs text-gold-300 font-semibold">Mornings</span>
+            <p class="text-sm text-white font-bold">Tropical Villa Breakfast</p>
+          </div>
+        </div>
+
+        <!-- Gallery Item 8 -->
+        <div class="group relative aspect-square rounded-2xl overflow-hidden border border-gold-600/30 cursor-pointer shadow-md bg-white" onclick="openLightbox('assets/images/crispy_calamari.jpg', 'Crispy Calamari Rings', 'Tender calamari lightly breaded and served with house tartar and cocktail dips.')">
+          <img src="assets/images/crispy_calamari.jpg" alt="Crispy Calamari Rings" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+            <span class="text-xs text-gold-300 font-semibold">Appetizers</span>
+            <p class="text-sm text-white font-bold">Crispy Golden Calamari</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION: TESTIMONIOS ================= -->
+  <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="text-xs sm:text-sm font-extrabold text-gold-700 uppercase tracking-widest bg-gold-50 border border-gold-200 px-4 py-1.5 rounded-full inline-block mb-3">
+        Guest Reviews
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0d0d12] tracking-tight mb-4">
+        What Guests Say About Dining with Chef Marcos
+      </h2>
+      <p class="text-base sm:text-lg text-[#555566]">
+        Verified feedback from families and private groups who experienced his culinary service.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Review 1 -->
+      <div class="bg-white rounded-2xl border border-gold-600/30 p-7 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex text-amber-500 mb-3 space-x-1">
+            <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+          </div>
+          <p class="text-sm text-[#3c3c4a] italic leading-relaxed mb-6">
+            "The lobster dinner was the absolute highlight of our vacation in Manuel Antonio. Marcos and his team were warm, discreet, and highly professional. The seafood was ultra-fresh, exquisitely seasoned, and the kitchen was left sparkling clean as if no one had cooked."
+          </p>
+        </div>
+        <div class="pt-4 border-t border-gray-100">
+          <div class="text-sm font-bold text-[#0d0d12]">Sarah & Michael M.</div>
+          <div class="text-xs text-gold-700 font-semibold">Villa Punto de Vista, Manuel Antonio</div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="bg-white rounded-2xl border border-gold-600/30 p-7 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex text-amber-500 mb-3 space-x-1">
+            <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+          </div>
+          <p class="text-sm text-[#3c3c4a] italic leading-relaxed mb-6">
+            "We booked the Catch & Cook after a sportfishing trip from Marina Pez Vela. Marcos turned our tuna into sashimi, fresh ceviche, and sesame-crusted steaks. Truly exceeded any 5-star restaurant experience in the area."
+          </p>
+        </div>
+        <div class="pt-4 border-t border-gray-100">
+          <div class="text-sm font-bold text-[#0d0d12]">David & Lisa K.</div>
+          <div class="text-xs text-gold-700 font-semibold">Tulemar Resort, Manuel Antonio</div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="bg-white rounded-2xl border border-gold-600/30 p-7 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex text-amber-500 mb-3 space-x-1">
+            <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+            <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+          </div>
+          <p class="text-sm text-[#3c3c4a] italic leading-relaxed mb-6">
+            "We were a party of 14 including young kids and celiac guests. Marcos accommodated every single restriction effortlessly and surprised us every evening with sublime Costa Rican flavors. 100% recommended!"
+          </p>
+        </div>
+        <div class="pt-4 border-t border-gray-100">
+          <div class="text-sm font-bold text-[#0d0d12]">Roberto Calderón & Family</div>
+          <div class="text-xs text-gold-700 font-semibold">Escape Villas, Quepos</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION: CALCULADORA INTERACTIVA DE COTIZACION ================= -->
+  <section id="cotizador" class="py-20 bg-gradient-to-b from-[#faf8f5] to-[#f4efe4] border-t border-gold-600/25">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs sm:text-sm font-extrabold text-gold-800 uppercase tracking-widest bg-gold-100 border border-gold-300 px-4 py-1.5 rounded-full inline-block mb-3">
+          Instant Quote
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0d0d12] tracking-tight mb-3">
+          Villa Dining Estimate Calculator
+        </h2>
+        <p class="text-sm sm:text-base text-[#555566]">
+          Select your stay details to estimate your investment and send an instant inquiry directly to our Concierge on WhatsApp.
+        </p>
+      </div>
+
+      <div class="bg-white border-2 border-gold-600/35 rounded-3xl p-6 sm:p-10 shadow-xl">
+        <form id="quote-form" onsubmit="event.preventDefault(); sendWhatsAppQuote();" class="space-y-6">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <!-- Name -->
+            <div>
+              <label for="quote-name" class="block text-xs font-bold text-[#0d0d12] uppercase mb-1.5">Full Name *</label>
+              <input type="text" id="quote-name" required placeholder="e.g. John Smith" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold-600 focus:outline-none text-sm font-medium">
+            </div>
+
+            <!-- Villa or Location -->
+            <div>
+              <label for="quote-villa" class="block text-xs font-bold text-[#0d0d12] uppercase mb-1.5">Villa Name or Area in Costa Rica *</label>
+              <input type="text" id="quote-villa" required placeholder="e.g. Villa Punto de Vista, Manuel Antonio" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold-600 focus:outline-none text-sm font-medium">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <!-- Date -->
+            <div>
+              <label for="quote-date" class="block text-xs font-bold text-[#0d0d12] uppercase mb-1.5">Service Date *</label>
+              <input type="date" id="quote-date" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold-600 focus:outline-none text-sm font-medium">
+            </div>
+
+            <!-- Adults -->
+            <div>
+              <label for="quote-adults" class="block text-xs font-bold text-[#0d0d12] uppercase mb-1.5">Adults *</label>
+              <input type="number" id="quote-adults" min="1" max="50" value="4" oninput="calculateEstimate()" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold-600 focus:outline-none text-sm font-medium">
+            </div>
+
+            <!-- Children -->
+            <div>
+              <label for="quote-kids" class="block text-xs font-bold text-[#0d0d12] uppercase mb-1.5">Children</label>
+              <input type="number" id="quote-kids" min="0" max="25" value="0" oninput="calculateEstimate()" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold-600 focus:outline-none text-sm font-medium">
+            </div>
+          </div>
+
+          <!-- Service Type -->
+          <div>
+            <label for="quote-service" class="block text-xs font-bold text-[#0d0d12] uppercase mb-1.5">Desired Culinary Experience *</label>
+            <select id="quote-service" onchange="calculateEstimate()" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold-600 focus:outline-none text-sm font-semibold bg-white">
+              <option value="140" selected>Package 1: Grand Seafood Feast & Caribbean Lobster ($140 USD / adult)</option>
+              <option value="125">Package 2: Prime Surf & Turf - Tenderloin & Jumbo Shrimp ($125 USD / adult)</option>
+              <option value="110">Package 3: Pura Vida Family BBQ Feast ($110 USD / adult)</option>
+              <option value="50">Tropical Villa Breakfast & Brunch Service ($50 USD / adult)</option>
+              <option value="catch">Catch & Cook Experience (We prepare your Quepos sportfishing catch)</option>
+              <option value="custom">100% Custom A La Carte Menu</option>
+            </select>
+          </div>
+
+          <!-- Dietary Restrictions -->
+          <div>
+            <label for="quote-diet" class="block text-xs font-bold text-[#0d0d12] uppercase mb-1.5">Dietary Restrictions or Food Allergies</label>
+            <input type="text" id="quote-diet" placeholder="e.g. 1 gluten-free, 1 vegetarian, nut allergy..." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-gold-600 focus:outline-none text-sm font-medium">
+          </div>
+
+          <!-- Live Estimate Box -->
+          <div class="p-5 rounded-2xl bg-gold-50/80 border border-gold-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <div class="text-xs font-bold text-gold-800 uppercase">Estimated Investment</div>
+              <div class="text-2xl sm:text-3xl font-black text-[#0d0d12]" id="estimate-display">$560 USD</div>
+              <div class="text-xs text-[#555566]" id="estimate-details">4 Adults · Lobster Package ($140 each)</div>
+            </div>
+            <div class="text-xs text-right text-gray-500 max-w-xs">
+              * Final confirmation provided via WhatsApp based on availability, menu, and special requests.
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-base shadow-lg hover:shadow-xl hover:scale-[1.01] transition-all flex items-center justify-center space-x-2">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            <span>Send Quote Inquiry to WhatsApp Concierge (+506 6081-1676)</span>
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION: PREGUNTAS FRECUENTES (FAQ) ================= -->
+  <section id="faq" class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-xs sm:text-sm font-extrabold text-gold-700 uppercase tracking-widest bg-gold-50 border border-gold-200 px-4 py-1.5 rounded-full inline-block mb-3">
+        Clear Answers
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0d0d12] tracking-tight mb-4">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-base text-[#555566]">
+        Everything you need to know about booking your private chef in Costa Rica.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      
+      <!-- FAQ 1 -->
+      <div class="bg-white rounded-2xl border border-gold-600/30 p-6 shadow-sm">
+        <h3 class="text-base sm:text-lg font-bold text-[#0d0d12] mb-2 flex items-center justify-between">
+          <span>Does the pricing include groceries and ingredients?</span>
+          <i data-lucide="check" class="w-5 h-5 text-emerald-600 shrink-0"></i>
+        </h3>
+        <p class="text-sm text-[#444455] leading-relaxed">
+          <strong>Yes, completely.</strong> All packages and quotes include morning grocery sourcing of premium seafood and prime meats, fresh organic produce, villa travel, on-site live preparation, table service, and thorough kitchen sanitation.
+        </p>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="bg-white rounded-2xl border border-gold-600/30 p-6 shadow-sm">
+        <h3 class="text-base sm:text-lg font-bold text-[#0d0d12] mb-2 flex items-center justify-between">
+          <span>How do you handle severe food allergies and special diets?</span>
+          <i data-lucide="check" class="w-5 h-5 text-emerald-600 shrink-0"></i>
+        </h3>
+        <p class="text-sm text-[#444455] leading-relaxed">
+          We accommodate gluten-free, vegetarian, vegan, dairy-free, and celiac diets at no extra charge. Simply specify dietary requirements during booking so we can sanitize utensils and procure safe ingredients.
+        </p>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="bg-white rounded-2xl border border-gold-600/30 p-6 shadow-sm">
+        <h3 class="text-base sm:text-lg font-bold text-[#0d0d12] mb-2 flex items-center justify-between">
+          <span>How far in advance should we reserve?</span>
+          <i data-lucide="check" class="w-5 h-5 text-emerald-600 shrink-0"></i>
+        </h3>
+        <p class="text-sm text-[#444455] leading-relaxed">
+          We recommend booking <strong>1 to 4 weeks in advance</strong>, particularly during high season (December through May). For last-minute inquiries, reach out on WhatsApp to check immediate calendar openings.
+        </p>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="bg-white rounded-2xl border border-gold-600/30 p-6 shadow-sm">
+        <h3 class="text-base sm:text-lg font-bold text-[#0d0d12] mb-2 flex items-center justify-between">
+          <span>Which areas in Costa Rica do you service?</span>
+          <i data-lucide="check" class="w-5 h-5 text-emerald-600 shrink-0"></i>
+        </h3>
+        <p class="text-sm text-[#444455] leading-relaxed">
+          Our home base is <strong>Manuel Antonio and Quepos</strong>. We also regularly serve private villas in <strong>Dominical, Uvita, Esterillos, Jacó, Los Sueños Marina, Papagayo, Santa Teresa, and luxury estates throughout Costa Rica</strong>.
+        </p>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="bg-white rounded-2xl border border-gold-600/30 p-6 shadow-sm">
+        <h3 class="text-base sm:text-lg font-bold text-[#0d0d12] mb-2 flex items-center justify-between">
+          <span>What happens if we go sportfishing in Marina Pez Vela?</span>
+          <i data-lucide="check" class="w-5 h-5 text-emerald-600 shrink-0"></i>
+        </h3>
+        <p class="text-sm text-[#444455] leading-relaxed">
+          We offer our signature <em>Catch & Cook</em> experience: you bring back your cleaned tuna, mahi-mahi, or snapper, and Chef Marcos crafts a multi-course culinary dinner highlighting your fresh catch with gourmet reductions and side dishes.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= LIGHTBOX / DISH DETAIL MODAL ================= -->
+  <div id="dish-modal" class="fixed inset-0 z-50 modal-backdrop hidden items-center justify-center p-4">
+    <div class="relative bg-white border border-gold-600/40 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl animate-fade-in" onclick="event.stopPropagation()">
+      
+      <!-- Close button -->
+      <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/70 text-white hover:text-gold-300 flex items-center justify-center border border-white/20 transition-colors" aria-label="Close modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Modal Image -->
+      <div id="modal-img-container" class="w-full h-72 sm:h-80 relative overflow-hidden bg-black">
+        <img id="modal-img" src="" alt="Dish preview" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
+      </div>
+
+      <!-- Modal Info -->
+      <div class="p-6 sm:p-8 bg-white">
+        <div class="flex items-center space-x-2.5 mb-3">
+          <span id="modal-category" class="badge-gold px-3 py-1 rounded-md text-xs font-bold">Category</span>
+          <span id="modal-tag" class="badge-tag px-3 py-1 rounded-md text-xs font-semibold">Specialty</span>
+        </div>
+        <h3 id="modal-title" class="text-2xl sm:text-3xl font-extrabold text-[#0d0d12] mb-3 leading-snug">Dish Name</h3>
+        <p id="modal-desc" class="text-base sm:text-lg text-[#3c3c4a] leading-relaxed font-normal mb-6">Preparation details and ingredients...</p>
+
+        <div class="pt-4 border-t border-gold-600/20 flex flex-wrap items-center justify-between gap-3">
+          <div class="text-xs sm:text-sm text-gold-700 font-bold">100% Custom-Tailored to Your Taste</div>
+          <div class="flex items-center space-x-2">
+            <a id="modal-wa-btn" href="https://wa.me/50660811676?text=Hello%20Chef%20Marcos,%20I%20would%20like%20to%20inquire%20about%20a%20dish%20from%20the%20menu." target="_blank" class="px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center space-x-1.5 shadow">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Inquire on WhatsApp</span>
+            </a>
+            <button onclick="closeModal()" class="px-5 py-2.5 rounded-lg bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold text-xs uppercase tracking-wider transition-all">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= FOOTER COMPLETO ================= -->
+  <footer class="border-t border-gold-600/30 bg-[#f0ece1] pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        
+        <!-- Brand Info -->
+        <div class="space-y-4 md:col-span-2">
+          <div class="flex items-center space-x-3">
+            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-gold-600 shadow shrink-0">
+              <img src="assets/images/chef_marcos_avatar.jpg" alt="Chef Marcos Mena" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <span class="text-lg font-black text-[#0d0d12] block">Chef Marcos Mena Viales</span>
+              <span class="text-xs text-gold-800 font-bold tracking-wide">Executive Private Chef · Costa Rica</span>
+            </div>
+          </div>
+          <p class="text-sm text-[#555566] max-w-md leading-relaxed">
+            Over 27 years crafting unforgettable culinary experiences in luxury villas, vacation residences, and private yachts in Manuel Antonio, Quepos, and Costa Rica’s Pacific coastline.
+          </p>
+          <div class="flex items-center space-x-3 pt-1">
+            <a href="https://www.facebook.com/share/1BYyHLKxuW/?mibextid=wwXIfr" target="_blank" class="w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow drop-shadow-sm" aria-label="Official Facebook" title="Official Facebook: Chef Marcos Mena">
+              <svg class="w-full h-full" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#1877F2" d="M36 18c0-9.94-8.06-18-18-18S0 8.06 0 18c0 8.98 6.58 16.43 15.19 17.78V23.23h-4.57V18h4.57v-3.99c0-4.51 2.69-7 6.8-7 1.97 0 4.03.35 4.03.35v4.43h-2.27c-2.24 0-2.93 1.39-2.93 2.81V18h4.99l-.8 5.23h-4.19v12.55C29.42 34.43 36 26.98 36 18z"/>
+                <path fill="#FFFFFF" d="M25.01 23.23l.8-5.23h-4.99V14.6c0-1.42.69-2.81 2.93-2.81h2.27V7.36s-2.06-.35-4.03-.35c-4.11 0-6.8 2.49-6.8 7V18h-4.57v5.23h4.57v12.55c.91.14 1.84.22 2.78.22.94 0 1.87-.08 2.78-.22V23.23h4.26z"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/50660811676" target="_blank" class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center hover:scale-105 transition-transform shadow" aria-label="WhatsApp Concierge" title="WhatsApp Concierge">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+            </a>
+            <a href="mailto:bookingschefmarcoscr@gmail.com" class="w-10 h-10 rounded-full bg-gold-700 text-white flex items-center justify-center hover:scale-105 transition-transform shadow" aria-label="Concierge Email" title="Concierge Email">
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </a>
+            <a href="pdf-menu.html" target="_blank" class="w-10 h-10 rounded-full bg-white border border-gold-400 text-gold-800 flex items-center justify-center hover:scale-105 transition-transform shadow" aria-label="PDF Menu" title="Download PDF Menu">
+              <i data-lucide="printer" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-sm font-extrabold text-[#0d0d12] uppercase tracking-wider mb-4">Navigation</h4>
+          <ul class="space-y-2.5 text-xs sm:text-sm font-semibold text-[#444455]">
+            <li><a href="#servicios" class="hover:text-gold-700 transition-colors">Exclusive Services</a></li>
+            <li><a href="#paquetes" class="hover:text-gold-700 transition-colors">Popular Packages ($110 - $140)</a></li>
+            <li><a href="#menu-section" class="hover:text-gold-700 transition-colors">Gastronomic Menu (32 Dishes)</a></li>
+            <li><a href="#chef-section" class="hover:text-gold-700 transition-colors">About Chef Marcos</a></li>
+            <li><a href="#gallery-section" class="hover:text-gold-700 transition-colors">Villa Moments Gallery</a></li>
+            <li><a href="#cotizador" class="hover:text-gold-700 transition-colors">Instant Calculator</a></li>
+            <li><a href="pdf-menu.html" target="_blank" class="text-gold-800 font-bold hover:underline">Download PDF Menu</a></li>
+          </ul>
+        </div>
+
+        <!-- Direct Contact -->
+        <div>
+          <h4 class="text-sm font-extrabold text-[#0d0d12] uppercase tracking-wider mb-4">Concierge & Bookings</h4>
+          <ul class="space-y-3 text-xs sm:text-sm text-[#444455]">
+            <li class="flex items-start space-x-2.5">
+              <i data-lucide="phone" class="w-4 h-4 text-gold-700 mt-0.5 shrink-0"></i>
+              <div>
+                <a href="https://wa.me/50660811676" target="_blank" class="hover:text-gold-700 font-bold block">+506 6081-1676</a>
+                <span class="text-xs text-gray-500">Concierge & Booking Manager</span>
+              </div>
+            </li>
+            <li class="flex items-start space-x-2.5">
+              <i data-lucide="mail" class="w-4 h-4 text-gold-700 mt-0.5 shrink-0"></i>
+              <a href="mailto:bookingschefmarcoscr@gmail.com" class="hover:text-gold-700 font-semibold break-all">bookingschefmarcoscr@gmail.com</a>
+            </li>
+            <li class="flex items-start space-x-2.5">
+              <i data-lucide="map-pin" class="w-4 h-4 text-gold-700 mt-0.5 shrink-0"></i>
+              <span>Manuel Antonio · Quepos · Dominical · Uvita · Costa Rica</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="gold-divider mb-8"></div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-[#666677] gap-3">
+        <p>© <span id="current-year"></span> Chef Marcos Mena Viales. All rights reserved.</p>
+        <p>Exclusive Private Chef Service in Costa Rica.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT DATA & LOGIC ================= -->
+  <script>
+    // Initialize current year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Toggle Mobile Navigation
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobile-nav');
+      nav.classList.toggle('hidden');
+    }
+
+    // Dish Data Collection (Preserved 32 Dishes with Verified Images)
+    const dishes = [
+      // BREAKFAST SELECTION
+      {
+        id: 'bf-1',
+        category: 'breakfast',
+        categoryName: 'Breakfast',
+        title: 'Costa Rican Heritage Breakfast ("Típico")',
+        description: 'Authentic gallo pinto paired with farm-fresh eggs prepared to your liking, sweet caramelized plantains, artisanal Costa Rican cheese, warm toast or tortillas, fresh fruit medley, and Costa Rican specialty coffee.',
+        tags: ['Signature', 'Gluten-Free Option', 'Local Classic'],
+        image: 'assets/images/gallo_pinto_platter.jpg',
+        featured: true
+      },
+      {
+        id: 'bf-2',
+        category: 'breakfast',
+        categoryName: 'Breakfast',
+        title: 'Classic American Morning',
+        description: 'Farm-fresh eggs to order with crispy smoked bacon, seasoned golden breakfast potatoes, artisan toast with butter and preserves, fresh fruit medley, chilled juice, and Costa Rican coffee.',
+        tags: ['Classic Favorite', 'Hearty Morning'],
+        image: 'assets/images/breakfast_hashbrowns.jpg',
+        featured: false
+      },
+      {
+        id: 'bf-3',
+        category: 'breakfast',
+        categoryName: 'Breakfast',
+        title: 'Fluffy Golden Buttermilk Pancakes',
+        description: 'Stack of light, fluffy golden pancakes drizzled with pure maple syrup, served with crispy bacon strips, eggs cooked to order, chilled fresh juice, and seasonal tropical fruit.',
+        tags: ['Guest Favorite', 'Sweet & Savory'],
+        image: 'assets/images/pancakes_ocean_view.jpg',
+        featured: true
+      },
+      {
+        id: 'bf-4',
+        category: 'breakfast',
+        categoryName: 'Breakfast',
+        title: 'Brioche French Toast Platter',
+        description: 'Artisanal brioche bread infused with pure vanilla and cinnamon, dusted with powdered sugar and served with crispy bacon, farm eggs, seasonal fresh fruits, and Costa Rican coffee.',
+        tags: ['Artisanal', 'Sweet Morning'],
+        image: 'assets/images/french_toast_platter.jpg',
+        featured: true
+      },
+      {
+        id: 'bf-5',
+        category: 'breakfast',
+        categoryName: 'Breakfast',
+        title: 'Continental Morning Spread',
+        description: 'Artisan bakery breads and rolls served with gourmet jams and butter, accompanied by creamy natural yogurt, crunchy granola, fresh fruit platter, and Costa Rican coffee.',
+        tags: ['Light & Fresh', 'Healthy Choice'],
+        image: 'assets/images/breakfast_pastries.jpg',
+        featured: false
+      },
+      {
+        id: 'bf-6',
+        category: 'breakfast',
+        categoryName: 'Breakfast',
+        title: 'Gourmet Ham & Cheese Omelet',
+        description: 'Fluffy three-egg omelet folded with select diced ham and melted cheeses, served alongside golden breakfast potatoes, toast, fresh juice, and coffee.',
+        tags: ['Savory', 'Protein Rich'],
+        image: 'assets/images/scrambled_farm_eggs.jpg',
+        featured: false
+      },
+      {
+        id: 'bf-7',
+        category: 'breakfast',
+        categoryName: 'Breakfast',
+        title: 'Huevos Rancheros',
+        description: 'Farm-fresh eggs served over warm corn tortillas with zesty ranchero salsa, diced vine tomatoes, ripe avocado, fresh jalapeños, melted mozzarella cheese, fresh juice, and coffee.',
+        tags: ['Zesty & Savory', 'Latin Special'],
+        image: 'assets/images/luxury_breakfast_spread.jpg',
+        featured: false
+      },
+
+      // APPETIZERS & STARTERS
+      {
+        id: 'app-1',
+        category: 'appetizers',
+        categoryName: 'Appetizers',
+        title: 'House Fresh Pacific Ceviche',
+        description: 'Pacific catch of the day cured in vibrant lime and citrus juices with finely minced cilantro, sweet peppers, and red onion, served with crispy artisan tortilla chips.',
+        tags: ['Signature', 'Pacific Fresh', 'Gluten-Free'],
+        image: 'assets/images/ceviche_fresh_bowl.jpg',
+        featured: true
+      },
+      {
+        id: 'app-2',
+        category: 'appetizers',
+        categoryName: 'Appetizers',
+        title: 'Yellowfin Tuna Tartare with Crispy Plantain',
+        description: 'Sashimi-grade yellowfin tuna tossed with toasted sesame oil, scallions, and diced ripe avocado, served over crunchy artisanal plantain chips with sweet mango accent.',
+        tags: ['Chef Signature', 'Raw Bar', 'Gluten-Free'],
+        image: 'assets/images/tuna_tartare_stack.jpg',
+        featured: true
+      },
+      {
+        id: 'app-3',
+        category: 'appetizers',
+        categoryName: 'Appetizers',
+        title: 'Ahi Tuna Sashimi',
+        description: 'Precision-sliced yellowfin tuna sashimi garnished with microgreens and roasted sesame seeds, served with pickled ginger, wasabi, and premium aged soy sauce.',
+        tags: ['Pure & Pristine', 'Raw Bar'],
+        image: 'assets/images/raw_seafood_champagne.jpg',
+        featured: false
+      },
+      {
+        id: 'app-4',
+        category: 'appetizers',
+        categoryName: 'Appetizers',
+        title: 'Crispy Golden Calamari Rings',
+        description: 'Tender calamari lightly breaded and flash-fried to golden perfection, served with citrus wedges, fine garden herbs, and Chef Marcos’ house tartar and cocktail dips.',
+        tags: ['Crowd Favorite', 'Crispy Seafood'],
+        image: 'assets/images/crispy_calamari.jpg',
+        featured: true
+      },
+      {
+        id: 'app-5',
+        category: 'appetizers',
+        categoryName: 'Appetizers',
+        title: 'Fire-Glazed Chicken Wings',
+        description: 'Crisp chicken wings tossed in Chef’s signature sweet-and-spicy glaze or golden fried, served with house-made creamy ranch dipping sauce and crisp celery.',
+        tags: ['Lively Bites', 'Cocktail Hour'],
+        image: 'assets/images/chicken_wings_platter.jpg',
+        featured: false
+      },
+      {
+        id: 'app-6',
+        category: 'appetizers',
+        categoryName: 'Appetizers',
+        title: 'Artisanal Guacamole & Pico de Gallo',
+        description: 'Hand-mashed Hass avocados with fresh lime juice, sea salt, and cilantro, served with homemade diced tomato pico de gallo and warm golden tortilla chips.',
+        tags: ['Vegan', 'Gluten-Free', 'Fresh Dip'],
+        image: 'assets/images/sunset_appetizers_ocean.jpg',
+        featured: false
+      },
+
+      // ARTISANAL SALADS
+      {
+        id: 'sal-1',
+        category: 'salads',
+        categoryName: 'Salads',
+        title: 'Tropical Paradise Salad',
+        description: 'Crisp garden greens, sweet cherry tomatoes, cucumber slices, shredded carrots, juicy ripe mango cubes, and red onion tossed in a house passionfruit citrus vinaigrette.',
+        tags: ['Tropical', 'Vegan', 'Gluten-Free'],
+        image: 'assets/images/tropical_fruit_bowl.jpg',
+        featured: true
+      },
+      {
+        id: 'sal-2',
+        category: 'salads',
+        categoryName: 'Salads',
+        title: 'Mediterranean Sun Salad',
+        description: 'Fresh arugula, cucumber, red onion, cherry tomatoes, crisp sweet watermelon cubes, and Kalamata olives topped with shaved Parmesan and aged balsamic drizzle.',
+        tags: ['Refreshing', 'Vegetarian', 'Gluten-Free'],
+        image: 'assets/images/gourmet_vegetable_stacks.jpg',
+        featured: false
+      },
+      {
+        id: 'sal-3',
+        category: 'salads',
+        categoryName: 'Salads',
+        title: 'Caprese Salad',
+        description: 'Vine-ripened tomatoes layered with creamy artisanal mozzarella slices and fresh garden basil leaves, drizzled with extra virgin olive oil and Modena balsamic reduction.',
+        tags: ['Italian Classic', 'Vegetarian', 'Gluten-Free'],
+        image: 'assets/images/caprese_salad_fresh.jpg',
+        featured: false
+      },
+
+      // PACIFIC SEAFOOD & CATCH OF THE DAY (MAIN COURSES)
+      {
+        id: 'sea-1',
+        category: 'seafood',
+        categoryName: 'Seafood & Fresh Catch',
+        title: 'Garlic Butter Caribbean Spiny Lobster',
+        description: 'Whole spiny lobster tails flame-grilled to succulent perfection, basted with rich garlic herb butter. Served with your choice of side: roasted mini potatoes, steamed white rice, or sautéed farm vegetables.',
+        tags: ['Chef Specialty', 'Luxury Highlight', 'Gluten-Free'],
+        image: 'assets/images/grilled_lobster_tails.jpg',
+        featured: true
+      },
+      {
+        id: 'sea-2',
+        category: 'seafood',
+        categoryName: 'Seafood & Fresh Catch',
+        title: 'Jumbo Pacific Citrus Butter Shrimp',
+        description: 'Jumbo Pacific prawns sautéed with garlic, white wine, fresh lime butter reduction, and herbs. Served with your choice of: roasted mini potatoes, steamed white rice, or sautéed farm vegetables.',
+        tags: ['Seafood Classic', 'Gluten-Free'],
+        image: 'assets/images/jumbo_garlic_shrimp.jpg',
+        featured: true
+      },
+      {
+        id: 'sea-3',
+        category: 'seafood',
+        categoryName: 'Seafood & Fresh Catch',
+        title: 'Grilled Yellowfin Tuna in Smoky Chipotle Glaze',
+        description: 'Pan-seared sashimi-grade yellowfin tuna steak finished with a mild, fresh smoky chipotle glaze. Served with your choice of side: roasted mini potatoes, steamed white rice, or sautéed farm vegetables.',
+        tags: ['Pacific Catch', 'Gluten-Free'],
+        image: 'assets/images/raw_seafood_champagne.jpg',
+        featured: false
+      },
+      {
+        id: 'sea-4',
+        category: 'seafood',
+        categoryName: 'Seafood & Fresh Catch',
+        title: 'Tuscan Style Atlantic Salmon',
+        description: 'Pan-seared salmon fillet bathed in a velvety reduction of garlic, sun-dried tomatoes, baby spinach, white wine, and sweet cream. Served with roasted mini potatoes, white rice, or farm vegetables.',
+        tags: ['Rich & Velvety', 'Fine Dining', 'Gluten-Free'],
+        image: 'assets/images/herb_butter_lobster.jpg',
+        featured: true
+      },
+      {
+        id: 'sea-5',
+        category: 'seafood',
+        categoryName: 'Seafood & Fresh Catch',
+        title: 'Pan-Seared Red Snapper (Pargo)',
+        description: 'Fresh wild Pacific red snapper fillet finished with a delicate emulsion of capers, fresh lime juice, white wine, butter, and cream. Served with roasted mini potatoes, white rice, or farm vegetables.',
+        tags: ['Local Catch', 'Gluten-Free'],
+        image: 'assets/images/red_snapper_crispy.jpg',
+        featured: false
+      },
+      {
+        id: 'sea-6',
+        category: 'seafood',
+        categoryName: 'Seafood & Fresh Catch',
+        title: 'Crispy Golden Dorado (Mahi-Mahi)',
+        description: 'Lightly panko-crusted fresh Dorado fillet fried to crisp perfection, accompanied by Chef Marcos’ tartar sauce and citrus wedges, with roasted mini potatoes, white rice, or farm vegetables.',
+        tags: ['Crispy Classic', 'Local Mahi-Mahi'],
+        image: 'assets/images/red_snapper_crispy.jpg',
+        featured: false
+      },
+      {
+        id: 'sea-7',
+        category: 'seafood',
+        categoryName: 'Seafood & Fresh Catch',
+        title: 'Garlic Sautéed Pacific Octopus ("Pulpo al Ajillo")',
+        description: 'Tender Pacific octopus sautéed with golden roasted garlic, extra virgin olive oil, white wine, sweet Spanish paprika, and fresh garden parsley. Served with your choice of side: roasted mini potatoes, steamed white rice, or sautéed farm vegetables.',
+        tags: ['Chef Signature', 'Pacific Octopus', 'Gluten-Free'],
+        image: 'assets/images/whole_lobster_pan.jpg',
+        featured: true
+      },
+      {
+        id: 'sea-8',
+        category: 'seafood',
+        categoryName: 'Seafood & Fresh Catch',
+        title: 'Grand Seafood Feast (Mariscada)',
+        description: 'An opulent centerpiece feast for groups of 6-10 guests. Features whole spiny lobster, tender grilled octopus, jumbo prawns, blue mussels, line-caught fish, calamari, mini potatoes, rice, and vegetables.',
+        tags: ['Grand Showpiece', 'Group Special (6-10)'],
+        image: 'assets/images/grand_seafood_feast.jpg',
+        featured: true
+      },
+
+      // PRIME MEATS & POULTRY (MAIN COURSES)
+      {
+        id: 'meat-1',
+        category: 'meats',
+        categoryName: 'Prime Meats',
+        title: 'Marinated Chimichurri Churrasco Steak',
+        description: 'Prime cut churrasco beef steak marinated with aromatic mountain herbs and sea salt, flame-grilled and served with house chimichurri. Includes choice of: roasted mini potatoes, white rice, or farm vegetables.',
+        tags: ['Signature Steak', 'Carnivore Delight', 'Gluten-Free'],
+        image: 'assets/images/flambe_pan_sizzle.jpg',
+        featured: true
+      },
+      {
+        id: 'meat-2',
+        category: 'meats',
+        categoryName: 'Prime Meats',
+        title: 'Surf & Turf ("Mar y Tierra")',
+        description: 'Prime beef tenderloin (lomito) paired with fresh catch of the day or jumbo prawns, finished with wild mushroom reduction and chimichurri, with roasted mini potatoes, white rice, or farm vegetables.',
+        tags: ['Executive Duo', 'Fine Dining', 'Gluten-Free'],
+        image: 'assets/images/chef_flambe_kitchen.jpg',
+        featured: true
+      },
+      {
+        id: 'meat-3',
+        category: 'meats',
+        categoryName: 'Prime Meats',
+        title: 'Tropical Mango Glazed Chicken',
+        description: 'Pan-roasted tender chicken breast glazed in a luscious sweet and tangy fresh mango reduction with garden herbs. Served with your choice of: roasted mini potatoes, white rice, or sautéed vegetables.',
+        tags: ['Tropical Flavors', 'Gluten-Free'],
+        image: 'assets/images/gourmet_vegetable_stacks.jpg',
+        featured: false
+      },
+      {
+        id: 'meat-4',
+        category: 'meats',
+        categoryName: 'Prime Meats',
+        title: 'Sizzling Beef & Mixed Fajitas',
+        description: 'Sliced prime beef tenderloin seared with crisp sweet bell peppers and caramelized onions on a cast iron pan, served with warm tortillas, salsa, and choice of mini potatoes, white rice, or vegetables.',
+        tags: ['Sizzling Flavor', 'Latin Flair'],
+        image: 'assets/images/flambe_pan_sizzle.jpg',
+        featured: false
+      },
+
+      // DESSERTS
+      {
+        id: 'des-1',
+        category: 'desserts',
+        categoryName: 'Desserts',
+        title: 'Warm Double Fudge Brownie',
+        description: 'Decadent, rich chocolate brownie served warm with a scoop of premium vanilla bean ice cream and wild raspberry coulis.',
+        tags: ['Sweet Finale', 'Chocolate Indulgence'],
+        image: 'assets/images/brownie_ice_cream_plated.jpg',
+        featured: true
+      },
+      {
+        id: 'des-2',
+        category: 'desserts',
+        categoryName: 'Desserts',
+        title: 'Traditional Costa Rican Tres Leches',
+        description: 'Light sponge cake soaked in a rich infusion of three milks, crowned with whipped meringue and dusted with sweet cinnamon.',
+        tags: ['Costa Rican Classic', 'Guest Favorite'],
+        image: 'assets/images/chocolate_brownies_platter.jpg',
+        featured: true
+      },
+      {
+        id: 'des-3',
+        category: 'desserts',
+        categoryName: 'Desserts',
+        title: 'Spiced Artisanal Carrot Cake',
+        description: 'Moist spiced carrot cake with toasted walnuts, layered with sweet cream cheese frosting and served with vanilla ice cream.',
+        tags: ['House Made', 'Spiced Delight'],
+        image: 'assets/images/french_toast_detail.jpg',
+        featured: false
+      },
+      {
+        id: 'des-4',
+        category: 'desserts',
+        categoryName: 'Desserts',
+        title: 'Tropical Key Lime Pie',
+        description: 'Tangy fresh Costa Rican lime curd filling inside a golden buttery graham cracker crust, topped with fresh whipped cream.',
+        tags: ['Zesty & Crisp', 'Tropical Sweet'],
+        image: 'assets/images/tropical_fruit_bowl.jpg',
+        featured: false
+      }
+    ];
+
+    let currentCategory = 'all';
+    let searchQuery = '';
+
+    // Render Dishes function with high contrast & legibility
+    function renderDishes() {
+      const container = document.getElementById('dishes-grid');
+      const emptyState = document.getElementById('empty-state');
+      
+      const filtered = dishes.filter(dish => {
+        const matchesCategory = currentCategory === 'all' || dish.category === currentCategory;
+        const matchesSearch = searchQuery === '' || 
+          dish.title.toLowerCase().includes(searchQuery) ||
+          dish.description.toLowerCase().includes(searchQuery) ||
+          dish.tags.some(t => t.toLowerCase().includes(searchQuery));
+        return matchesCategory && matchesSearch;
+      });
+
+      // Update count
+      document.getElementById('count-all').textContent = dishes.length;
+
+      if (filtered.length === 0) {
+        container.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      
+      container.innerHTML = filtered.map(dish => {
+        const hasImg = dish.image && dish.image.trim() !== '';
+        
+        return `
+          <div class="dish-card rounded-2xl overflow-hidden flex flex-col justify-between group cursor-pointer" onclick="openDishDetail('${dish.id}')">
+            
+            <!-- Image (if available) -->
+            ${hasImg ? `
+              <div class="dish-img-container h-52 w-full bg-[#f4efe4] relative">
+                <img src="${dish.image}" alt="${dish.title}" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute top-3 left-3">
+                  <span class="badge-gold px-3 py-1 rounded-md shadow-md text-xs font-bold">${dish.categoryName}</span>
+                </div>
+                ${dish.featured ? `
+                  <div class="absolute top-3 right-3 bg-gradient-to-r from-gold-600 to-gold-500 text-white text-xs font-bold px-2.5 py-0.5 rounded-md shadow">
+                    Chef Choice
+                  </div>
+                ` : ''}
+              </div>
+            ` : `
+              <div class="p-6 pb-0 flex items-center justify-between">
+                <span class="badge-gold px-3 py-1 rounded-md text-xs font-bold">${dish.categoryName}</span>
+                ${dish.featured ? `
+                  <span class="text-gold-700 text-xs font-bold flex items-center space-x-1.5">
+                    <i data-lucide="sparkle" class="w-3.5 h-3.5 text-gold-600"></i>
+                    <span>Specialty</span>
+                  </span>
+                ` : ''}
+              </div>
+            `}
+
+            <!-- Card Body -->
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="text-lg sm:text-xl font-bold text-[#0d0d12] group-hover:text-gold-600 transition-colors mb-2.5 leading-snug">
+                  ${dish.title}
+                </h3>
+                <p class="text-[14.5px] sm:text-[15px] text-[#444455] leading-relaxed font-normal mb-3 line-clamp-3">
+                  ${dish.description}
+                </p>
+              </div>
+
+              <!-- Tags & Detail Trigger -->
+              <div class="mt-4 pt-3.5 border-t border-gold-600/15 flex items-center justify-between">
+                <div class="flex flex-wrap gap-1.5">
+                  ${dish.tags.map(t => `<span class="badge-tag px-2.5 py-1 rounded text-xs font-semibold">${t}</span>`).join('')}
+                </div>
+                <div class="text-gold-700 text-xs sm:text-sm flex items-center space-x-1.5 font-bold group-hover:text-gold-600 group-hover:translate-x-1 transition-all shrink-0 ml-2">
+                  <span>View details</span>
+                  <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        `;
+      }).join('');
+
+      // Refresh icons
+      lucide.createIcons();
+    }
+
+    // Filter by Category
+    function filterCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        if (btn.dataset.cat === cat) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      renderDishes();
+    }
+
+    // Search Input Listener
+    document.getElementById('menu-search').addEventListener('input', (e) => {
+      searchQuery = e.target.value.toLowerCase().trim();
+      renderDishes();
+    });
+
+    // Open Dish Detail Modal
+    function openDishDetail(dishId) {
+      const dish = dishes.find(d => d.id === dishId);
+      if (!dish) return;
+
+      document.getElementById('modal-title').textContent = dish.title;
+      document.getElementById('modal-desc').textContent = dish.description;
+      document.getElementById('modal-category').textContent = dish.categoryName;
+      document.getElementById('modal-tag').textContent = dish.tags[0] || 'Chef Selection';
+
+      const imgContainer = document.getElementById('modal-img-container');
+      const imgElem = document.getElementById('modal-img');
+
+      if (dish.image && dish.image.trim() !== '') {
+        imgElem.src = dish.image;
+        imgContainer.classList.remove('hidden');
+      } else {
+        imgContainer.classList.add('hidden');
+      }
+
+      // Update WhatsApp link in modal
+      const waText = encodeURIComponent(`Hello Chef Marcos, I would like to check availability for the dish: "${dish.title}".`);
+      document.getElementById('modal-wa-btn').href = `https://wa.me/50660811676?text=${waText}`;
+
+      document.getElementById('dish-modal').classList.remove('hidden');
+      document.getElementById('dish-modal').classList.add('flex');
+    }
+
+    // Open Gallery Lightbox
+    function openLightbox(imgSrc, title, desc) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-desc').textContent = desc;
+      document.getElementById('modal-category').textContent = 'Gallery';
+      document.getElementById('modal-tag').textContent = 'Villa Experience';
+
+      const imgContainer = document.getElementById('modal-img-container');
+      const imgElem = document.getElementById('modal-img');
+      imgElem.src = imgSrc;
+      imgContainer.classList.remove('hidden');
+
+      const waText = encodeURIComponent(`Hello Chef Marcos, I saw the photo of "${title}" on your website and would like to quote a similar preparation for our villa.`);
+      document.getElementById('modal-wa-btn').href = `https://wa.me/50660811676?text=${waText}`;
+
+      document.getElementById('dish-modal').classList.remove('hidden');
+      document.getElementById('dish-modal').classList.add('flex');
+    }
+
+    // Close Modal
+    function closeModal() {
+      document.getElementById('dish-modal').classList.add('hidden');
+      document.getElementById('dish-modal').classList.remove('flex');
+    }
+
+    // Close Modal on ESC or Backdrop click
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+    document.getElementById('dish-modal').addEventListener('click', closeModal);
+
+    // ================= CALCULADORA INTERACTIVA DE COTIZACION =================
+    function calculateEstimate() {
+      const adults = parseInt(document.getElementById('quote-adults').value) || 0;
+      const kids = parseInt(document.getElementById('quote-kids').value) || 0;
+      const serviceVal = document.getElementById('quote-service').value;
+      const displayElem = document.getElementById('estimate-display');
+      const detailsElem = document.getElementById('estimate-details');
+
+      if (serviceVal === 'catch') {
+        displayElem.textContent = 'Custom Quote';
+        detailsElem.textContent = `${adults} adults + ${kids} children · Catch & Cook tailored to your fishing charter`;
+        return;
+      }
+
+      if (serviceVal === 'custom') {
+        displayElem.textContent = 'Upon Request';
+        detailsElem.textContent = `${adults} adults + ${kids} children · Custom menu tailored to your chosen dishes`;
+        return;
+      }
+
+      const pricePerPerson = parseInt(serviceVal);
+      // Kids portion at 50%
+      const kidPrice = pricePerPerson * 0.5;
+      const total = (adults * pricePerPerson) + (kids * kidPrice);
+
+      displayElem.textContent = `$${total} USD`;
+      
+      let packageLabel = 'Menu Package';
+      if (pricePerPerson === 140) packageLabel = 'Package 1: Grand Seafood & Lobster ($140/adult)';
+      else if (pricePerPerson === 125) packageLabel = 'Package 2: Prime Surf & Turf ($125/adult)';
+      else if (pricePerPerson === 110) packageLabel = 'Package 3: Family BBQ Feast ($110/adult)';
+      else if (pricePerPerson === 50) packageLabel = 'Tropical Villa Breakfast & Brunch ($50/adult)';
+
+      detailsElem.textContent = `${adults} adults ($${pricePerPerson} ea)${kids > 0 ? ` + ${kids} children ($${kidPrice} ea)` : ''} · ${packageLabel}`;
+    }
+
+    function sendWhatsAppQuote() {
+      const name = document.getElementById('quote-name').value.trim();
+      const villa = document.getElementById('quote-villa').value.trim();
+      const date = document.getElementById('quote-date').value;
+      const adults = document.getElementById('quote-adults').value;
+      const kids = document.getElementById('quote-kids').value;
+      const serviceSelect = document.getElementById('quote-service');
+      const serviceText = serviceSelect.options[serviceSelect.selectedIndex].text;
+      const diet = document.getElementById('quote-diet').value.trim() || 'None specified';
+      const estimate = document.getElementById('estimate-display').textContent;
+
+      if (!name || !villa || !date) {
+        alert('Please complete your name, villa, and date to calculate your quote.');
+        return;
+      }
+
+      const message = 
+`🍽️ *VILLA DINING QUOTE INQUIRY - CHEF MARCOS MENA*
+
+👤 *Name:* ${name}
+📍 *Villa / Location:* ${villa}
+📅 *Event Date:* ${date}
+👥 *Guests:* ${adults} Adults, ${kids} Children
+🍴 *Desired Experience:* ${serviceText}
+🥗 *Dietary Needs / Allergies:* ${diet}
+💵 *Estimated Investment:* ${estimate}
+
+Hello Chef Marcos, I would like to verify calendar availability for this date and confirm our villa booking quote. Thank you!`;
+
+      const waUrl = `https://wa.me/50660811676?text=${encodeURIComponent(message)}`;
+      window.open(waUrl, '_blank');
+    }
+
+    // Set minimum date to today
+    const dateInput = document.getElementById('quote-date');
+    if (dateInput) {
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.min = today;
+      dateInput.value = today;
+    }
+
+    // Initial Render & Calculations
+    renderDishes();
+    calculateEstimate();
+  </script>
+
+</body>
+</html>

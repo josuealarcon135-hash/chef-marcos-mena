@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Marcos Mena Viales | Chef Ejecutivo & Private Chef</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0f172a;      /* Slate profundo luxury */
+            --primary-dark: #020617;
+            --accent: #c2811e;       /* Dorado bronce gastronómico */
+            --accent-hover: #9a6514;
+            --accent-soft: #fdf6e7;
+            --text-main: #334155;
+            --text-dark: #0f172a;
+            --text-light: #64748b;
+            --bg-sidebar: #0f172a;
+            --bg-main: #ffffff;
+            --border-color: #e2e8f0;
+            --tag-bg: #f8fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color-adjust: exact !important;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #cbd5e1;
+            color: var(--text-main);
+            line-height: 1.45;
+            -webkit-font-smoothing: antialiased;
+            padding: 24px 10px;
+        }
+
+        /* BARRA SUPERIOR DE ACCIONES */
+        .toolbar {
+            max-width: 920px;
+            margin: 0 auto 16px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            background: #ffffff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .toolbar-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .toolbar-info i {
+            color: var(--accent);
+            font-size: 16px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: #ffffff;
+            border: none;
+            padding: 9px 16px;
+            font-size: 12.5px;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        .btn-gold {
+            background-color: var(--accent);
+            color: #ffffff;
+        }
+        .btn-gold:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .lang-switch {
+            display: flex;
+            background: #f1f5f9;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            padding: 2px;
+        }
+
+        .lang-btn {
+            padding: 6px 12px;
+            border: none;
+            background: transparent;
+            font-size: 11.5px;
+            font-weight: 700;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: 0.2s;
+            border-radius: 4px;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        /* HOJA DEL CV (TAMAÑO LETTER/A4 COMPACTO Y ELEGANTE) */
+        .cv-sheet {
+            max-width: 920px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+            border-radius: 4px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 290px 1fr;
+            min-height: 1150px;
+        }
+
+        /* SIDEBAR LATERAL IZQUIERDA */
+        .cv-sidebar {
+            background-color: var(--bg-sidebar);
+            color: #f8fafc;
+            padding: 34px 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            border-right: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .profile-photo-container {
+            text-align: center;
+            margin-bottom: 4px;
+        }
+
+        .profile-photo {
+            width: 145px;
+            height: 145px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+            margin: 0 auto;
+            display: block;
+        }
+
+        .sidebar-section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #fbbf24;
+            border-bottom: 1px solid rgba(251, 191, 36, 0.3);
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+            font-size: 12px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            word-break: break-word;
+        }
+
+        .contact-item i {
+            color: #fbbf24;
+            margin-top: 3px;
+            font-size: 12.5px;
+            width: 14px;
+            text-align: center;
+        }
+
+        .contact-item a {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: #fbbf24;
+        }
+
+        .contact-item .label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #94a3b8;
+            display: block;
+            margin-bottom: 1px;
+            font-weight: 600;
+        }
+
+        .skills-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 11.5px;
+        }
+
+        .skills-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            color: #e2e8f0;
+            line-height: 1.35;
+        }
+
+        .skills-list li i {
+            color: #fbbf24;
+            font-size: 10px;
+            margin-top: 3px;
+        }
+
+        .badge-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            color: #e2e8f0;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        .lang-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11.5px;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .lang-card:last-child {
+            border-bottom: none;
+        }
+
+        .lang-card .lang-name {
+            font-weight: 600;
+            color: #f1f5f9;
+        }
+
+        .lang-card .lang-level {
+            color: #94a3b8;
+            font-size: 10.5px;
+        }
+
+        /* COLUMNA PRINCIPAL DERECHA */
+        .cv-main {
+            padding: 36px 32px;
+            background-color: var(--bg-main);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .header-area {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 14px;
+        }
+
+        .candidate-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.05;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .candidate-title {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 5px;
+        }
+
+        .candidate-tagline {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 3px;
+            font-weight: 500;
+        }
+
+        /* MÉTRICAS CLAVE */
+        .highlights-box {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent);
+            padding: 10px 14px;
+            border-radius: 4px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            text-align: center;
+        }
+
+        .highlight-item .number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .highlight-item .desc {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-top: 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .main-section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 4px;
+        }
+
+        .main-section-title i {
+            color: var(--accent);
+            font-size: 15px;
+        }
+
+        .profile-summary {
+            font-size: 12.5px;
+            color: #475569;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* TIMELINE EXPERIENCIA */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+        }
+
+        .job-card {
+            position: relative;
+            padding-left: 16px;
+            border-left: 2px solid #cbd5e1;
+            transition: border-color 0.2s;
+        }
+
+        .job-card:hover {
+            border-left-color: var(--accent);
+        }
+
+        .job-card::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 3px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 2px solid var(--accent);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 1px;
+        }
+
+        .job-title {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .job-dates {
+            font-size: 11px;
+            font-weight: 700;
+            color: #b45309;
+            background: #fffbeb;
+            padding: 1px 7px;
+            border-radius: 10px;
+            border: 1px solid #fde68a;
+        }
+
+        .job-company {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .job-location {
+            font-size: 11px;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .job-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-top: 4px;
+            font-size: 12px;
+            color: #475569;
+        }
+
+        .job-bullets li {
+            position: relative;
+            padding-left: 12px;
+            line-height: 1.45;
+        }
+
+        .job-bullets li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        /* REGLAS PARA IMPRESIÓN Y PDF PERFECTO */
+        @media print {
+            body {
+                background: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .toolbar {
+                display: none !important;
+            }
+            .cv-sheet {
+                box-shadow: none !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                margin: 0 !important;
+                border-radius: 0 !important;
+                min-height: auto !important;
+            }
+            .cv-sidebar {
+                background-color: #0f172a !important;
+                color: #f8fafc !important;
+            }
+            @page {
+                size: letter portrait;
+                margin: 0;
+            }
+            .job-card {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cv-sheet {
+                grid-template-columns: 1fr;
+            }
+            .highlights-box {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA DE ACCIONES PARA EL USUARIO -->
+    <div class="toolbar">
+        <div class="toolbar-info">
+            <i class="fa-solid fa-crown"></i>
+            <span>Currículum Vitae Profesional de Alta Gama</span>
+        </div>
+        <div class="btn-group">
+            <div class="lang-switch">
+                <button class="lang-btn active" id="btn-es" onclick="switchLang('es')">ESPAÑOL</button>
+                <button class="lang-btn" id="btn-en" onclick="switchLang('en')">ENGLISH</button>
+            </div>
+            <button class="btn btn-gold" onclick="window.print()">
+                <i class="fa-solid fa-file-pdf"></i> Guardar como PDF / Imprimir
+            </button>
+        </div>
+    </div>
+
+    <!-- HOJA PRINCIPAL DEL CV -->
+    <div class="cv-sheet" id="cv-content">
+        
+        <!-- SIDEBAR IZQUIERDA -->
+        <aside class="cv-sidebar">
+            <div class="profile-photo-container">
+                <img src="marcos_foto_perfil.jpg" alt="Marcos Mena Viales - Chef" class="profile-photo">
+            </div>
+
+            <!-- CONTACTO -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title" data-i18n="contact_title"><i class="fa-solid fa-address-book"></i> Contacto</h3>
+                <ul class="contact-list">
+                    <li class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <span class="label" data-i18n="lbl_phone">WhatsApp & Reservas</span>
+                            <a href="https://wa.me/50660811676" target="_blank">+506 6081-1676</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <span class="label" data-i18n="lbl_email">Correo Reservas</span>
+                            <a href="mailto:bookingschefmarcoscr@gmail.com">bookingschefmarcoscr@gmail.com</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fa-brands fa-facebook" style="color: #1877F2; font-size: 16px;"></i>
+                        <div>
+                            <span class="label">Facebook</span>
+                            <a href="https://www.facebook.com/share/1BYyHLKxuW/?mibextid=wwXIfr" target="_blank">Chef Marcos Mena</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <span class="label" data-i18n="lbl_location">Ubicación</span>
+                            <span>Manuel Antonio & Quepos, Puntarenas, Costa Rica</span>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <span class="label" data-i18n="lbl_status">Disponibilidad</span>
+                            <span data-i18n="val_status">Inmediata / Villas VIP & Eventos</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- ESPECIALIDADES Y COCINA -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title" data-i18n="skills_title"><i class="fa-solid fa-utensils"></i> Especialidades</h3>
+                <div class="badge-grid">
+                    <span class="badge" data-i18n="b1">Alta Cocina de Autor</span>
+                    <span class="badge" data-i18n="b2">Private Dining & Villas VIP</span>
+                    <span class="badge" data-i18n="b3">Mariscos & Pesca Fresca</span>
+                    <span class="badge" data-i18n="b4">Fusión Tropical Costarricense</span>
+                    <span class="badge" data-i18n="b5">Menús Degustación</span>
+                    <span class="badge" data-i18n="b6">Parrilla & Asados Gourmet</span>
+                    <span class="badge" data-i18n="b7">Dietas (Keto / GF / Veganas)</span>
+                </div>
+            </div>
+
+            <!-- GESTIÓN Y LIDERAZGO -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title" data-i18n="mgmt_title"><i class="fa-solid fa-list-check"></i> Gestión & Control</h3>
+                <ul class="skills-list">
+                    <li><i class="fa-solid fa-check"></i> <span data-i18n="m1">Control de Food Cost y Rendimientos</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span data-i18n="m2">Optimización y Reducción de Mermas</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span data-i18n="m3">Estandarización de Recetas y Costos</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span data-i18n="m4">Normas BPM & Manipulación de Alimentos</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span data-i18n="m5">Liderazgo y Capacitación de Brigadas</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span data-i18n="m6">Eventos Privados y Banquetes VIP</span></li>
+                </ul>
+            </div>
+
+            <!-- IDIOMAS -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title" data-i18n="lang_title"><i class="fa-solid fa-globe"></i> Idiomas</h3>
+                <div class="lang-card">
+                    <span class="lang-name" data-i18n="lang_es">Español</span>
+                    <span class="lang-level" data-i18n="lang_es_lvl">Nativo</span>
+                </div>
+                <div class="lang-card">
+                    <span class="lang-name" data-i18n="lang_en">Inglés</span>
+                    <span class="lang-level" data-i18n="lang_en_lvl">Servicio Gastronómico / Fluido</span>
+                </div>
+            </div>
+
+            <!-- CERTIFICACIONES -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title" data-i18n="cert_title"><i class="fa-solid fa-award"></i> Certificaciones</h3>
+                <ul class="skills-list">
+                    <li><i class="fa-solid fa-certificate"></i> <span data-i18n="c1">Manipulación de Alimentos al Día (INA/MS)</span></li>
+                    <li><i class="fa-solid fa-certificate"></i> <span data-i18n="c2">Buenas Prácticas de Manufactura (BPM)</span></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- CUERPO PRINCIPAL -->
+        <main class="cv-main">
+            
+            <!-- HEADER CANDIDATO -->
+            <header class="header-area">
+                <h1 class="candidate-name">Marcos Mena Viales</h1>
+                <div class="candidate-title" data-i18n="candidate_role">Chef Ejecutivo | Private Chef | Especialista en Experiencias Gastronómicas</div>
+                <div class="candidate-tagline" data-i18n="candidate_sub">Más de 27 años de trayectoria culinaria en hotelería de lujo y villas privadas en Manuel Antonio, Costa Rica</div>
+            </header>
+
+            <!-- MÉTRICAS DE IMPACTO -->
+            <div class="highlights-box">
+                <div class="highlight-item">
+                    <div class="number">+27</div>
+                    <div class="desc" data-i18n="h1_desc">Años de Trayectoria</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="number">100%</div>
+                    <div class="desc" data-i18n="h2_desc">Enfoque en Calidad VIP</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="number">-25%</div>
+                    <div class="desc" data-i18n="h3_desc">Optimización de Mermas</div>
+                </div>
+            </div>
+
+            <!-- PERFIL PROFESIONAL -->
+            <section class="main-section">
+                <h2 class="main-section-title" data-i18n="profile_title"><i class="fa-solid fa-user-tie"></i> Perfil Profesional</h2>
+                <p class="profile-summary" data-i18n="profile_text">
+                    Chef profesional con más de 27 años de sólida trayectoria liderando cocinas de alta exigencia, hoteles boutique y servicios exclusivos de Private Chef en villas de lujo en Manuel Antonio. Especialista en fusionar la riqueza gastronómica costarricense con técnicas internacionales contemporáneas y pesca fresca del Pacífico. Destacada capacidad para diseñar menús personalizados de alta cocina, coordinar eventos y banquetes privados, liderar brigadas de cocina y garantizar la máxima rentabilidad operativa mediante un riguroso control de mermas, costos y estándares de inocuidad alimentaria (BPM).
+                </p>
+            </section>
+
+            <!-- EXPERIENCIA LABORAL EN ORDEN CRONOLÓGICO INVERSO -->
+            <section class="main-section">
+                <h2 class="main-section-title" data-i18n="exp_title"><i class="fa-solid fa-briefcase"></i> Experiencia Profesional</h2>
+                
+                <div class="timeline">
+                    
+                    <!-- 1. TULEMAR (ACTUAL) -->
+                    <div class="job-card">
+                        <div class="job-header">
+                            <span class="job-title" data-i18n="job1_title">Private Chef / Chef de Villa</span>
+                            <span class="job-dates" data-i18n="job1_dates">Dic 2024 - Presente</span>
+                        </div>
+                        <div class="job-company">
+                            <span>Tulemar (Casa Belleza Verde)</span>
+                            <span class="job-location"><i class="fa-solid fa-location-dot"></i> Manuel Antonio, Costa Rica</span>
+                        </div>
+                        <ul class="job-bullets">
+                            <li data-i18n="job1_b1">Diseño y ejecución de experiencias gastronómicas exclusivas para huéspedes VIP en villas de ultra-lujo.</li>
+                            <li data-i18n="job1_b2">Creación de menús degustación a la medida, adaptando preparaciones a dietas especiales (Keto, Gluten-Free, Vegano, Kosher-Friendly y Alergias).</li>
+                            <li data-i18n="job1_b3">Gestión integral de compras, selección directa de mariscos y productos frescos de productores locales, garantizando máxima calidad.</li>
+                            <li data-i18n="job1_b4">Supervisión impecable de inocuidad, higiene y presentación visual de alto impacto en cada servicio.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 2. ESCAPE VILLAS -->
+                    <div class="job-card">
+                        <div class="job-header">
+                            <span class="job-title" data-i18n="job2_title">Chef Ejecutivo / Jefe de Cocina</span>
+                            <span class="job-dates" data-i18n="job2_dates">Ene 2014 - Nov 2024 (10 años)</span>
+                        </div>
+                        <div class="job-company">
+                            <span>Escape Villas de Manuel Antonio</span>
+                            <span class="job-location"><i class="fa-solid fa-location-dot"></i> Manuel Antonio, Costa Rica</span>
+                        </div>
+                        <ul class="job-bullets">
+                            <li data-i18n="job2_b1">Liderazgo culinario para el complejo de villas vacacionales de lujo, asegurando estándares de fine dining para grupos de alta demanda.</li>
+                            <li data-i18n="job2_b2">Implementación de controles de producción y estandarización de recetas, reduciendo desperdicios y optimizando el Food Cost operativo en más de un 20%.</li>
+                            <li data-i18n="job2_b3">Creación de menús de autor combinando cocina tradicional costarricense con técnicas culinarias internacionales modernas.</li>
+                            <li data-i18n="job2_b4">Capacitación y supervisión de equipos de cocina bajo protocolos estrictos de calidad y Buenas Prácticas de Manufactura (BPM).</li>
+                        </ul>
+                    </div>
+
+                    <!-- 3. HOTEL MARIPOSA -->
+                    <div class="job-card">
+                        <div class="job-header">
+                            <span class="job-title" data-i18n="job3_title">Cocinero Principal / Encargado de Producción y Eventos</span>
+                            <span class="job-dates" data-i18n="job3_dates">Feb 1997 - Oct 2013 (16 años)</span>
+                        </div>
+                        <div class="job-company">
+                            <span>Hotel Mariposa</span>
+                            <span class="job-location"><i class="fa-solid fa-location-dot"></i> Manuel Antonio, Costa Rica</span>
+                        </div>
+                        <ul class="job-bullets">
+                            <li data-i18n="job3_b1">Trayectoria destacada de 16 años en uno de los hoteles boutique más reconocidos y de mayor tradición en Manuel Antonio.</li>
+                            <li data-i18n="job3_b2">Dirección de partidas en cocina y despacho ágil durante temporadas de alta ocupación hotelera garantizando consistencia y sabor insuperable.</li>
+                            <li data-i18n="job3_b3">Coordinación y ejecución culinaria de eventos privados, bodas de destino y banquetes especiales de gran volumen en el departamento de Alimentos y Bebidas (AyB).</li>
+                            <li data-i18n="job3_b4">Control riguroso de inventarios, recepción de insumos con altos estándares de calidad y cumplimiento estricto de normativas sanitarias.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- SCRIPT DE TRADUCCIÓN BILINGÜE INLINE -->
+    <script>
+        const translations = {
+            es: {
+                contact_title: '<i class="fa-solid fa-address-book"></i> Contacto',
+                lbl_phone: 'Teléfono / WhatsApp',
+                lbl_email: 'Correo Electrónico',
+                lbl_location: 'Ubicación',
+                lbl_status: 'Disponibilidad',
+                val_status: 'Inmediata / Villas VIP & Eventos',
+                skills_title: '<i class="fa-solid fa-utensils"></i> Especialidades',
+                b1: 'Alta Cocina de Autor',
+                b2: 'Private Dining & Villas VIP',
+                b3: 'Mariscos & Pesca Fresca',
+                b4: 'Fusión Tropical Costarricense',
+                b5: 'Menús Degustación',
+                b6: 'Parrilla & Asados Gourmet',
+                b7: 'Dietas (Keto / GF / Veganas)',
+                mgmt_title: '<i class="fa-solid fa-list-check"></i> Gestión & Control',
+                m1: 'Control de Food Cost y Rendimientos',
+                m2: 'Optimización y Reducción de Mermas',
+                m3: 'Estandarización de Recetas y Costos',
+                m4: 'Normas BPM & Manipulación de Alimentos',
+                m5: 'Liderazgo y Capacitación de Brigadas',
+                m6: 'Eventos Privados y Banquetes VIP',
+                lang_title: '<i class="fa-solid fa-globe"></i> Idiomas',
+                lang_es: 'Español',
+                lang_es_lvl: 'Nativo',
+                lang_en: 'Inglés',
+                lang_en_lvl: 'Servicio Gastronómico / Fluido',
+                cert_title: '<i class="fa-solid fa-award"></i> Certificaciones',
+                c1: 'Manipulación de Alimentos al Día (INA/MS)',
+                c2: 'Buenas Prácticas de Manufactura (BPM)',
+                candidate_role: 'Chef Ejecutivo | Private Chef | Especialista en Experiencias Gastronómicas',
+                candidate_sub: 'Más de 27 años de trayectoria culinaria en hotelería de lujo y villas privadas en Manuel Antonio, Costa Rica',
+                h1_desc: 'Años de Trayectoria',
+                h2_desc: 'Enfoque en Calidad VIP',
+                h3_desc: 'Optimización de Mermas',
+                profile_title: '<i class="fa-solid fa-user-tie"></i> Perfil Profesional',
+                profile_text: 'Chef profesional con más de 27 años de sólida trayectoria liderando cocinas de alta exigencia, hoteles boutique y servicios exclusivos de Private Chef en villas de lujo en Manuel Antonio. Especialista en fusionar la riqueza gastronómica costarricense con técnicas internacionales contemporáneas y pesca fresca del Pacífico. Destacada capacidad para diseñar menús personalizados de alta cocina, coordinar eventos y banquetes privados, liderar brigadas de cocina y garantizar la máxima rentabilidad operativa mediante un riguroso control de mermas, costos y estándares de inocuidad alimentaria (BPM).',
+                exp_title: '<i class="fa-solid fa-briefcase"></i> Experiencia Profesional',
+                job1_title: 'Private Chef / Chef de Villa',
+                job1_dates: 'Dic 2024 - Presente',
+                job1_b1: 'Diseño y ejecución de experiencias gastronómicas exclusivas para huéspedes VIP en villas de ultra-lujo.',
+                job1_b2: 'Creación de menús degustación a la medida, adaptando preparaciones a dietas especiales (Keto, Gluten-Free, Vegano, Kosher-Friendly y Alergias).',
+                job1_b3: 'Gestión integral de compras, selección directa de mariscos y productos frescos de productores locales, garantizando máxima calidad.',
+                job1_b4: 'Supervisión impecable de inocuidad, higiene y presentación visual de alto impacto en cada servicio.',
+                job2_title: 'Chef Ejecutivo / Jefe de Cocina',
+                job2_dates: 'Ene 2014 - Nov 2024 (10 años)',
+                job2_b1: 'Liderazgo culinario para el complejo de villas vacacionales de lujo, asegurando estándares de fine dining para grupos de alta demanda.',
+                job2_b2: 'Implementación de controles de producción y estandarización de recetas, reduciendo desperdicios y optimizando el Food Cost operativo en más de un 20%.',
+                job2_b3: 'Creación de menús de autor combinando cocina tradicional costarricense con técnicas culinarias internacionales modernas.',
+                job2_b4: 'Capacitación y supervisión de equipos de cocina bajo protocolos estrictos de calidad y Buenas Prácticas de Manufactura (BPM).',
+                job3_title: 'Cocinero Principal / Encargado de Producción y Eventos',
+                job3_dates: 'Feb 1997 - Oct 2013 (16 años)',
+                job3_b1: 'Trayectoria destacada de 16 años en uno de los hoteles boutique más reconocidos y de mayor tradición en Manuel Antonio.',
+                job3_b2: 'Dirección de partidas en cocina y despacho ágil durante temporadas de alta ocupación hotelera garantizando consistencia y sabor insuperable.',
+                job3_b3: 'Coordinación y ejecución culinaria de eventos privados, bodas de destino y banquetes especiales de gran volumen en el departamento de Alimentos y Bebidas (AyB).',
+                job3_b4: 'Control riguroso de inventarios, recepción de insumos con altos estándares de calidad y cumplimiento estricto de normativas sanitarias.'
+            },
+            en: {
+                contact_title: '<i class="fa-solid fa-address-book"></i> Contact Info',
+                lbl_phone: 'Phone / WhatsApp',
+                lbl_email: 'Email Address',
+                lbl_location: 'Location',
+                lbl_status: 'Availability',
+                val_status: 'Immediate / Luxury Villas & VIP Dining',
+                skills_title: '<i class="fa-solid fa-utensils"></i> Culinary Specialties',
+                b1: 'Signature Fine Dining',
+                b2: 'Private Dining & VIP Villas',
+                b3: 'Fresh Seafood & Pacific Catch',
+                b4: 'Costa Rican Tropical Fusion',
+                b5: 'Tasting Menus',
+                b6: 'Gourmet Grill & BBQ',
+                b7: 'Special Diets (Keto / GF / Vegan)',
+                mgmt_title: '<i class="fa-solid fa-list-check"></i> Kitchen Management',
+                m1: 'Food Cost Optimization & Yields',
+                m2: 'Waste Reduction & Cost Control',
+                m3: 'Recipe Standardization & Sourcing',
+                m4: 'Food Safety & GMP / BPM Standards',
+                m5: 'Kitchen Brigade Leadership & Mentoring',
+                m6: 'Private Catering & VIP Banquets',
+                lang_title: '<i class="fa-solid fa-globe"></i> Languages',
+                lang_es: 'Spanish',
+                lang_es_lvl: 'Native',
+                lang_en: 'English',
+                lang_en_lvl: 'Culinary Hospitality / Professional',
+                cert_title: '<i class="fa-solid fa-award"></i> Certifications',
+                c1: 'Certified Food Handler (Current)',
+                c2: 'Good Manufacturing Practices (GMP / BPM)',
+                candidate_role: 'Executive Chef | Private Chef | Luxury Dining Specialist',
+                candidate_sub: 'Over 27 years of culinary excellence in luxury hotels & private villas in Manuel Antonio, Costa Rica',
+                h1_desc: 'Years of Experience',
+                h2_desc: 'VIP Quality Focus',
+                h3_desc: 'Waste Reduction',
+                profile_title: '<i class="fa-solid fa-user-tie"></i> Executive Profile',
+                profile_text: 'Accomplished culinary professional with over 27 years of proven success leading high-volume kitchens, boutique luxury resorts, and high-end private chef services across Manuel Antonio’s most prestigious villas. Renowned for fusing vibrant Costa Rican tropical flavors with contemporary international techniques and fresh local seafood. Proven track record in bespoke fine-dining menu creation, private events, team leadership, food cost control, and rigorous adherence to food safety and hygiene protocols.',
+                exp_title: '<i class="fa-solid fa-briefcase"></i> Professional Experience',
+                job1_title: 'Private Chef / Villa Chef',
+                job1_dates: 'Dec 2024 - Present',
+                job1_b1: 'Curating and delivering exclusive culinary experiences for high-profile international and local guests in ultra-luxury private villas.',
+                job1_b2: 'Designing tailored multi-course tasting menus accommodating diverse dietary preferences (Keto, Gluten-Free, Vegan, Allergies, and Kosher-Friendly).',
+                job1_b3: 'Managing end-to-end food sourcing, hand-picking premier fresh seafood and local organic produce to guarantee unmatched quality.',
+                job1_b4: 'Maintaining strict kitchen sanitation, presentation standards, and high-touch hospitality for bespoke villa dining.',
+                job2_title: 'Executive Chef / Head of Kitchen',
+                job2_dates: 'Jan 2014 - Nov 2024 (10 Years)',
+                job2_b1: 'Directed all culinary operations across luxury villa rental estates, upholding rigorous fine-dining standards for demanding international clientele.',
+                job2_b2: 'Streamlined kitchen workflows and recipe standardization, achieving over 20% reduction in food waste and optimal food costing.',
+                job2_b3: 'Developed innovative signature menus celebrating authentic Costa Rican heritage infused with global culinary trends.',
+                job2_b4: 'Mentored and supervised kitchen brigades, enforcing strict health, sanitation, and safety standards.',
+                job3_title: 'Senior Chef / Banquet & Line Lead',
+                job3_dates: 'Feb 1997 - Oct 2013 (16 Years)',
+                job3_b1: '16-year distinguished tenure at one of Manuel Antonio’s premier pioneer boutique hotels.',
+                job3_b2: 'Managed high-volume dinner service and kitchen stations during peak tourism seasons, delivering consistent quality and fast plate turnover.',
+                job3_b3: 'Executed large-scale private events, destination weddings, and VIP banquets within the Food & Beverage division.',
+                job3_b4: 'Controlled inventory, inspected incoming vendor goods, and maintained top-tier hygiene and health compliance.'
+            }
+        };
+
+        function switchLang(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        }
+    </script>
+</body>
+</html>

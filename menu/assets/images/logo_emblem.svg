@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Metallic Gold Gradient -->
+    <linearGradient id="culinaryGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff2d4"/>
+      <stop offset="30%" stop-color="#dfb76c"/>
+      <stop offset="70%" stop-color="#c5a059"/>
+      <stop offset="100%" stop-color="#916c27"/>
+    </linearGradient>
+
+    <linearGradient id="goldLine" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ab873c"/>
+      <stop offset="50%" stop-color="#faecc8"/>
+      <stop offset="100%" stop-color="#ab873c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Clean Minimalist Circle Base (Centered at 250, 250) -->
+  <circle cx="250" cy="250" r="236" fill="#08080b" stroke="url(#culinaryGold)" stroke-width="2"/>
+  <circle cx="250" cy="250" r="226" fill="none" stroke="url(#goldLine)" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- ================= PERFECTLY CENTERED CULINARY ICON ================= -->
+  <g transform="translate(250, 190)">
+    
+    <!-- 1. Symmetrical Chef Hat (Toque Blanche) -->
+    <!-- Mirrored around X = 0 -->
+    <g fill="none" stroke="url(#culinaryGold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Hat Crown Contour (Mathematically Symmetrical) -->
+      <path d="M -58, -14 C -78, -44 -55, -86 -22, -78 C -12, -98 12, -98 22, -78 C 55, -86 78, -44 58, -14 Z" fill="url(#culinaryGold)" fill-opacity="0.12"/>
+      
+      <!-- Inner Crease Lines (Symmetrical) -->
+      <path d="M -22, -76 C -18, -48 -14, -24 -14, -14" stroke-width="1.8" stroke-opacity="0.6"/>
+      <path d="M 0, -94 C 0, -60 0, -30 0, -14" stroke-width="1.8" stroke-opacity="0.6"/>
+      <path d="M 22, -76 C 18, -48 14, -24 14, -14" stroke-width="1.8" stroke-opacity="0.6"/>
+      
+      <!-- Hat Headband Base (Centered at X = 0) -->
+      <rect x="-60" y="-14" width="120" height="14" rx="3" fill="url(#culinaryGold)" stroke="none"/>
+    </g>
+
+    <!-- 2. Symmetrical Crossed Knife & Fork -->
+    <!-- Center of intersection is exactly (0, 36) -->
+    
+    <!-- Chef Knife (Rotated +40deg around (0, 36)) -->
+    <g transform="translate(0, 36) rotate(40) translate(0, -36)">
+      <!-- Blade (Facing Right) -->
+      <path d="M -6, -45 C 8, -42 16, -20 14, 20 L -6, 20 Z" fill="url(#culinaryGold)"/>
+      <!-- Bolster -->
+      <rect x="-7" y="20" width="14" height="4" rx="1" fill="url(#culinaryGold)"/>
+      <!-- Handle -->
+      <path d="M -5, 24 L -5, 80 C -5, 84 -2, 87 0, 87 C 2, 87 5, 84 5, 80 L 5, 24 Z" fill="url(#culinaryGold)"/>
+      <!-- Rivets -->
+      <circle cx="0" cy="38" r="1.5" fill="#08080b"/>
+      <circle cx="0" cy="56" r="1.5" fill="#08080b"/>
+      <circle cx="0" cy="74" r="1.5" fill="#08080b"/>
+    </g>
+
+    <!-- Gourmet Fork (Rotated -40deg around (0, 36)) -->
+    <g transform="translate(0, 36) rotate(-40) translate(0, -36)">
+      <!-- Fork Head Base & 4 Tines -->
+      <path d="M -13, -15 C -13, 5 -8, 20 -4, 20 L 4, 20 C 8, 20 13, 5 13, -15 Z" fill="url(#culinaryGold)"/>
+      <!-- 4 Fine Tines -->
+      <rect x="-12" y="-45" width="3" height="32" rx="1" fill="url(#culinaryGold)"/>
+      <rect x="-4" y="-45" width="2.5" height="32" rx="1" fill="url(#culinaryGold)"/>
+      <rect x="1.5" y="-45" width="2.5" height="32" rx="1" fill="url(#culinaryGold)"/>
+      <rect x="9" y="-45" width="3" height="32" rx="1" fill="url(#culinaryGold)"/>
+      <!-- Bolster -->
+      <rect x="-5" y="20" width="10" height="4" rx="1" fill="url(#culinaryGold)"/>
+      <!-- Handle -->
+      <path d="M -4, 24 L -4, 80 C -4, 84 -2, 87 0, 87 C 2, 87 4, 84 4, 80 L 4, 24 Z" fill="url(#culinaryGold)"/>
+    </g>
+
+    <!-- Center Crossing Star / Medallion (Centered at X=0, Y=36) -->
+    <polygon points="0,26 3.2,33.5 10.5,34.5 5,39.5 6.5,46.5 0,43 -6.5,46.5 -5,39.5 -10.5,34.5 -3.2,33.5" fill="url(#culinaryGold)" stroke="#08080b" stroke-width="1.5"/>
+  </g>
+
+  <!-- ================= CENTERED TYPOGRAPHY & DIVIDERS ================= -->
+  <!-- Divider Bar (Centered at 250, 318) -->
+  <g transform="translate(250, 318)">
+    <line x1="-110" y1="0" x2="110" y2="0" stroke="url(#culinaryGold)" stroke-width="1" stroke-opacity="0.5"/>
+    <polygon points="0,-4 4,0 0,4 -4,0" fill="url(#culinaryGold)"/>
+  </g>
+
+  <!-- Brand Name (Centered at 250) -->
+  <text x="250" y="360" text-anchor="middle" fill="url(#culinaryGold)" font-family="'Cinzel', 'Trajan Pro', serif" font-size="28" font-weight="700" letter-spacing="6" text-transform="uppercase">
+    CHEF MARCOS
+  </text>
+
+  <!-- Subtitle (Centered at 250) -->
+  <text x="250" y="392" text-anchor="middle" fill="#ffffff" font-family="'Cormorant Garamond', Georgia, serif" font-size="19" font-style="italic" font-weight="400" letter-spacing="3" opacity="0.95">
+    Private Culinary Experience
+  </text>
+
+  <!-- Location (Centered at 250) -->
+  <text x="250" y="418" text-anchor="middle" fill="url(#culinaryGold)" font-family="'Montserrat', sans-serif" font-size="9" font-weight="600" letter-spacing="5" text-transform="uppercase" opacity="0.85">
+    COSTA RICA
+  </text>
+</svg>
