@@ -399,6 +399,122 @@
       object-fit: cover;
     }
 
+    /* ================= PACKAGES & PRICING PAGE STYLES ================= */
+    .package-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 4px 0;
+    }
+    .pkg-box {
+      background: #ffffff;
+      border: 1.5px solid rgba(166, 124, 46, 0.4);
+      border-radius: 7px;
+      padding: 10px 14px;
+      box-shadow: 0 2px 8px rgba(125, 91, 24, 0.05);
+      position: relative;
+    }
+    .pkg-box.featured {
+      border: 2px solid var(--gold-primary);
+      background: linear-gradient(135deg, #ffffff 0%, #faf6ec 100%);
+    }
+    .pkg-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      border-bottom: 1px solid rgba(166, 124, 46, 0.2);
+      padding-bottom: 4px;
+    }
+    .pkg-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--text-headings);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .pkg-tag {
+      font-size: 8.5px;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--gold-dark);
+      background: var(--gold-light);
+      padding: 2px 7px;
+      border-radius: 4px;
+      border: 1px solid rgba(166, 124, 46, 0.35);
+    }
+    .pkg-price-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--gold-dark);
+      background: #faf6ec;
+      border: 1.2px solid var(--gold-primary);
+      padding: 2px 10px;
+      border-radius: 5px;
+      white-space: nowrap;
+    }
+    .pkg-price-badge small {
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+    .pkg-courses {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+      font-size: 10.5px;
+      line-height: 1.35;
+    }
+    .pkg-courses.three-col {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .pkg-course-item {
+      background: rgba(244, 238, 224, 0.45);
+      padding: 5px 7px;
+      border-radius: 4px;
+      border: 1px solid rgba(166, 124, 46, 0.18);
+    }
+    .pkg-course-label {
+      font-size: 8.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .pkg-course-desc {
+      color: var(--text-body);
+      font-weight: 500;
+    }
+    .pkg-policy-banner {
+      background: linear-gradient(135deg, #143527 0%, #1e523d 100%);
+      color: #ffffff;
+      border-radius: 7px;
+      padding: 9px 14px;
+      margin-top: 6px;
+      font-size: 10px;
+      line-height: 1.45;
+      border: 1.2px solid #c5a059;
+    }
+    .pkg-policy-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 5px;
+      text-align: left;
+    }
+    .pkg-policy-item {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 5px 8px;
+      border-radius: 5px;
+      border: 1px solid rgba(197, 160, 89, 0.3);
+    }
+
     /* Print Media Query */
     @media print {
       body {
@@ -501,9 +617,181 @@
           Serving Luxury Villas, Private Residences & Yachts Across Costa Rica
         </div>
       </div>
+    <!-- ================= PAGE 2: SIGNATURE DINNER PACKAGES & PRICING ================= -->
+    <div class="menu-page">
+      <div class="page-border"></div>
+      <div class="page-border-inner"></div>
+      <div class="corner-diamond c-tl"></div>
+      <div class="corner-diamond c-tr"></div>
+      <div class="corner-diamond c-bl"></div>
+      <div class="corner-diamond c-br"></div>
+
+      <!-- Header -->
+      <div class="page-header" style="margin-bottom: 8px;">
+        <div style="width: 30px; height: 30px; margin: 0 auto 3px auto; border-radius: 50%; overflow: hidden; border: 1.5px solid var(--gold-primary);">
+          <img src="assets/images/chef_marcos_avatar.jpg" alt="Chef Marcos" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <span class="page-category-tag">All-Inclusive Gastronomic Experiences</span>
+        <h2 class="page-title" style="font-size: 21px;">Popular Villa Dinner Packages & Pricing</h2>
+        <div class="header-divider">
+          <div class="line"></div>
+          <div class="dot"></div>
+          <div class="line"></div>
+        </div>
+        <p style="font-size: 11px; color: var(--text-muted); font-weight: 500; max-width: 6.8in; margin: 0 auto;">
+          Fixed per-person rates with zero surprises. Includes morning grocery sourcing of pristine seafood & meats, live cooking in your villa, attentive table service, and complete spotless kitchen cleanup.
+        </p>
+      </div>
+
+      <!-- Packages List -->
+      <div class="package-grid">
+
+        <!-- Package 1 -->
+        <div class="pkg-box featured">
+          <div class="pkg-header">
+            <div class="pkg-title">
+              <span>Option 1 · Grand Seafood Feast & Caribbean Lobster</span>
+              <span class="pkg-tag">Most Requested · 5-Star Luxury</span>
+            </div>
+            <div class="pkg-price-badge">
+              $140 <small>USD / Adult</small>
+            </div>
+          </div>
+          <div class="pkg-courses">
+            <div class="pkg-course-item">
+              <span class="pkg-course-label">1. Starter</span>
+              <span class="pkg-course-desc">Pacific Yellowfin Tuna Tartare with avocado, sweet mango & plantain chips.</span>
+            </div>
+            <div class="pkg-course-item">
+              <span class="pkg-course-label">2. Ceviche</span>
+              <span class="pkg-course-desc">Quepos Fresh Sea Bass Ceviche cured in lime & passionfruit juices.</span>
+            </div>
+            <div class="pkg-course-item" style="background: rgba(230, 204, 142, 0.35); border-color: rgba(166, 124, 46, 0.4);">
+              <span class="pkg-course-label" style="color: #7d5b18;">3. Main Course</span>
+              <span class="pkg-course-desc"><strong>Flame-Basted Caribbean Lobster Tail</strong> with garlic herb butter & mini potatoes.</span>
+            </div>
+            <div class="pkg-course-item">
+              <span class="pkg-course-label">4. Flambé Dessert</span>
+              <span class="pkg-course-desc">Centenario Rum Flambé Bananas with vanilla bean ice cream & macadamias.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 2 -->
+        <div class="pkg-box">
+          <div class="pkg-header">
+            <div class="pkg-title">
+              <span>Option 2 · Surf & Turf: Prime Tenderloin & Jumbo Shrimp</span>
+              <span class="pkg-tag">Prime Land & Sea</span>
+            </div>
+            <div class="pkg-price-badge">
+              $125 <small>USD / Adult</small>
+            </div>
+          </div>
+          <div class="pkg-courses">
+            <div class="pkg-course-item">
+              <span class="pkg-course-label">1. Starter</span>
+              <span class="pkg-course-desc">Compressed Watermelon with Local Goat Cheese & aged Modena balsamic.</span>
+            </div>
+            <div class="pkg-course-item">
+              <span class="pkg-course-label">2. Appetizer</span>
+              <span class="pkg-course-desc">Crispy Golden Calamari Rings with roasted garlic aioli & fresh lime.</span>
+            </div>
+            <div class="pkg-course-item" style="background: rgba(230, 204, 142, 0.35); border-color: rgba(166, 124, 46, 0.4);">
+              <span class="pkg-course-label" style="color: #7d5b18;">3. Main Course</span>
+              <span class="pkg-course-desc"><strong>Prime Beef Tenderloin (Lomito)</strong> in coffee crust OR White Wine Jumbo Prawns.</span>
+            </div>
+            <div class="pkg-course-item">
+              <span class="pkg-course-label">4. Dessert</span>
+              <span class="pkg-course-desc">Warm Molten Costa Rican Chocolate Lava Cake (70% organic cacao).</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="pkg-box">
+          <div class="pkg-header">
+            <div class="pkg-title">
+              <span>Option 3 · Pura Vida Family-Style BBQ Feast</span>
+              <span class="pkg-tag">For Families & Groups (6-25 Guests)</span>
+            </div>
+            <div class="pkg-price-badge">
+              $110 <small>USD / Adult</small>
+            </div>
+          </div>
+          <div class="pkg-courses three-col">
+            <div class="pkg-course-item">
+              <span class="pkg-course-label">1. Sunset Platter</span>
+              <span class="pkg-course-desc">Shared Appetizer Board: guacamole, fresh Pacific ceviche, crispy calamari & chips.</span>
+            </div>
+            <div class="pkg-course-item" style="background: rgba(230, 204, 142, 0.35); border-color: rgba(166, 124, 46, 0.4);">
+              <span class="pkg-course-label" style="color: #7d5b18;">2. Grand Mixed Grill</span>
+              <span class="pkg-course-desc"><strong>Surf & Turf Centerpiece:</strong> whole grilled Pacific catch, churrasco skewers, chicken & plantains.</span>
+            </div>
+            <div class="pkg-course-item">
+              <span class="pkg-course-label">3. Traditional Dessert</span>
+              <span class="pkg-course-desc">Costa Rican Tres Leches Cake infused with tropical passionfruit essence.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Morning Add-On -->
+        <div class="pkg-box" style="padding: 7px 14px; background: #faf8f5;">
+          <div class="pkg-header" style="margin-bottom: 3px; padding-bottom: 2px;">
+            <div class="pkg-title" style="font-size: 12.5px;">
+              <span>Morning Add-On · Tropical Villa Breakfast & Brunch</span>
+              <span class="pkg-tag" style="background: #e8f4ed; color: #143527;">Fresh & Healthy</span>
+            </div>
+            <div class="pkg-price-badge" style="font-size: 13.5px; padding: 1px 8px;">
+              $50 <small>USD / Adult</small>
+            </div>
+          </div>
+          <p style="font-size: 10px; color: var(--text-body); margin: 0; line-height: 1.4;">
+            Costa Rican gallo pinto, farm eggs to order, Turrialba artisan cheese, sweet caramelized plantains, crispy bacon, fluffy golden pancakes or brioche French toast, abundant seasonal tropical fruit platter, Costa Rican coffee & fresh natural juices.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Policy & Concierge Commission Box -->
+      <div class="pkg-policy-banner">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(197, 160, 89, 0.4); padding-bottom: 4px;">
+          <strong style="color: #dfb76c; text-transform: uppercase; letter-spacing: 0.1em; font-size: 10px;">
+            Villa Concierge & Host Information
+          </strong>
+          <span style="color: #ffffff; font-weight: 700; font-size: 9.5px;">
+            WhatsApp Desk: +506 6081-1676 • bookingschefmarcoscr@gmail.com
+          </span>
+        </div>
+        <div class="pkg-policy-grid">
+          <div class="pkg-policy-item">
+            <strong style="color: #dfb76c; display: block; font-size: 9px; text-transform: uppercase;">100% Turnkey Service</strong>
+            Morning shopping, live cooking, table service, and kitchen spotless sanitization.
+          </div>
+          <div class="pkg-policy-item">
+            <strong style="color: #dfb76c; display: block; font-size: 9px; text-transform: uppercase;">Children Pricing</strong>
+            Kids under 10 are 50% off ($55 - $70). Toddlers under 3 dine complimentary.
+          </div>
+          <div class="pkg-policy-item">
+            <strong style="color: #dfb76c; display: block; font-size: 9px; text-transform: uppercase;">Host Commission</strong>
+            10% to 15% direct commission paid to villa hosts & concierges on every booking.
+          </div>
+          <div class="pkg-policy-item">
+            <strong style="color: #dfb76c; display: block; font-size: 9px; text-transform: uppercase;">Party Size & Dietary</strong>
+            Minimum party 4 adults. Vegan, vegetarian, gluten-free & allergies accommodated.
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="page-footer">
+        <span>Chef Marcos Mena Viales</span>
+        <span>Page 02 · Villa Packages & Pricing</span>
+        <span>WhatsApp: +506 6081-1676</span>
+      </div>
     </div>
 
-    <!-- ================= PAGE 2: BREAKFAST COLLECTION ================= -->
+    <!-- ================= PAGE 3: BREAKFAST COLLECTION ================= -->
     <div class="menu-page">
       <div class="page-border"></div>
       <div class="page-border-inner"></div>
@@ -619,7 +907,7 @@
       <!-- Footer -->
       <div class="page-footer">
         <span>Chef Marcos Mena Viales</span>
-        <span>Page 02 · Breakfast Collection</span>
+        <span>Page 03 · Breakfast Collection</span>
         <span>WhatsApp: +506 6081-1676</span>
       </div>
     </div>
@@ -746,12 +1034,12 @@
       <!-- Footer -->
       <div class="page-footer">
         <span>Chef Marcos Mena Viales</span>
-        <span>Page 03 · Appetizers & Salads</span>
+        <span>Page 04 · Appetizers & Salads</span>
         <span>WhatsApp: +506 6081-1676</span>
       </div>
     </div>
 
-    <!-- ================= PAGE 4: SEAFOOD & CATCH OF THE DAY ================= -->
+    <!-- ================= PAGE 5: SEAFOOD & CATCH OF THE DAY ================= -->
     <div class="menu-page">
       <div class="page-border"></div>
       <div class="page-border-inner"></div>
@@ -879,12 +1167,12 @@
       <!-- Footer -->
       <div class="page-footer">
         <span>Chef Marcos Mena Viales</span>
-        <span>Page 04 · Seafood & Fresh Catch</span>
+        <span>Page 05 · Seafood & Fresh Catch</span>
         <span>WhatsApp: +506 6081-1676</span>
       </div>
     </div>
 
-    <!-- ================= PAGE 5: MEATS, DESSERTS & CHEF BIO ================= -->
+    <!-- ================= PAGE 6: MEATS, DESSERTS & CHEF BIO ================= -->
     <div class="menu-page">
       <div class="page-border"></div>
       <div class="page-border-inner"></div>
@@ -1009,7 +1297,7 @@
       <!-- Footer -->
       <div class="page-footer">
         <span>Chef Marcos Mena Viales</span>
-        <span>Page 05 · Prime Meats & Desserts</span>
+        <span>Page 06 · Prime Meats & Desserts</span>
         <span>WhatsApp: +506 6081-1676</span>
       </div>
     </div>
