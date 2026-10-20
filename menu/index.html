@@ -54,6 +54,44 @@
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" type="image/jpeg" href="assets/images/chef_marcos_avatar.jpg">
+
+  <!-- Suppress Netlify Injected Promo Badges & Drawers -->
+  <style>
+    #nl-badge-frame,
+    #nl-hud-frame,
+    iframe[id^="nl-"],
+    iframe[title*="Netlify"],
+    iframe[title*="Powered by Netlify"],
+    .nl-wrap,
+    .nl-badge,
+    .nl-card {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      clip-path: path("M0 0Z") !important;
+      width: 0 !important;
+      height: 0 !important;
+      position: absolute !important;
+      bottom: -9999px !important;
+      left: -9999px !important;
+      z-index: -99999 !important;
+    }
+  </style>
+  <script>
+    (function() {
+      const killNetlify = function() {
+        document.querySelectorAll('#nl-badge-frame, #nl-hud-frame, iframe[id^="nl-"], iframe[title*="Netlify"]').forEach(function(el) {
+          el.remove();
+        });
+      };
+      if (window.MutationObserver) {
+        new MutationObserver(killNetlify).observe(document.documentElement, { childList: true, subtree: true });
+      }
+      window.addEventListener('DOMContentLoaded', killNetlify);
+      window.addEventListener('load', killNetlify);
+    })();
+  </script>
 </head>
 <body class="bg-[#faf8f5] text-[#141418] font-sans antialiased selection:bg-gold-500 selection:text-white">
 

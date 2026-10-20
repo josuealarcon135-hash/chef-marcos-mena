@@ -59,7 +59,39 @@
       background-color: #925f14;
       transform: translateY(-1px);
     }
+
+    #nl-badge-frame,
+    #nl-hud-frame,
+    iframe[id^="nl-"],
+    iframe[title*="Netlify"],
+    iframe[title*="Powered by Netlify"],
+    .nl-wrap,
+    .nl-badge,
+    .nl-card {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      position: absolute !important;
+      z-index: -99999 !important;
+    }
   </style>
+  <script>
+    (function() {
+      const killNetlify = function() {
+        document.querySelectorAll('#nl-badge-frame, #nl-hud-frame, iframe[id^="nl-"], iframe[title*="Netlify"]').forEach(function(el) {
+          el.remove();
+        });
+      };
+      if (window.MutationObserver) {
+        new MutationObserver(killNetlify).observe(document.documentElement, { childList: true, subtree: true });
+      }
+      window.addEventListener('DOMContentLoaded', killNetlify);
+      window.addEventListener('load', killNetlify);
+    })();
+  </script>
 </head>
 <body class="selection:bg-amber-200 selection:text-amber-900">
 
