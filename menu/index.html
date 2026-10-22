@@ -203,8 +203,8 @@
       <!-- Action Buttons & Mobile Menu Toggle -->
       <div class="flex items-center space-x-3.5">
         <a href="pdf-menu.html" target="_blank" class="hidden sm:inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl border border-gold-600/40 text-gold-800 font-bold text-xs hover:bg-gold-50 transition-all shadow-sm">
-          <i data-lucide="printer" class="w-4 h-4 text-gold-600"></i>
-          <span>PDF Menu</span>
+          <i data-lucide="book-open" class="w-4 h-4 text-gold-600"></i>
+          <span>15-Page Menu Booklet</span>
         </a>
         <a href="https://wa.me/50660811676?text=Hello,%20I%20would%20like%20to%20inquire%20about%20private%20chef%20availability%20for%20our%20villa." target="_blank" class="inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-md transition-all">
           <i data-lucide="message-circle" class="w-4 h-4"></i>
@@ -229,7 +229,7 @@
           <i data-lucide="chevron-right" class="w-4 h-4 text-gold-600"></i>
         </a>
         <a href="#menu-section" onclick="toggleMobileNav()" class="hover:text-gold-600 py-1 flex items-center justify-between">
-          <span>Gastronomic Menu (32 Dishes)</span>
+          <span>Gastronomic Menu & 15-Page Booklet</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-gold-600"></i>
         </a>
         <a href="#chef-section" onclick="toggleMobileNav()" class="hover:text-gold-600 py-1 flex items-center justify-between">
@@ -253,8 +253,9 @@
           <i data-lucide="chevron-right" class="w-4 h-4 text-gold-600"></i>
         </a>
         <div class="pt-3 border-t border-gray-100 flex flex-col gap-2">
-          <a href="pdf-menu.html" target="_blank" class="w-full text-center py-2.5 rounded-lg border border-gold-600/40 text-gold-800 font-bold text-xs bg-gold-50/50">
-            Download PDF Menu
+          <a href="pdf-menu.html" target="_blank" class="w-full text-center py-2.5 rounded-lg border border-gold-600/40 text-gold-800 font-bold text-xs bg-gold-50/50 flex items-center justify-center space-x-2">
+            <i data-lucide="book-open" class="w-4 h-4 text-gold-600"></i>
+            <span>Explore 15-Page Editorial Menu</span>
           </a>
         </div>
       </div>
@@ -978,20 +979,48 @@
     </div>
   </section>
 
-  <!-- ================= SECTION: MENU COMPLETO (32 PLATILLOS) ================= -->
+  <!-- ================= SECTION: MENU COMPLETO & EXPERIENCIAS DE VILLA ================= -->
   <section id="menu-section" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
     
     <!-- Section Title -->
     <div class="text-center max-w-3xl mx-auto mb-10">
       <span class="text-xs sm:text-sm font-extrabold text-gold-700 uppercase tracking-widest bg-gold-50 border border-gold-200 px-4 py-1.5 rounded-full inline-block mb-3">
-        Full Culinary Menu
+        Full Culinary Menu & Villa Nights
       </span>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0d0d12] tracking-tight mb-4">
-        Gastronomic Collection (32 Dishes)
+        Gastronomic Collection & Thematic Experiences
       </h2>
       <p class="text-base sm:text-lg text-[#4a4a58]">
-        Explore our chef creations prepared with the finest fresh ingredients in Costa Rica.
+        Explore our chef creations, poolside feasts, interactive thematic dining nights, and dedicated family menus.
       </p>
+    </div>
+
+    <!-- 15-Page Editorial Magazine Showcase Banner -->
+    <div class="max-w-4xl mx-auto mb-8 p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-[#211e15] via-[#2c281c] to-[#3a3525] text-white border-2 border-gold-500/70 flex flex-col sm:flex-row items-center justify-between gap-5 shadow-xl">
+      <div class="flex items-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-gold-500/20 border border-gold-400/50 text-gold-300 flex items-center justify-center shrink-0 shadow-inner">
+          <i data-lucide="book-open" class="w-7 h-7"></i>
+        </div>
+        <div>
+          <span class="text-[11px] font-extrabold uppercase tracking-widest text-gold-400 bg-gold-400/10 px-2.5 py-0.5 rounded border border-gold-400/30 inline-block mb-1">
+            New 15-Page Luxury Editorial Booklet
+          </span>
+          <h3 class="text-lg sm:text-xl font-bold tracking-tight text-white">
+            Explore Chef Marcos' Complete 15-Page Magazine Menu
+          </h3>
+          <p class="text-xs sm:text-sm text-gold-100/80 mt-0.5">
+            Breakfast, Lunch, Dinner, 6 Thematic Nights (Sushi, Pizza, BBQ, Tacos, Pasta, Fiesta Tica), Kids & Villa Policies.
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2.5 shrink-0 w-full sm:w-auto">
+        <a href="pdf-menu.html" target="_blank" class="flex-1 sm:flex-initial px-5 py-3 rounded-xl bg-gradient-to-r from-gold-500 to-gold-400 hover:from-gold-400 hover:to-gold-300 text-stone-900 font-extrabold text-xs uppercase tracking-wider text-center transition-all shadow-md">
+          Read Booklet
+        </a>
+        <a href="Chef_Marcos_Mena_Menu.pdf" download class="px-4 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-gold-400/40 text-white font-bold text-xs uppercase tracking-wider transition-all" title="Download PDF Menu">
+          <i data-lucide="download" class="w-4 h-4"></i>
+        </a>
+      </div>
     </div>
 
     <!-- Side Dishes Notice Banner (Destacado por solicitud del chef) -->
@@ -1014,19 +1043,21 @@
         <input 
           type="text" 
           id="menu-search" 
-          placeholder="Search dishes (e.g. Lobster, Tuna, Octopus, Steak, Ceviche, Breakfast)..."
+          placeholder="Search dishes (e.g. Sushi, Pizza, Tacos, BBQ, Lobster, Tuna, Pasta, Kids)..."
           class="w-full pl-12 pr-4 py-3.5 rounded-xl bg-white border border-gold-600/35 text-base text-[#141418] placeholder-[#7d7d8e] focus:outline-none focus:border-gold-600 shadow-sm transition-all"
         >
       </div>
 
       <!-- Category Filter Tabs -->
       <div class="flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-none text-xs sm:text-sm font-bold">
-        <button onclick="filterCategory('all')" class="tab-btn active px-4 py-2.5 rounded-full" data-cat="all">All (<span id="count-all">32</span>)</button>
+        <button onclick="filterCategory('all')" class="tab-btn active px-4 py-2.5 rounded-full" data-cat="all">All (<span id="count-all">46</span>)</button>
         <button onclick="filterCategory('breakfast')" class="tab-btn px-4 py-2.5 rounded-full" data-cat="breakfast">Breakfast</button>
         <button onclick="filterCategory('appetizers')" class="tab-btn px-4 py-2.5 rounded-full" data-cat="appetizers">Appetizers</button>
         <button onclick="filterCategory('salads')" class="tab-btn px-4 py-2.5 rounded-full" data-cat="salads">Salads</button>
         <button onclick="filterCategory('seafood')" class="tab-btn px-4 py-2.5 rounded-full" data-cat="seafood">Seafood & Fresh Catch</button>
         <button onclick="filterCategory('meats')" class="tab-btn px-4 py-2.5 rounded-full" data-cat="meats">Prime Meats</button>
+        <button onclick="filterCategory('thematic')" class="tab-btn px-4 py-2.5 rounded-full" data-cat="thematic">Thematic Nights</button>
+        <button onclick="filterCategory('kids')" class="tab-btn px-4 py-2.5 rounded-full" data-cat="kids">Kids Menu</button>
         <button onclick="filterCategory('desserts')" class="tab-btn px-4 py-2.5 rounded-full" data-cat="desserts">Desserts</button>
       </div>
     </div>
@@ -1715,11 +1746,11 @@
           <ul class="space-y-2.5 text-xs sm:text-sm font-semibold text-[#444455]">
             <li><a href="#servicios" class="hover:text-gold-700 transition-colors">Exclusive Services</a></li>
             <li><a href="#paquetes" class="hover:text-gold-700 transition-colors">Popular Packages ($110 - $140)</a></li>
-            <li><a href="#menu-section" class="hover:text-gold-700 transition-colors">Gastronomic Menu (32 Dishes)</a></li>
+            <li><a href="#menu-section" class="hover:text-gold-700 transition-colors">Gastronomic Menu & Thematic Nights</a></li>
             <li><a href="#chef-section" class="hover:text-gold-700 transition-colors">About Chef Marcos</a></li>
             <li><a href="#gallery-section" class="hover:text-gold-700 transition-colors">Villa Moments Gallery</a></li>
             <li><a href="#cotizador" class="hover:text-gold-700 transition-colors">Instant Calculator</a></li>
-            <li><a href="pdf-menu.html" target="_blank" class="text-gold-800 font-bold hover:underline">Download PDF Menu</a></li>
+            <li><a href="pdf-menu.html" target="_blank" class="text-gold-800 font-bold hover:underline">15-Page Editorial Menu (PDF)</a></li>
           </ul>
         </div>
 
@@ -1840,6 +1871,26 @@
         tags: ['Zesty & Savory', 'Latin Special'],
         image: 'assets/images/luxury_breakfast_spread.jpg',
         featured: false
+      },
+      {
+        id: 'bf-8',
+        category: 'breakfast',
+        categoryName: 'Breakfast',
+        title: 'Eggs Benedict Signature',
+        description: 'Soft-poached organic eggs on toasted artisanal brioche with Canadian bacon or smoked Pacific salmon, finished with rich house-whisked Meyer lemon hollandaise sauce.',
+        tags: ['Gourmet Classic', 'Guest Favorite'],
+        image: 'assets/images/scrambled_farm_eggs.jpg',
+        featured: true
+      },
+      {
+        id: 'bf-9',
+        category: 'breakfast',
+        categoryName: 'Breakfast',
+        title: 'Avocado & Smoked Salmon Toast',
+        description: 'Rustic sourdough bread toasted with extra virgin olive oil, smashed Haas avocado, delicate smoked salmon ribbons, microgreens, capers, and everything seasoning.',
+        tags: ['Healthy Luxury', 'Artisanal Bread'],
+        image: 'assets/images/french_toast_detail.jpg',
+        featured: true
       },
 
       // APPETIZERS & STARTERS
@@ -2099,6 +2150,130 @@
         description: 'Tangy fresh Costa Rican lime curd filling inside a golden buttery graham cracker crust, topped with fresh whipped cream.',
         tags: ['Zesty & Crisp', 'Tropical Sweet'],
         image: 'assets/images/tropical_fruit_bowl.jpg',
+        featured: false
+      },
+      {
+        id: 'des-5',
+        category: 'desserts',
+        categoryName: 'Desserts',
+        title: 'Crepe Suzette Flambée Grand Marnier',
+        description: 'Delicate French crepes in caramelized orange sugar syrup, dramatically flambéed live table-side with Grand Marnier liqueur, served with artisanal vanilla gelato.',
+        tags: ['Live Flambé', 'Luxury Signature'],
+        image: 'assets/images/crepe_suzette_flambe.jpg',
+        featured: true
+      },
+      {
+        id: 'des-6',
+        category: 'desserts',
+        categoryName: 'Desserts',
+        title: 'Passion Fruit (Maracuyá) Villa Cheesecake',
+        description: 'Silky New York style cheesecake on a honey graham crust, topped with tart-sweet fresh passion fruit coulis and fresh mint leaves.',
+        tags: ['Tropical Tart', 'Silky Smooth'],
+        image: 'assets/images/tropical_fruit_bowl.jpg',
+        featured: true
+      },
+
+      // THEMATIC VILLA EXPERIENCES
+      {
+        id: 'thematic-1',
+        category: 'thematic',
+        categoryName: 'Thematic Nights',
+        title: 'Artisanal Pasta Night Experience',
+        description: 'Complete Italian night in your villa: complimentary bottle of wine, 2 Italian starters, choice of 3 freshly kneaded handmade pastas (Fettuccine Alfredo with shrimp, Carbonara, Rigatoni al Pesto, Lasagna Bolognese), and Tiramisù.',
+        tags: ['Handmade Pasta', 'Wine Included', 'Interactive Experience'],
+        image: 'assets/images/artisanal_pasta_hero.jpg',
+        featured: true
+      },
+      {
+        id: 'thematic-2',
+        category: 'thematic',
+        categoryName: 'Thematic Nights',
+        title: 'Wood-Fired Style Artisan Pizza Night',
+        description: 'High-heat crispy crust pizza party: Italian antipasto board, crisp garden salad, unlimited hand-stretched artisanal pizzas (Margherita, Quattro Formaggi, Prosciutto e Rucola, Diavola, Tica), and warm Nutella strawberry dessert pizza.',
+        tags: ['Artisan Pizza', '48hr Fermented Dough', 'Family Favorite'],
+        image: 'assets/images/wood_fired_pizza_oven.jpg',
+        featured: true
+      },
+      {
+        id: 'thematic-3',
+        category: 'thematic',
+        categoryName: 'Thematic Nights',
+        title: 'Sunset Poolside BBQ Grill Night',
+        description: 'Open-flame BBQ feast grilled live by Chef Marcos: Certified Angus ribeye steaks, chimichurri skirt steak, glazed baby back ribs, jumbo garlic shrimp skewers, grilled sweet corn, loaded potatoes, and grilled cinnamon pineapple.',
+        tags: ['Poolside BBQ', 'Prime Angus Cuts', 'Open Flame'],
+        image: 'assets/images/bbq_grill_hero.jpg',
+        featured: true
+      },
+      {
+        id: 'thematic-4',
+        category: 'thematic',
+        categoryName: 'Thematic Nights',
+        title: 'Interactive Taco & Fajita Fiesta',
+        description: 'Vibrant Mexican-Costa Rican feast: Warm fresh corn tortillas, table-side fresh guacamole, trio of homemade salsas, crispy snapper tacos, carne asada fajitas, carnitas, jumbo shrimp, and hot cinnamon churros with dulce de leche.',
+        tags: ['Table-Side Guacamole', 'Fresh Tortillas', 'Fiesta Buffet'],
+        image: 'assets/images/taco_bar_hero.jpg',
+        featured: true
+      },
+      {
+        id: 'thematic-5',
+        category: 'thematic',
+        categoryName: 'Thematic Nights',
+        title: 'Fresh Pacific Sushi & Raw Bar Night',
+        description: 'Artisanal sushi bar using marina-fresh catch: Edamame, miso soup, nigiri & sashimi tasting, and 12 specialty rolls including Manuel Antonio Roll, Pacific Dragon, Volcano Crab, Tropical Salmon, and seared Tuna Tataki.',
+        tags: ['Marina Fresh Catch', 'Raw Bar', 'Artisanal Sushi'],
+        image: 'assets/images/sushi_platter_hero.jpg',
+        featured: true
+      },
+      {
+        id: 'thematic-6',
+        category: 'thematic',
+        categoryName: 'Thematic Nights',
+        title: 'Costa Rican "Fiesta Tica" Heritage Banquet',
+        description: 'Authentic Costa Rican celebration: Traditional iced "Agua de Sapo", fresh tortillas palmeadas a mano, coastal seafood soup, Casado Campesino de Gala with steak, pork belly or snapper, gallo pinto, plantains, and warm arroz con leche.',
+        tags: ['Cultural Heritage', 'Handmade Tortillas', 'Pura Vida Banquet'],
+        image: 'assets/images/costa_rican_tamales_hero.jpg',
+        featured: true
+      },
+
+      // KIDS MENU (LITTLE CHEFS)
+      {
+        id: 'kids-1',
+        category: 'kids',
+        categoryName: 'Kids Menu',
+        title: 'Mini Brioche Angus Beef Sliders',
+        description: 'Two mini 100% Angus beef patties with melted cheddar cheese on soft toasted brioche buns, served with crispy golden french fries and ketchup.',
+        tags: ['Kids Favorite', 'Angus Beef'],
+        image: 'assets/images/kids_sliders_hero.jpg',
+        featured: true
+      },
+      {
+        id: 'kids-2',
+        category: 'kids',
+        categoryName: 'Kids Menu',
+        title: 'Creamy Four-Cheese Mac & Cheese',
+        description: 'Elbow macaroni smothered in a velvety homemade cheddar and mozzarella cheese sauce, topped with toasted butter breadcrumbs.',
+        tags: ['Cheesy Classic', 'Kids Comfort'],
+        image: 'assets/images/kids_sliders_hero.jpg',
+        featured: false
+      },
+      {
+        id: 'kids-3',
+        category: 'kids',
+        categoryName: 'Kids Menu',
+        title: 'Crispy Fish or Chicken Nuggets',
+        description: 'Handmade bite-sized nuggets of fresh local fish or chicken breast coated in crispy panko breadcrumbs, served with honey-mustard and fries.',
+        tags: ['Handmade Crispy', 'Kids Favorite'],
+        image: 'assets/images/chicken_wings_platter.jpg',
+        featured: false
+      },
+      {
+        id: 'kids-4',
+        category: 'kids',
+        categoryName: 'Kids Menu',
+        title: 'Cheesy Chicken Quesadillas with Guacamole',
+        description: 'Warm flour tortillas folded with grilled chicken breast and melted mozzarella cheese, served with fresh guacamole and sour cream.',
+        tags: ['Mild & Cheesy', 'Kids Favorite'],
+        image: 'assets/images/taco_fiesta_plate.jpg',
         featured: false
       }
     ];
