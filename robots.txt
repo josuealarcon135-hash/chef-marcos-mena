@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chef-marcos-mena.netlify.app/sitemap.xml
