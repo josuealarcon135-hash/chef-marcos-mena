@@ -9,7 +9,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     /* ==========================================================================
@@ -25,13 +25,15 @@
     :root {
       --gold-primary: #a39967;
       --gold-dark: #82784b;
-      --gold-light: #f7f4ea;
+      --gold-accent: #b8a576;
+      --gold-light: #faf8f2;
       --gold-hairline: rgba(163, 153, 103, 0.75);
       --bg-canvas: #ebe7df;
       --bg-page: #ffffff;
       --text-headings: #a39967;
-      --text-body: #333333;
-      --text-muted: #666666;
+      --text-dark: #222222;
+      --text-body: #2c2c2c;
+      --text-muted: #555555;
     }
 
     * {
@@ -44,9 +46,9 @@
 
     body {
       background-color: var(--bg-canvas);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       color: var(--text-body);
-      line-height: 1.4;
+      line-height: 1.45;
       padding: 0;
       margin: 0;
     }
@@ -180,7 +182,7 @@
       gap: 35px;
     }
 
-    /* Individual Letter Page */
+    /* Individual Letter Page (8.5in x 11in) */
     .menu-page {
       width: 8.5in;
       height: 11in;
@@ -189,7 +191,7 @@
       background: #ffffff;
       box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
       box-sizing: border-box;
-      padding: 0.32in;
+      padding: 0.30in;
       position: relative;
       overflow: hidden;
       display: flex;
@@ -222,8 +224,8 @@
     /* Category Hero Banner */
     .category-hero {
       width: 100%;
-      height: 2.22in;
-      min-height: 2.22in;
+      height: 2.15in;
+      min-height: 2.15in;
       position: relative;
       overflow: hidden;
       background-color: #1a1a1a;
@@ -268,7 +270,7 @@
 
     .category-subtitle {
       font-family: 'Montserrat', sans-serif;
-      font-size: 10.5px;
+      font-size: 11px;
       font-weight: 600;
       letter-spacing: 0.14em;
       color: #f7eedb;
@@ -280,29 +282,28 @@
     /* Content Area */
     .page-content {
       flex: 1;
-      padding: 12px 18px 6px 18px;
+      padding: 14px 20px 8px 20px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       overflow: hidden;
     }
 
-    /* 2-Column Grid */
+    /* 2-Column Grid for Standard Dish Pages */
     .dish-grid-2col {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      column-gap: 20px;
-      row-gap: 9px;
-      margin-bottom: 4px;
+      column-gap: 24px;
+      row-gap: 14px;
     }
 
     .dish-col {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 13px;
     }
 
-    /* Dish Typography */
+    /* Dish Typography - Increased for Legibility & Filling Blank Space */
     .dish-item {
       display: flex;
       flex-direction: column;
@@ -311,19 +312,19 @@
 
     .dish-name {
       font-family: 'Montserrat', sans-serif;
-      font-size: 11.2px;
+      font-size: 14.5px;
       font-weight: 700;
-      letter-spacing: 0.07em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--gold-primary);
-      margin-bottom: 2px;
-      line-height: 1.22;
+      margin-bottom: 3px;
+      line-height: 1.24;
     }
 
     .dish-desc {
-      font-size: 9px;
-      line-height: 1.35;
-      color: #383838;
+      font-size: 12px;
+      line-height: 1.46;
+      color: var(--text-dark);
       font-weight: 400;
       letter-spacing: 0.01em;
     }
@@ -333,13 +334,13 @@
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 6px;
-      margin: 6px 0;
+      margin: 8px 0;
       width: 100%;
     }
 
     .thumb-strip-5 img {
       width: 100%;
-      aspect-ratio: 1 / 1;
+      height: 0.65in;
       object-fit: cover;
       border: 1px solid var(--gold-hairline);
       border-radius: 2px;
@@ -351,24 +352,56 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
-      margin-top: 6px;
-      margin-bottom: 4px;
+      margin: 8px 0 6px 0;
       width: 100%;
     }
 
     .dinner-showcase-2photo img {
       width: 100%;
-      height: 1.35in;
+      height: 1.45in;
       object-fit: cover;
       border: 1px solid var(--gold-hairline);
+      border-radius: 2px;
       display: block;
     }
 
-    /* Specials Bottom Banner */
+    /* Specials (Page 6) Centered Single-Column Styling */
+    .specials-content-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 10px 15px 0 15px;
+      flex: 1;
+      justify-content: space-around;
+    }
+
+    .special-centered-item {
+      max-width: 86%;
+      margin: 0 auto;
+    }
+
+    .special-centered-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .special-centered-desc {
+      font-size: 12.8px;
+      line-height: 1.48;
+      color: var(--text-dark);
+      font-weight: 400;
+    }
+
     .specials-bottom-banner {
       width: 100%;
-      height: 1.45in;
-      margin-top: 6px;
+      height: 1.75in;
+      margin-top: 8px;
       border-top: 1px solid var(--gold-hairline);
       overflow: hidden;
     }
@@ -385,13 +418,13 @@
       background-color: var(--gold-primary);
       color: #ffffff;
       text-align: center;
-      padding: 5px 12px;
+      padding: 7px 16px;
       border-radius: 4px;
-      font-size: 9px;
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
       margin-top: auto;
-      line-height: 1.3;
+      line-height: 1.35;
     }
 
     /* Symmetrical Footer */
@@ -412,7 +445,7 @@
 
     .footer-text {
       font-family: 'Montserrat', sans-serif;
-      font-size: 8px;
+      font-size: 9px;
       font-weight: 700;
       letter-spacing: 0.16em;
       color: var(--gold-primary);
@@ -422,7 +455,7 @@
 
     .footer-page-num {
       font-family: 'Montserrat', sans-serif;
-      font-size: 8px;
+      font-size: 9px;
       font-weight: 700;
       letter-spacing: 0.12em;
       color: var(--gold-dark);
@@ -516,9 +549,9 @@
     .thematic-grid-6 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 14px;
       flex: 1;
-      margin: 10px 0 6px 0;
+      margin: 14px 0 10px 0;
     }
 
     .thematic-card {
@@ -557,7 +590,7 @@
 
     .thematic-card-title {
       font-family: 'Montserrat', sans-serif;
-      font-size: 18px;
+      font-size: 19px;
       font-weight: 800;
       letter-spacing: 0.18em;
       color: #ffffff;
@@ -565,7 +598,7 @@
       text-shadow: 0 2px 6px rgba(0,0,0,0.7);
     }
 
-    /* PAGE 7: SPLIT KIDS & DESSERTS */
+    /* PAGE 7: EXACT CLONE OF KIDS & DESSERTS */
     .split-section-half {
       flex: 1;
       display: flex;
@@ -575,7 +608,7 @@
 
     .split-hero-small {
       width: 100%;
-      height: 1.1in;
+      height: 1.15in;
       position: relative;
       overflow: hidden;
     }
@@ -587,120 +620,209 @@
       display: block;
     }
 
-    .split-divider-line {
-      width: 100%;
-      height: 1px;
-      background: var(--gold-hairline);
-      margin: 6px 0;
+    .kids-dessert-badge {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.55) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
     }
 
-    .dessert-gold-box {
-      border: 1px solid var(--gold-hairline);
-      padding: 9px 12px;
-      background-color: #faf9f6;
+    .kids-table-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 10px;
+      border-bottom: 1px solid rgba(163, 153, 103, 0.35);
+    }
+
+    .kids-item-left {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+    }
+
+    .kids-item-right {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      text-align: right;
+    }
+
+    /* Solid Gold Desserts Box */
+    .dessert-solid-gold-box {
+      background-color: var(--gold-primary);
+      border: 2px solid #ffffff;
+      outline: 1.25px solid var(--gold-primary);
+      padding: 12px 18px;
       border-radius: 4px;
-      margin-top: 5px;
+      margin: 10px 16px;
+      color: #ffffff;
     }
 
-    /* THEMATIC DETAIL PAGES */
+    .dessert-table-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .dessert-item-left {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .dessert-item-right {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #ffffff;
+      text-transform: uppercase;
+      text-align: right;
+    }
+
+    .dessert-item-center {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #ffffff;
+      text-transform: uppercase;
+      text-align: center;
+      padding-top: 7px;
+    }
+
+    /* THEMATIC DETAIL PAGES (Pages 9, 10, 11, 12, 13, 14) */
     .thematic-intro-text {
       text-align: center;
-      font-size: 9.3px;
-      line-height: 1.4;
-      color: #444444;
-      max-width: 92%;
-      margin: 4px auto 8px auto;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #333333;
+      max-width: 90%;
+      margin: 4px auto 14px auto;
     }
 
-    .thematic-two-split {
-      display: grid;
-      grid-template-columns: 1.85in 1fr;
-      gap: 16px;
-      margin-top: 6px;
-      align-items: start;
-    }
-
-    .thematic-side-photo {
-      width: 100%;
-      height: 2.5in;
-      object-fit: cover;
-      border: 1px solid var(--gold-hairline);
-      border-radius: 2px;
-      display: block;
-    }
-
-    .thematic-two-split-right {
-      display: grid;
-      grid-template-columns: 1fr 1.85in;
-      gap: 16px;
-      margin-top: 6px;
-      align-items: start;
-    }
-
-    .includes-gold-box {
-      border: 1px solid var(--gold-hairline);
-      background-color: #faf9f6;
-      padding: 8px 12px;
-      border-radius: 4px;
-      margin-bottom: 6px;
-    }
-
-    .includes-box-title {
+    .thematic-section-heading {
       font-family: 'Montserrat', sans-serif;
-      font-size: 10.5px;
+      font-size: 15px;
       font-weight: 800;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--gold-primary);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     .bullet-list-gold {
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin: 0 0 14px 0;
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 5px;
     }
 
     .bullet-list-gold li {
-      font-size: 8.8px;
-      color: #333333;
+      font-size: 12.5px;
+      color: #2c2c2c;
       display: flex;
       align-items: flex-start;
-      gap: 5px;
-      line-height: 1.32;
+      gap: 6px;
+      line-height: 1.45;
     }
 
     .bullet-list-gold li::before {
       content: "•";
       color: var(--gold-primary);
-      font-size: 11px;
+      font-size: 14px;
       line-height: 1;
-      margin-top: -1px;
+      margin-top: 1px;
     }
 
-    /* FAQ Q&A Styling */
+    .thematic-right-dish-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: right;
+    }
+
+    .thematic-right-dish-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .thematic-right-dish-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #1a1a1a;
+      letter-spacing: 0.04em;
+    }
+
+    .thematic-right-dish-ingredients {
+      font-size: 12px;
+      color: #444444;
+      line-height: 1.4;
+    }
+
+    /* Round/Styled Hero Photo inside Thematic Pages */
+    .thematic-round-photo {
+      width: 2.2in;
+      height: 2.2in;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--gold-hairline);
+      display: block;
+      margin: 10px auto 0 auto;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
+    /* FAQ Q&A Styling (Page 15) */
+    .faq-title-header {
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      margin: 6px 0 18px 0;
+    }
+
     .faq-qa-item {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     .faq-question {
       font-family: 'Montserrat', sans-serif;
-      font-size: 10px;
+      font-size: 14px;
       font-weight: 700;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--gold-primary);
-      margin-bottom: 2px;
-      line-height: 1.25;
+      margin-bottom: 6px;
+      line-height: 1.3;
     }
 
     .faq-answer {
-      font-size: 8.8px;
-      line-height: 1.35;
-      color: #3a3a3a;
+      font-size: 12.8px;
+      line-height: 1.52;
+      color: #2c2c2c;
     }
 
     /* Costa Rican Sarchí Oxcart Decor (Page 14) */
@@ -709,7 +831,7 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .flag-costa-rica-badge {
@@ -747,7 +869,7 @@
         height: 11in !important;
         max-height: 11in !important;
         margin: 0 !important;
-        padding: 0.32in !important;
+        padding: 0.30in !important;
         box-shadow: none !important;
         border-radius: 0 !important;
         overflow: hidden !important;
@@ -862,7 +984,7 @@
               <div class="dish-col">
                 <div class="dish-item">
                   <h3 class="dish-name">TRADITIONAL TICO BREAKFAST</h3>
-                  <p class="dish-desc">Farm-fresh eggs cooked to order, authentic homemade gallo pinto, golden plantains, grilled Turrialba artisan cheese, sour cream, and handmade warm corn tortillas.</p>
+                  <p class="dish-desc">Farm-fresh eggs to order, homemade gallo pinto, golden ripe plantains, grilled Turrialba artisan cheese, farm natilla, and warm pressed corn tortillas.</p>
                 </div>
                 <div class="dish-item">
                   <h3 class="dish-name">EGGS BENEDICT SIGNATURE</h3>
@@ -870,11 +992,11 @@
                 </div>
                 <div class="dish-item">
                   <h3 class="dish-name">FLUFFY BUTTERMILK PANCAKES</h3>
-                  <p class="dish-desc">Golden stack topped with fresh strawberries, blueberries, whipped cream, butter, and 100% pure Canadian maple syrup or caramelized spiced bananas.</p>
+                  <p class="dish-desc">Golden stack crowned with fresh strawberries, blueberries, whipped cream, butter, and 100% pure Canadian maple syrup or caramelized spiced bananas.</p>
                 </div>
                 <div class="dish-item">
                   <h3 class="dish-name">BRIOCHE FRENCH TOAST</h3>
-                  <p class="dish-desc">Thick slices of artisan brioche soaked in cinnamon vanilla custard, griddled golden, finished with powdered sugar, toasted almonds, and warm berry compote.</p>
+                  <p class="dish-desc">Thick artisan brioche slices soaked in cinnamon vanilla custard, griddled golden, finished with powdered sugar, toasted almonds, and warm berry compote.</p>
                 </div>
                 <div class="dish-item">
                   <h3 class="dish-name">AVOCADO & SMOKED SALMON TOAST</h3>
@@ -884,7 +1006,7 @@
               <div class="dish-col">
                 <div class="dish-item">
                   <h3 class="dish-name">FARM-FRESH OMELETTE CREATION</h3>
-                  <p class="dish-desc">Three-egg fluffy omelette folded with your choice of bell peppers, sweet onions, sautéed mushrooms, baby spinach, cheddar, ham, or crisp smoked bacon.</p>
+                  <p class="dish-desc">Three-egg fluffy omelette folded with sweet peppers, onions, sautéed mushrooms, baby spinach, cheddar, ham, or crisp smoked bacon.</p>
                 </div>
                 <div class="dish-item">
                   <h3 class="dish-name">CHEF'S BREAKFAST BURRITO</h3>
@@ -1131,8 +1253,8 @@
             </div>
           </div>
           <div class="page-content">
-            <div class="dish-grid-2col">
-              <div class="dish-col">
+            <div class="dish-grid-2col" style="row-gap: 16px;">
+              <div class="dish-col" style="gap: 15px;">
                 <div class="dish-item">
                   <h3 class="dish-name">GRILLED JUMBO LOBSTER TAILS</h3>
                   <p class="dish-desc">Wild Pacific rock lobster tails basted in garlic-herb butter on open fire, paired with creamy mashed potatoes, grilled asparagus, and lemon beurre blanc.</p>
@@ -1142,7 +1264,7 @@
                   <p class="dish-desc">Tender beef tenderloin pan-seared to perfection, red wine rosemary reduction, roasted garlic potato purée, and butter-glazed baby carrots.</p>
                 </div>
                 <div class="dish-item">
-                  <h3 class="dish-name">PACIFIC MAHI-MAHI EN SALSA DE MARACUYÁ</h3>
+                  <h3 class="dish-name">PACIFIC MAHI-MAHI EN MARACUYÁ</h3>
                   <p class="dish-desc">Pan-seared catch of the day coated in a tropical passion fruit and white wine butter sauce, served alongside coconut jasmine rice and sautéed vegetables.</p>
                 </div>
                 <div class="dish-item">
@@ -1150,7 +1272,7 @@
                   <p class="dish-desc">The ultimate villa indulgence: Center-cut beef tenderloin topped with jumbo garlic prawns, accompanied by truffle potato mash and grilled asparagus spears.</p>
                 </div>
               </div>
-              <div class="dish-col">
+              <div class="dish-col" style="gap: 15px;">
                 <div class="dish-item">
                   <h3 class="dish-name">CARIBBEAN COCONUT CURRY CHICKEN</h3>
                   <p class="dish-desc">Tender chicken breast simmered in fragrant yellow curry, coconut milk, ginger, lemongrass, sweet peppers, with coconut rice and fried plantains.</p>
@@ -1210,35 +1332,36 @@
               <p class="category-subtitle">GRANDES ESPECIALES · SIGNATURE POOLSIDE FEASTS</p>
             </div>
           </div>
-          <div class="page-content">
-            <div class="dish-grid-2col">
-              <div class="dish-col">
-                <div class="dish-item">
-                  <h3 class="dish-name">GRAND MARISCADA MANUEL ANTONIO</h3>
-                  <p class="dish-desc">The ocean's finest bounty served family-style: Whole lobster tails, colossal tiger prawns, tender calamari rings, fresh mussels, and seared mahi-mahi grilled over flames with garlic butter and fresh herbs.</p>
-                </div>
-                <div class="dish-item">
-                  <h3 class="dish-name">PARGO ENTERO EN HOJA DE PLÁTANO</h3>
-                  <p class="dish-desc">Fresh line-caught Pacific red snapper marinated with ginger, lemongrass, sweet peppers, and wrapped in fragrant banana leaves, slowly roasted over charcoal embers to retain delicate juices.</p>
-                </div>
-                <div class="dish-item">
-                  <h3 class="dish-name">ARTISANAL SPANISH PAELLA DE LA CASA</h3>
-                  <p class="dish-desc">Authentic Valencian paella pan cooked live in your villa with saffron-infused Calasparra rice, mussels, jumbo shrimp, calamari, chicken, and Spanish chorizo, finished with lemon crowns.</p>
-                </div>
+          <div class="page-content" style="padding-bottom: 4px;">
+            <div class="specials-content-container">
+              <div class="special-centered-item">
+                <h3 class="special-centered-name">COSTA RICAN CASADO DE GALA</h3>
+                <p class="special-centered-desc">Served with your favorite protein: prime ribeye steak, chicken, pork, or catch of the day. Accompanied by white rice, black beans, tortillas, ripe plantain, heart of palm picadillo, and fresh garden salad.</p>
               </div>
-              <div class="dish-col">
-                <div class="dish-item">
-                  <h3 class="dish-name">SUNSET POOLSIDE BBQ EXTRAVAGANZA</h3>
-                  <p class="dish-desc">Chef Marcos mans the villa grill with Certified Angus ribeye steaks, chimichurri skirt steaks, caramelized pork ribs, glazed chicken drumsticks, artisanal chorizos, and grilled sweet corn.</p>
-                </div>
-                <div class="dish-item">
-                  <h3 class="dish-name">CASADO DE GALA TRADICIONAL</h3>
-                  <p class="dish-desc">Elevated gourmet presentation of Costa Rica's iconic feast: Tender ribeye cut, seasoned chicken or crispy snapper with gallo pinto, caramelized plantains, fresh salad, avocado, and handmade tortillas.</p>
-                </div>
-                <div class="dish-item">
-                  <h3 class="dish-name">FLAMBÉED SEAFOOD SARTÉN AL COGNAC</h3>
-                  <p class="dish-desc">Colossal prawns and lobster chunks sautéed table-side with shallots and garlic, dramatically flambéed with fine French cognac and finished with rich heavy cream and fresh tarragon.</p>
-                </div>
+
+              <div class="special-centered-item">
+                <h3 class="special-centered-name">GRAND MARISCADA MANUEL ANTONIO</h3>
+                <p class="special-centered-desc">Ocean mix of rock lobster tails, colossal tiger prawns, tender calamari rings, fresh mussels, and seared mahi-mahi cooked with butter, garlic, and white wine sauce, served with coconut rice and garlic bread.</p>
+              </div>
+
+              <div class="special-centered-item">
+                <h3 class="special-centered-name">GRILLED BY THE POOL (PREMIUM MEATS)</h3>
+                <p class="special-centered-desc">Certified Angus ribeye steak, artisanal chorizo, Caribbean glazed chicken, homemade corn tortillas, charred sweet corn, grilled seasonal vegetables, chimichurri, guacamole, and crispy corn chips.</p>
+              </div>
+
+              <div class="special-centered-item">
+                <h3 class="special-centered-name">GRILLED BY THE POOL (FRESH SEAFOOD)</h3>
+                <p class="special-centered-desc">Pacific lobster tails, jumbo prawns, fresh mahi-mahi skewers, tender squid, mussels, fragrant rice, grilled vegetables, house salad, chimichurri, table-side guacamole, and fresh pico de gallo.</p>
+              </div>
+
+              <div class="special-centered-item">
+                <h3 class="special-centered-name">WHOLE RED SNAPPER IN BANANA LEAF</h3>
+                <p class="special-centered-desc">Fresh 4-5 lb line-caught Pacific snapper roasted in fragrant banana leaves, marinated with fresh ginger, garden herbs, lime juice, served with roasted herbed potatoes and tropical salad.</p>
+              </div>
+
+              <div class="special-centered-item">
+                <h3 class="special-centered-name">ARTISANAL SPANISH PAELLA DE LA CASA</h3>
+                <p class="special-centered-desc">Authentic saffron-infused Valencian rice dish prepared live in your villa with lobster, shrimp, mussels, clams, calamari, chicken, and Spanish chorizo, served with garlic bread and salad.</p>
               </div>
             </div>
 
@@ -1248,7 +1371,7 @@
             </div>
 
             <div class="inclusion-pill" style="margin-top: 6px;">
-              SPECIAL SIGNATURE FEASTS ARE PREPARED LIVE AND SERVED FAMILY-STYLE FOR MAXIMUM SHARING & CELEBRATION
+              SPECIAL SIGNATURE FEASTS ARE PREPARED LIVE AND SERVED FAMILY-STYLE FOR MAXIMUM CELEBRATION
             </div>
           </div>
           
@@ -1272,92 +1395,75 @@
           <div class="split-section-half">
             <div class="split-hero-small">
               <img src="assets/images/kids_sliders_hero.jpg" alt="Kids Culinary Menu">
-              <div class="category-hero-overlay">
-                <h2 class="category-title" style="font-size: 20px;">LITTLE CHEFS · KIDS MENU</h2>
-                <p class="category-subtitle">FAVORITOS DE LOS NIÑOS · FRESH & FRIENDLY DISHES</p>
+              <div class="kids-dessert-badge">
+                <svg class="category-emblem-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 5C13.5 5 8.1 9.8 7.2 16H32.8C31.9 9.8 26.5 5 20 5Z" stroke="#ffffff" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M4 19H36" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="20" cy="3.5" r="2" fill="#ffffff"/>
+      <path d="M12 25L16 33L20 27L24 33L28 25" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+                <h2 class="category-title" style="font-size: 22px;">KIDS</h2>
               </div>
             </div>
-            <div style="padding: 8px 18px 4px 18px;">
-              <div class="dish-grid-2col">
-                <div class="dish-col">
-                  <div class="dish-item">
-                    <h3 class="dish-name">MINI BRIOCHE BEEF SLIDERS</h3>
-                    <p class="dish-desc">Two mini 100% Angus beef patties with melted cheddar cheese on soft brioche buns, served with crispy golden french fries.</p>
-                  </div>
-                  <div class="dish-item">
-                    <h3 class="dish-name">CRISPY FISH OR CHICKEN NUGGETS</h3>
-                    <p class="dish-desc">Handmade bites of fresh local fish or chicken breast coated in panko breadcrumbs, fried golden with honey-mustard or ketchup.</p>
-                  </div>
-                  <div class="dish-item">
-                    <h3 class="dish-name">KIDS CHEESY QUESADILLAS</h3>
-                    <p class="dish-desc">Warm flour tortillas folded with melted mozzarella and mild cheddar cheese, served with guacamole and sour cream.</p>
-                  </div>
-                </div>
-                <div class="dish-col">
-                  <div class="dish-item">
-                    <h3 class="dish-name">CREAMY FOUR-CHEESE MAC & CHEESE</h3>
-                    <p class="dish-desc">Elbow macaroni tossed in a rich, velvety cheddar and mozzarella cheese sauce, topped with toasted butter breadcrumbs.</p>
-                  </div>
-                  <div class="dish-item">
-                    <h3 class="dish-name">SPAGHETTI BOLOGNESE O POMODORO</h3>
-                    <p class="dish-desc">Al dente spaghetti tossed in sweet homemade San Marzano tomato sauce or rich minced beef bolognese with parmesan cheese.</p>
-                  </div>
-                  <div class="dish-item">
-                    <h3 class="dish-name">MINI PIZZA MARGHERITA</h3>
-                    <p class="dish-desc">Hand-stretched individual thin crust pizza topped with fresh tomato sauce and bubbling melted mozzarella cheese.</p>
-                  </div>
-                </div>
+            <div style="padding: 10px 24px 6px 24px; flex: 1; display: flex; flex-direction: column; justify-content: space-around;">
+              <div class="kids-table-row">
+                <span class="kids-item-left">• MAC & CHEESE</span>
+                <span class="kids-item-right">CHICKEN TACOS •</span>
+              </div>
+              <div class="kids-table-row">
+                <span class="kids-item-left">• MINI BURGERS AND FRIES</span>
+                <span class="kids-item-right">CHICKEN NUGGETS AND FRIES •</span>
+              </div>
+              <div class="kids-table-row">
+                <span class="kids-item-left">• SPAGHETTI WITH BUTTER</span>
+                <span class="kids-item-right">FISH NUGGETS AND FRIES •</span>
+              </div>
+              <div class="kids-table-row">
+                <span class="kids-item-left">• SPAGHETTI WITH POMODORO</span>
+                <span class="kids-item-right">CHICKEN BURRITOS •</span>
+              </div>
+              <div class="kids-table-row" style="border-bottom: none;">
+                <span class="kids-item-left">• CHEESY QUESADILLAS</span>
+                <span class="kids-item-right">CHICKEN SANDWICH •</span>
               </div>
             </div>
           </div>
 
-          <div class="split-divider-line"></div>
-
-          <!-- BOTTOM HALF: ARTISANAL DESSERTS -->
+          <!-- BOTTOM HALF: ARTISANAL DESSERTS (SOLID GOLD BOX MATCHING REFERENCE) -->
           <div class="split-section-half">
             <div class="split-hero-small">
               <img src="assets/images/crepe_suzette_flambe.jpg" alt="Artisanal Desserts & Flambé">
-              <div class="category-hero-overlay">
-                <h2 class="category-title" style="font-size: 20px;">ARTISANAL DESSERTS</h2>
-                <p class="category-subtitle">POSTRES DE AUTOR · SWEET FINALE</p>
+              <div class="kids-dessert-badge">
+                <svg class="category-emblem-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 5C13.5 5 8.1 9.8 7.2 16H32.8C31.9 9.8 26.5 5 20 5Z" stroke="#ffffff" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M4 19H36" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="20" cy="3.5" r="2" fill="#ffffff"/>
+      <path d="M12 25L16 33L20 27L24 33L28 25" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+                <h2 class="category-title" style="font-size: 22px;">DESSERTS</h2>
               </div>
             </div>
-            <div style="padding: 6px 18px 4px 18px; flex: 1; display: flex; flex-direction: column;">
-              <div class="dessert-gold-box">
-                <div class="dish-grid-2col">
-                  <div class="dish-col">
-                    <div class="dish-item">
-                      <h3 class="dish-name">CREPE SUZETTE GRAND MARNIER</h3>
-                      <p class="dish-desc">Delicate French crepes in fresh orange juice and caramelized sugar syrup, dramatically flambéed live table-side with Grand Marnier liqueur and served with vanilla gelato.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">WARM CHOCOLATE FUDGE BROWNIE</h3>
-                      <p class="dish-desc">Rich double-chocolate fudge brownie served warm with a molten center, accompanied by artisanal vanilla bean ice cream and hot chocolate ganache drizzle.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">PASSION FRUIT (MARACUYÁ) CHEESECAKE</h3>
-                      <p class="dish-desc">Silky New York style cheesecake on a graham cracker crust, crowned with tangy tropical passion fruit coulis and fresh mint leaves.</p>
-                    </div>
-                  </div>
-                  <div class="dish-col">
-                    <div class="dish-item">
-                      <h3 class="dish-name">TRADITIONAL TRES LECHES DE COCO</h3>
-                      <p class="dish-desc">Light sponge cake soaked in a rich blend of evaporated milk, condensed milk, and fresh coconut cream, topped with toasted meringue and berries.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">COCONUT CUSTARD FLAN CARAMEL</h3>
-                      <p class="dish-desc">Velvety baked custard infused with coconut milk and vanilla, topped with amber caramel syrup and toasted shredded coconut flakes.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">CLASSIC ITALIAN TIRAMISÙ</h3>
-                      <p class="dish-desc">Espresso-dipped ladyfingers layered with whipped mascarpone cream and dusted with fine Dutch cocoa powder.</p>
-                    </div>
-                  </div>
+            <div style="padding: 4px 10px 8px 10px; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+              <div class="dessert-solid-gold-box">
+                <div class="dessert-table-row">
+                  <span class="dessert-item-left">• CREPE SUZETTE</span>
+                  <span class="dessert-item-right">VANILLA BEAN CAKE •</span>
                 </div>
-              </div>
-
-              <div class="inclusion-pill" style="margin-top: auto;">
-                ALL DESSERTS CAN BE PAIRED WITH FRESHLY BREWED COSTA RICAN DARK ROAST COFFEE OR TROPICAL TEA
+                <div class="dessert-table-row">
+                  <span class="dessert-item-left">• WARM BROWNIE WITH ICE CREAM</span>
+                  <span class="dessert-item-right">CLASSIC TIRAMISÙ •</span>
+                </div>
+                <div class="dessert-table-row">
+                  <span class="dessert-item-left">• PASSION FRUIT CHEESECAKE</span>
+                  <span class="dessert-item-right">LEMON PIE FLAMBÉ •</span>
+                </div>
+                <div class="dessert-table-row">
+                  <span class="dessert-item-left">• DOUBLE CHOCOLATE FUDGE CAKE</span>
+                  <span class="dessert-item-right">COCONUT CUSTARD FLAN •</span>
+                </div>
+                <div class="dessert-item-center">
+                  • TRADITIONAL TRES LECHES DE COCO •
+                </div>
               </div>
             </div>
           </div>
@@ -1378,7 +1484,7 @@
     <article class="menu-page" id="page-8">
       <div class="page-border-outer">
         <div class="page-border-inner">
-          <div class="category-hero" style="height: 1.8in; min-height: 1.8in;">
+          <div class="category-hero" style="height: 1.85in; min-height: 1.85in;">
             <img src="assets/images/chef_flambe_kitchen.jpg" alt="Thematic Dining Experiences">
             <div class="category-hero-overlay">
               <svg class="category-emblem-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1391,7 +1497,7 @@
               <p class="category-subtitle">EXPERIENCIAS TEMÁTICAS DE VILLA · INTERACTIVE CULINARY JOURNEYS</p>
             </div>
           </div>
-          <div class="page-content" style="padding-top: 8px;">
+          <div class="page-content" style="padding-top: 10px;">
             <p class="thematic-intro-text">
               Transform your Manuel Antonio villa evening into an unforgettable culinary celebration. Each themed dinner is crafted live in your villa kitchen, featuring dedicated presentation, authentic cookware, and abundant multi-course courses designed to delight every guest.
             </p>
@@ -1435,7 +1541,7 @@
               </a>
             </div>
 
-            <div class="inclusion-pill" style="margin-top: 6px;">
+            <div class="inclusion-pill" style="margin-top: 8px;">
               EACH THEMATIC NIGHT INCLUDES TAILORED APPETIZERS, FRESH SALADS, CUSTOM SIDES, AND MATCHING DESSERTS
             </div>
           </div>
@@ -1456,7 +1562,7 @@
     <article class="menu-page" id="page-9">
       <div class="page-border-outer">
         <div class="page-border-inner">
-          <div class="category-hero">
+          <div class="category-hero" style="height: 1.85in; min-height: 1.85in;">
             <img src="assets/images/artisanal_pasta_hero.jpg" alt="Artisanal Pasta Night">
             <div class="category-hero-overlay">
               <svg class="category-emblem-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1469,73 +1575,98 @@
               <p class="category-subtitle">NOCHE DE PASTAS ARTESANALES · FRESH HANDMADE ITALIAN CUISINE</p>
             </div>
           </div>
-          <div class="page-content">
-            <div class="includes-gold-box">
-              <h3 class="includes-box-title">YOUR PASTA NIGHT INCLUDES:</h3>
-              <ul class="bullet-list-gold">
-                <li>Complimentary Welcome Bottle of Selected Italian Red or Crisp White Wine for the Villa.</li>
-                <li>Choice of 2 Starters: Classic Tomato & Basil Bruschetta, Caprese Salad with Buffalo Mozzarella, or Caesar Salad.</li>
-                <li>Selection of 3 Handmade Pasta Creations crafted fresh and served family-style or plated.</li>
-                <li>Artisanal Garlic Bread Basket with fresh rosemary and herb compound butter.</li>
-                <li>Dessert Finale: Classic Italian Espresso Tiramisú or Silky Vanilla Bean Panna Cotta.</li>
-              </ul>
-            </div>
+          <div class="page-content" style="padding-top: 8px;">
+            <p class="thematic-intro-text">
+              Welcome to our <strong>Artisanal Pasta Night</strong>, where culinary magic meets creativity. Guided by our chefs, we'll explore unique textures and authentic flavors, transforming pasta into a culinary masterpiece.
+            </p>
 
-            <div class="thematic-two-split">
+            <div style="display: grid; grid-template-columns: 1fr 1.35fr; gap: 24px; flex: 1; align-items: start;">
+              <!-- Left Column: Includes, Appetizers, Desserts, and Round Photo -->
               <div>
-                <img src="assets/images/plated_pasta_dish.jpg" alt="Plated Fettuccine with Shrimp" class="thematic-side-photo">
+                <h3 class="thematic-section-heading">INCLUDES</h3>
+                <ul class="bullet-list-gold">
+                  <li>3 appetizers to choose from</li>
+                  <li>3 pasta options</li>
+                  <li>2 desserts</li>
+                  <li>1 bottle of wine for pairing</li>
+                </ul>
+
+                <h3 class="thematic-section-heading">APPETIZERS</h3>
+                <ul class="bullet-list-gold">
+                  <li>Salmon Bruschetta</li>
+                  <li>Sweet Potato with Bacon</li>
+                  <li>Green Salad</li>
+                  <li>Cold Cuts and Cheese</li>
+                  <li>Caprese Salad</li>
+                  <li>Antipasto Board</li>
+                </ul>
+
+                <h3 class="thematic-section-heading">DESSERTS</h3>
+                <ul class="bullet-list-gold">
+                  <li>Tiramisu</li>
+                  <li>Panna Cotta</li>
+                </ul>
+
+                <img src="assets/images/plated_pasta_dish.jpg" alt="Plated Fettuccine with Shrimp" class="thematic-round-photo">
               </div>
-              <div>
-                <div class="dish-grid-2col">
-                  <div class="dish-col">
-                    <div class="dish-item">
-                      <h3 class="dish-name">FETTUCCINE ALFREDO CON CAMARONES</h3>
-                      <p class="dish-desc">Handmade fettuccine ribbons in rich parmesan cream sauce with garlic butter sautéed jumbo prawns.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">SPAGHETTI CARBONARA TRADIZIONALE</h3>
-                      <p class="dish-desc">Spaghetti tossed with crispy guanciale/pancetta, farm egg yolks, pecorino romano, and black pepper.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">RIGATONI AL PESTO GENOVESE</h3>
-                      <p class="dish-desc">Rigatoni tubes tossed in fragrant fresh basil pesto, toasted pine nuts, extra virgin olive oil, and shaved parmesan.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">LASAGNA BOLOGNESE AL FORNO</h3>
-                      <p class="dish-desc">Layers of fresh pasta sheets, slow-simmered beef ragù, creamy béchamel, and melted mozzarella.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">SPAGHETTI AI FRUTTI DI MARE</h3>
-                      <p class="dish-desc">Mussels, calamari, and shrimp in white wine garlic sauce with cherry tomatoes and fresh parsley.</p>
-                    </div>
-                  </div>
-                  <div class="dish-col">
-                    <div class="dish-item">
-                      <h3 class="dish-name">PENNE ALL'ARRABBIATA PICCANTE</h3>
-                      <p class="dish-desc">Penne in spicy San Marzano tomato sauce, garlic, red chili flakes, fresh basil, and extra virgin olive oil.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">TAGLIATELLE AL TARTUFO & FUNGHI</h3>
-                      <p class="dish-desc">Egg tagliatelle with sautéed wild mushrooms, white truffle oil, light garlic cream, and fresh herbs.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">PAPPARDELLE CON RAGÙ DI TERNERA</h3>
-                      <p class="dish-desc">Wide pappardelle ribbons with tender slow-braised veal and beef ragù in rich chianti wine sauce.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">RAVIOLI DI RICOTTA E SPINACI</h3>
-                      <p class="dish-desc">Handmade ravioli filled with ricotta and spinach in sage-infused browned butter and toasted hazelnuts.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">GNOCCHI DI PATATE AL GORGONZOLA</h3>
-                      <p class="dish-desc">Pillow-soft potato gnocchi smothered in a velvety gorgonzola cream sauce with fresh walnuts.</p>
-                    </div>
-                  </div>
+
+              <!-- Right Column: Pastas Right-Aligned -->
+              <div class="thematic-right-dish-group">
+                <h3 class="thematic-section-heading" style="text-align: right;">PASTAS</h3>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Alfredo</span>
+                  <span class="thematic-right-dish-ingredients">(cream, milk, parmesan, ham, bacon, mushrooms)</span>
+                </div>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Bolognese</span>
+                  <span class="thematic-right-dish-ingredients">(beef, bacon, carrot, onion, celery, tomato, parsley, nutmeg, cheese)</span>
+                </div>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Fettuccine Carbonara</span>
+                  <span class="thematic-right-dish-ingredients">(egg, bacon, parmesan or pecorino)</span>
+                </div>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Pesto Pasta with Shrimp or Chicken</span>
+                  <span class="thematic-right-dish-ingredients">(pesto, fresh mozzarella, cherry tomatoes, red onion, olives, basil, parmesan)</span>
+                </div>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Fettuccine with Shrimp</span>
+                  <span class="thematic-right-dish-ingredients">(fettuccine with fresh local shrimp in alfredo sauce, parmesan, basil, side salad)</span>
+                </div>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Spaghetti with Clams and Anchovies</span>
+                  <span class="thematic-right-dish-ingredients">(parsley, olive oil, tomato, garlic, lemon)</span>
+                </div>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Orecchiette alla Pugliese</span>
+                  <span class="thematic-right-dish-ingredients">(anchovies, garlic, tomato, broccoli, olive oil, pecorino)</span>
+                </div>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Seafood Fettuccine</span>
+                  <span class="thematic-right-dish-ingredients">(shrimp, mussels, octopus, squid, garlic, oregano, tomato, chives, parmesan)</span>
+                </div>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Fettuccine with Lobster</span>
+                  <span class="thematic-right-dish-ingredients">(sun-dried tomato, black olives, garlic, white wine, basil, butter, olive oil, pecorino)</span>
+                </div>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Spring Fettuccine (Veggie)</span>
+                  <span class="thematic-right-dish-ingredients">(onion, celery, carrot, chili, zucchini, parsley, broccoli, butter, olive oil, parmesan)</span>
                 </div>
               </div>
             </div>
 
-            <div class="inclusion-pill" style="margin-top: 6px;">
+            <div class="inclusion-pill" style="margin-top: 8px;">
               ALL PASTAS ARE KNEADED AND CUT FRESH IN YOUR VILLA · GLUTEN-FREE PASTA OPTIONS ARE READILY AVAILABLE
             </div>
           </div>
@@ -1556,7 +1687,7 @@
     <article class="menu-page" id="page-10">
       <div class="page-border-outer">
         <div class="page-border-inner">
-          <div class="category-hero">
+          <div class="category-hero" style="height: 1.85in; min-height: 1.85in;">
             <img src="assets/images/wood_fired_pizza_oven.jpg" alt="Wood Fired Artisan Pizza">
             <div class="category-hero-overlay">
               <svg class="category-emblem-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1569,80 +1700,105 @@
               <p class="category-subtitle">PIZZA ARTESANAL DE VILLA · HIGH-HEAT CRISPY CRUST SPECIALTIES</p>
             </div>
           </div>
-          <div class="page-content">
-            <div class="includes-gold-box">
-              <h3 class="includes-box-title">YOUR PIZZA NIGHT INCLUDES:</h3>
-              <ul class="bullet-list-gold">
-                <li>Artisanal Antipasto Board: Italian prosciutto, aged salame, green olives, artichoke hearts, and parmesan chunks.</li>
-                <li>Crisp Garden Salad with mixed greens, cherry tomatoes, cucumbers, and balsamic herb vinaigrette.</li>
-                <li>Unlimited Fresh Hand-Stretched Pizzas baked live until golden and bubbling.</li>
-                <li>Sweet Dessert Finale: Warm Nutella & Strawberry Pizza with toasted hazelnut crumble.</li>
-              </ul>
-            </div>
+          <div class="page-content" style="padding-top: 8px;">
+            <p class="thematic-intro-text">
+              A symphony of flavors with our extraordinary <strong>Pizza creations</strong>. Each slice is a canvas painted with a palette of the finest ingredients.
+            </p>
 
-            <div class="thematic-two-split">
+            <div style="display: grid; grid-template-columns: 1fr 1.35fr; gap: 24px; flex: 1; align-items: start;">
+              <!-- Left Column: Includes, Appetizers, Desserts, and Round Photo -->
               <div>
-                <img src="assets/images/pizza_oven_baked_round.jpg" alt="Artisan Baked Round Pizza" class="thematic-side-photo">
+                <h3 class="thematic-section-heading">INCLUDES</h3>
+                <ul class="bullet-list-gold">
+                  <li>3 appetizers to choose from</li>
+                  <li>4 pizzas to choose from</li>
+                  <li>2 desserts</li>
+                  <li>1 bottle of wine</li>
+                </ul>
+
+                <h3 class="thematic-section-heading">APPETIZERS</h3>
+                <ul class="bullet-list-gold">
+                  <li>Green Salad</li>
+                  <li>Mini Eggplant and Zucchini Pizzas</li>
+                  <li>Caprese Salad</li>
+                  <li>Antipasto Board</li>
+                  <li>Caesar Salad</li>
+                  <li>Garlic Cheese Bread</li>
+                  <li>Mozzarella Sticks</li>
+                  <li>Jalapeño Poppers</li>
+                </ul>
+
+                <h3 class="thematic-section-heading">DESSERTS</h3>
+                <ul class="bullet-list-gold">
+                  <li>Mango Sorbet</li>
+                  <li>Tiramisu</li>
+                </ul>
+
+                <img src="assets/images/pizza_oven_baked_round.jpg" alt="Artisan Baked Round Pizza" class="thematic-round-photo">
               </div>
-              <div>
-                <div class="dish-grid-2col">
-                  <div class="dish-col">
-                    <div class="dish-item">
-                      <h3 class="dish-name">MARGHERITA DI BUFALA</h3>
-                      <p class="dish-desc">Crushed San Marzano tomatoes, fresh buffalo mozzarella, fresh basil leaves, and extra virgin olive oil.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">QUATTRO FORMAGGI</h3>
-                      <p class="dish-desc">Mozzarella, gorgonzola dolce, creamy provolone, and freshly grated 24-month parmesan reggiano.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">PROSCIUTTO DI PARMA E RUCOLA</h3>
-                      <p class="dish-desc">Crispy crust topped with tomato sauce, mozzarella, thin aged prosciutto di Parma, wild arugula, and parmesan shavings.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">DIAVOLA SPICY PEPPERONI</h3>
-                      <p class="dish-desc">Artisanal spicy pepperoni, chili flakes, mozzarella, sweet tomato sauce, and hot honey drizzle.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">FRUTTI DI MARE SEAFOOD</h3>
-                      <p class="dish-desc">Garlic olive oil base, sautéed calamari, Pacific shrimp, fresh parsley, and mozzarella.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">FUNGHI SELVATICI & TRUFFLE</h3>
-                      <p class="dish-desc">Roasted wild mushrooms, caramelized onions, mozzarella, thyme, and aromatic white truffle oil.</p>
-                    </div>
-                  </div>
-                  <div class="dish-col">
-                    <div class="dish-item">
-                      <h3 class="dish-name">TICA TROPICAL FAVORITE</h3>
-                      <p class="dish-desc">Smoked artisanal ham, tender hearts of palm (palmito), sweet corn kernels, and melted mozzarella.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">BBQ PULLED PORK GOURMET</h3>
-                      <p class="dish-desc">Slow-braised pork shoulder, homemade guava BBQ sauce, red onions, cilantro, and smoked gouda.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">POLLO AL PESTO & DRIED TOMATO</h3>
-                      <p class="dish-desc">Grilled chicken breast strips, sweet basil pesto, sun-dried tomatoes, goat cheese, and mozzarella.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">CAPRICCIOSA CLASSICA</h3>
-                      <p class="dish-desc">Italian cooked ham, cremini mushrooms, artichoke quarters, black kalamata olives, and mozzarella.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">VEGETARIANA DEL HUERTO</h3>
-                      <p class="dish-desc">Grilled zucchini, bell peppers, roasted eggplant, red onions, cherry tomatoes, and herb oil.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">HAWAIIAN LUXURY</h3>
-                      <p class="dish-desc">Smoked ham, fresh grilled caramelized golden pineapple, sliced fresh jalapeño, and mozzarella.</p>
-                    </div>
-                  </div>
+
+              <!-- Right Column: Pizzas Right-Aligned -->
+              <div class="thematic-right-dish-group">
+                <h3 class="thematic-section-heading" style="text-align: right;">PIZZAS</h3>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Margherita</span>
+                  <span class="thematic-right-dish-ingredients">(tomato, mozzarella, sauce, basil)</span>
+                </div>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Bacon Pizza</span>
+                  <span class="thematic-right-dish-ingredients">(pesto, mozzarella, bacon, onion, cherry tomatoes, parmesan, arugula)</span>
+                </div>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Four Cheese</span>
+                  <span class="thematic-right-dish-ingredients">(mozzarella, gorgonzola, parmesan, ricotta, fontina cheese, tomato sauce)</span>
+                </div>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Pepperoni</span>
+                  <span class="thematic-right-dish-ingredients">(tomato sauce, pepperoni, mozzarella)</span>
+                </div>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Prosciutto</span>
+                  <span class="thematic-right-dish-ingredients">(tomato sauce, mozzarella, prosciutto, arugula, parmesan)</span>
+                </div>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Shrimp Pizza</span>
+                  <span class="thematic-right-dish-ingredients">(sauce, mozzarella, shrimp, chili, onion, mushrooms, arugula, parmesan)</span>
+                </div>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Vegetarian</span>
+                  <span class="thematic-right-dish-ingredients">(sauce, mozzarella, zucchini, broccoli, mushrooms, chili, onion, eggplant, carrot)</span>
+                </div>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Meat Lover</span>
+                  <span class="thematic-right-dish-ingredients">(sauce, mozzarella, beef, chicken, pepperoni, salami, bacon, chili, onion)</span>
+                </div>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">BBQ Chicken</span>
+                  <span class="thematic-right-dish-ingredients">(sauce, mozzarella, BBQ, mushrooms, chicken, bacon)</span>
+                </div>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Hawaiian</span>
+                  <span class="thematic-right-dish-ingredients">(sauce, mozzarella, pineapple, ham, bacon)</span>
+                </div>
+
+                <div class="thematic-right-dish-item">
+                  <span class="thematic-right-dish-title">Cheesesteak Pizza</span>
+                  <span class="thematic-right-dish-ingredients">(sauce, mozzarella, tenderloin, onion, chili, cheddar, arugula)</span>
                 </div>
               </div>
             </div>
 
-            <div class="inclusion-pill" style="margin-top: 6px;">
+            <div class="inclusion-pill" style="margin-top: 8px;">
               DOUGH SLOW-FERMENTED 48 HOURS FOR OPTIMAL DIGESTIBILITY, AROMATIC FLAVOR & AIRY CRISP CRUST
             </div>
           </div>
@@ -1663,7 +1819,7 @@
     <article class="menu-page" id="page-11">
       <div class="page-border-outer">
         <div class="page-border-inner">
-          <div class="category-hero">
+          <div class="category-hero" style="height: 1.85in; min-height: 1.85in;">
             <img src="assets/images/bbq_grill_hero.jpg" alt="Poolside BBQ Grill Night">
             <div class="category-hero-overlay">
               <svg class="category-emblem-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1676,65 +1832,63 @@
               <p class="category-subtitle">PARRILLADA JUNTO A LA PISCINA · SMOKEY WOOD & CHARCOAL FLAVORS</p>
             </div>
           </div>
-          <div class="page-content">
-            <div class="includes-gold-box">
-              <h3 class="includes-box-title">YOUR BBQ NIGHT INCLUDES:</h3>
-              <ul class="bullet-list-gold">
-                <li>All premium meat & seafood cuts seasoned with house rubs and grilled live by Chef Marcos.</li>
-                <li>Grilled Sweet Corn on the Cob with smoked paprika herb compound butter.</li>
-                <li>Loaded Baked Idaho Potatoes with sour cream, crisp bacon bits, chives, and melted cheddar.</li>
-                <li>Crisp Homemade Creamy Coleslaw & Fresh Garden Salad with honey-mustard vinaigrette.</li>
-                <li>Dessert Finale: Grilled Cinnamon Sugar Pineapple Skewers with artisanal vanilla bean ice cream.</li>
-              </ul>
-            </div>
+          <div class="page-content" style="padding-top: 8px;">
+            <p class="thematic-intro-text">
+              Experience the ultimate open-air villa cookout. Chef Marcos grills premium cuts, fresh Pacific seafood, and vibrant vegetables over flaming embers right by your pool.
+            </p>
 
-            <div class="thematic-two-split-right">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; flex: 1; align-items: start;">
+              <!-- Left Column: Includes & Cuts -->
               <div>
-                <div class="dish-grid-2col">
-                  <div class="dish-col">
-                    <div class="dish-item">
-                      <h3 class="dish-name">CERTIFIED ANGUS RIBEYE STEAKS</h3>
-                      <p class="dish-desc">Thick-cut Angus ribeye steaks flame-grilled to your preferred temperature, basted with rosemary garlic butter.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">CHIMICHURRI SKIRT STEAK (CHURRASCO)</h3>
-                      <p class="dish-desc">Tender flank / skirt steak marinated in citrus and herbs, grilled hot and fast, served with house chimichurri.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">GLAZED BBQ BABY BACK RIBS</h3>
-                      <p class="dish-desc">Pork ribs slow-smoked until tender and falling off the bone, slathered in homemade guava-honey BBQ glaze.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">JUMBO GARLIC SHRIMP SKEWERS</h3>
-                      <p class="dish-desc">Colossal Pacific prawns skewered with sweet bell peppers and red onions, charred with lemon garlic butter.</p>
-                    </div>
+                <h3 class="thematic-section-heading">INCLUDES</h3>
+                <ul class="bullet-list-gold">
+                  <li>All premium cuts seasoned and grilled live by Chef Marcos</li>
+                  <li>Grilled Sweet Corn with smoked paprika butter</li>
+                  <li>Loaded Idaho Baked Potatoes with sour cream & chives</li>
+                  <li>Creamy Coleslaw & Crisp Garden Salad with vinaigrette</li>
+                  <li>Dessert: Grilled Cinnamon Pineapple with Ice Cream</li>
+                </ul>
+
+                <h3 class="thematic-section-heading">PREMIUM CUTS</h3>
+                <div class="dish-col" style="gap: 12px; margin-top: 6px;">
+                  <div class="dish-item">
+                    <h3 class="dish-name" style="font-size: 14px;">CERTIFIED ANGUS RIBEYE</h3>
+                    <p class="dish-desc">Thick-cut Angus ribeye steaks flame-grilled to order, basted with rosemary garlic butter.</p>
                   </div>
-                  <div class="dish-col">
-                    <div class="dish-item">
-                      <h3 class="dish-name">CARIBBEAN SPICED CHICKEN</h3>
-                      <p class="dish-desc">Organic chicken breasts and drumsticks marinated in citrus, ginger, thyme, and allspice, grilled to juicy perfection.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">ARTISANAL CHORIZO & SAUSAGE BOARD</h3>
-                      <p class="dish-desc">Trio of grilled artisanal sausages including Argentine chorizo, bratwurst, and spicy Italian sausage with Lizano mustard.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">CATCH OF THE DAY IN CITRUS FOIL</h3>
-                      <p class="dish-desc">Wild mahi-mahi or snapper fillets wrapped in foil with lemon slices, butter, white wine, and fresh garden herbs.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">CHARRED VEGETABLE MEDLEY</h3>
-                      <p class="dish-desc">Fire-roasted green asparagus, zucchini ribbons, portobello mushrooms, and sweet peppers with balsamic drizzle.</p>
-                    </div>
+                  <div class="dish-item">
+                    <h3 class="dish-name" style="font-size: 14px;">CHIMICHURRI SKIRT STEAK</h3>
+                    <p class="dish-desc">Tender flank steak marinated in citrus and garden herbs, charred hot with house chimichurri.</p>
+                  </div>
+                  <div class="dish-item">
+                    <h3 class="dish-name" style="font-size: 14px;">GLAZED BBQ BABY BACK RIBS</h3>
+                    <p class="dish-desc">Pork ribs slow-smoked until tender and slathered in homemade guava-honey BBQ glaze.</p>
                   </div>
                 </div>
               </div>
+
+              <!-- Right Column: Seafood & Sides + Dish Photo -->
               <div>
-                <img src="assets/images/skewers_bbq_dish.jpg" alt="Glazed BBQ Skewers Platter" class="thematic-side-photo">
+                <h3 class="thematic-section-heading">SEAFOOD & POULTRY</h3>
+                <div class="dish-col" style="gap: 12px; margin-top: 6px;">
+                  <div class="dish-item">
+                    <h3 class="dish-name" style="font-size: 14px;">JUMBO GARLIC SHRIMP SKEWERS</h3>
+                    <p class="dish-desc">Colossal Pacific prawns skewered with sweet bell peppers and red onions, charred with garlic butter.</p>
+                  </div>
+                  <div class="dish-item">
+                    <h3 class="dish-name" style="font-size: 14px;">CARIBBEAN SPICED CHICKEN</h3>
+                    <p class="dish-desc">Organic chicken breasts and drumsticks marinated in citrus, ginger, thyme, and island allspice.</p>
+                  </div>
+                  <div class="dish-item">
+                    <h3 class="dish-name" style="font-size: 14px;">ARTISANAL CHORIZO BOARD</h3>
+                    <p class="dish-desc">Trio of grilled sausages including Argentine chorizo, bratwurst, and spicy Italian with Lizano mustard.</p>
+                  </div>
+                </div>
+
+                <img src="assets/images/skewers_bbq_dish.jpg" alt="Glazed BBQ Skewers Platter" class="thematic-round-photo">
               </div>
             </div>
 
-            <div class="inclusion-pill" style="margin-top: 6px;">
+            <div class="inclusion-pill" style="margin-top: 8px;">
               CHEF MARCOS COOKS EVERYTHING LIVE ON YOUR VILLA PATIO GRILL · VEGETARIAN GRILL PLATTERS ALSO PROVIDED
             </div>
           </div>
@@ -1755,7 +1909,7 @@
     <article class="menu-page" id="page-12">
       <div class="page-border-outer">
         <div class="page-border-inner">
-          <div class="category-hero">
+          <div class="category-hero" style="height: 1.85in; min-height: 1.85in;">
             <img src="assets/images/taco_bar_hero.jpg" alt="Interactive Taco Bar Fiesta">
             <div class="category-hero-overlay">
               <svg class="category-emblem-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1768,65 +1922,49 @@
               <p class="category-subtitle">BARRA DE TACOS & FAJITAS · VIBRANT MEXICAN-COSTA RICAN FEAST</p>
             </div>
           </div>
-          <div class="page-content">
-            <div class="includes-gold-box">
-              <h3 class="includes-box-title">YOUR TACO FIESTA INCLUDES:</h3>
-              <ul class="bullet-list-gold">
-                <li>Warm Fresh Corn & Flour Tortillas kept soft and steaming at your villa table.</li>
-                <li>Table-Side Guacamole made fresh with Haas avocados, diced tomatoes, cilantro, and freshly squeezed lime.</li>
-                <li>Trio of Homemade Salsas: Roasted Tomato Salsa, Tomatillo Salsa Verde, and Sweet Mango-Habanero.</li>
-                <li>Abundant Sides: Refried black beans, fragrant cilantro-lime rice, pico de gallo, pickled red onions, and cotija cheese.</li>
-                <li>Dessert Finale: Golden Crispy Churros dusted in cinnamon sugar with warm dulce de leche and chocolate dipping sauce.</li>
-              </ul>
-            </div>
+          <div class="page-content" style="padding-top: 8px;">
+            <p class="thematic-intro-text">
+              Enjoy fresh ingredients in your own <strong>Taco style</strong>! Served as an interactive, bountiful villa buffet.
+            </p>
 
-            <div class="thematic-two-split-right">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; flex: 1; align-items: start;">
+              <!-- Left Column: Includes & Desserts -->
               <div>
-                <div class="dish-grid-2col">
-                  <div class="dish-col">
-                    <div class="dish-item">
-                      <h3 class="dish-name">CRISPY PACIFIC SNAPPER TACOS</h3>
-                      <p class="dish-desc">Beer-battered catch of the day, shaved red cabbage slaw, chipotle crema, and fresh cilantro.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">CARNE ASADA STEAK FAJITAS</h3>
-                      <p class="dish-desc">Prime flank steak marinated in citrus and spices, grilled with sizzling sweet peppers and onions.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">SLOW-BRAISED PORK CARNITAS</h3>
-                      <p class="dish-desc">Crispy and tender shredded pork shoulder with citrus, Mexican oregano, and pickled jalapeños.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">TINGA DE POLLO RUSTICA</h3>
-                      <p class="dish-desc">Shredded chicken breast simmered in smokey chipotle-tomato broth with sweet caramelized onions.</p>
-                    </div>
-                  </div>
-                  <div class="dish-col">
-                    <div class="dish-item">
-                      <h3 class="dish-name">GARLIC & LIME JUMBO SHRIMP</h3>
-                      <p class="dish-desc">Plump Pacific prawns sautéed with garlic butter and fresh lime, served with avocado slices.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">ROASTED POBLANO & SWEET CORN (VEGGIE)</h3>
-                      <p class="dish-desc">Charred poblano pepper strips, roasted sweet corn, cremini mushrooms, and black beans.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">HOUSE NACHOS WITH MELTED QUESO</h3>
-                      <p class="dish-desc">Crisp artisanal corn tortilla chips served with warm melted queso fundido, guacamole, and jalapeños.</p>
-                    </div>
-                    <div class="dish-item">
-                      <h3 class="dish-name">FRESH TOPPINGS BAR</h3>
-                      <p class="dish-desc">Crumbled cotija cheese, sour cream (crema agria), diced radish, fresh lime wedges, and pickled red onions.</p>
-                    </div>
-                  </div>
-                </div>
+                <h3 class="thematic-section-heading">INCLUDES</h3>
+                <ul class="bullet-list-gold" style="font-size: 12px; gap: 4px;">
+                  <li>1 bottle of wine</li>
+                  <li>Handmade corn & flour tortillas</li>
+                  <li>Refried black beans & cilantro-lime rice</li>
+                  <li>Cabbage, lettuce & pickled onions</li>
+                  <li>Grilled Pacific Shrimp</li>
+                  <li>Citrus Herb Chicken Tinga</li>
+                  <li>Crispy Beer-Battered Fish</li>
+                  <li>Carne Asada Beef</li>
+                  <li>Artisanal Chorizo</li>
+                  <li>Slow-Braised Pork Carnitas</li>
+                  <li>Table-side Fresh Guacamole</li>
+                  <li>Green tomato tomatillo salsa</li>
+                  <li>Tartar sauce & chipotle aioli</li>
+                  <li>Argentine chimichurri</li>
+                  <li>Pineapple salad & mushrooms</li>
+                  <li>Fresh Pico de Gallo & Jalapeños</li>
+                  <li>Cotija cheese & crunchy chips</li>
+                </ul>
+
+                <h3 class="thematic-section-heading" style="margin-top: 8px;">DESSERTS</h3>
+                <ul class="bullet-list-gold">
+                  <li>Crepes with Nutella and fresh fruit</li>
+                  <li>Warm sweet cornbread with caramel</li>
+                </ul>
               </div>
-              <div>
-                <img src="assets/images/taco_fiesta_plate.jpg" alt="Taco Fiesta Plate" class="thematic-side-photo">
+
+              <!-- Right Column: Hero Tacos Platter Photo -->
+              <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+                <img src="assets/images/taco_fiesta_plate.jpg" alt="Taco Fiesta Plate" style="width: 100%; max-height: 4.8in; object-fit: cover; border-radius: 4px; border: 1px solid var(--gold-hairline); box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
               </div>
             </div>
 
-            <div class="inclusion-pill" style="margin-top: 6px;">
+            <div class="inclusion-pill" style="margin-top: 8px;">
               SERVED AS AN INTERACTIVE FAMILY-STYLE BUFFET WHERE GUESTS BUILD THEIR OWN CUSTOM TACOS & FAJITAS
             </div>
           </div>
@@ -1847,7 +1985,7 @@
     <article class="menu-page" id="page-13">
       <div class="page-border-outer">
         <div class="page-border-inner">
-          <div class="category-hero">
+          <div class="category-hero" style="height: 1.7in; min-height: 1.7in;">
             <img src="assets/images/sushi_platter_hero.jpg" alt="Fresh Pacific Sushi & Raw Bar">
             <div class="category-hero-overlay">
               <svg class="category-emblem-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1860,74 +1998,117 @@
               <p class="category-subtitle">SUSHI & RAW BAR · WILD LINE-CAUGHT PACIFIC SEAFOOD</p>
             </div>
           </div>
-          <div class="page-content">
-            <div class="includes-gold-box">
-              <h3 class="includes-box-title">YOUR SUSHI EXPERIENCE INCLUDES:</h3>
-              <ul class="bullet-list-gold">
-                <li>Steamed Edamame with Himalayan pink sea salt flakes or spicy garlic sesame oil.</li>
-                <li>Traditional Japanese Miso Soup with silken tofu cubes, green scallions, and wakame seaweed.</li>
-                <li>Chef's Tasting Nigiri & Sashimi selection featuring line-caught yellowfin tuna, salmon, and snapper.</li>
-                <li>Pickled ginger, prepared wasabi, artisanal soy sauce, and sweet unagi reduction.</li>
-                <li>Dessert Finale: Artisanal Green Tea Matcha Ice Cream or Chilled Tropical Mochi Trio.</li>
-              </ul>
-            </div>
+          <div class="page-content" style="padding-top: 8px;">
+            <!-- Top Section: Includes, Appetizers, and Round Photo -->
+            <div style="display: grid; grid-template-columns: 1fr 1.35fr 0.9fr; gap: 14px; margin-bottom: 8px; align-items: start;">
+              <div>
+                <h3 class="thematic-section-heading">INCLUDES</h3>
+                <ul class="bullet-list-gold">
+                  <li>3 appetizers to choose from</li>
+                  <li>4 Rolls to choose from</li>
+                  <li>2 Desserts to choose from</li>
+                  <li>1 Bottle of Wine</li>
+                </ul>
+              </div>
 
-            <div class="dish-grid-2col">
-              <div class="dish-col">
-                <div class="dish-item">
-                  <h3 class="dish-name">MANUEL ANTONIO SIGNATURE ROLL</h3>
-                  <p class="dish-desc">Spicy yellowfin tuna, crisp cucumber, topped with ripe avocado slices, sweet mango coulis, and orange tobiko.</p>
-                </div>
-                <div class="dish-item">
-                  <h3 class="dish-name">PACIFIC DRAGON ROLL</h3>
-                  <p class="dish-desc">Crispy tempura shrimp, cream cheese, crowned with thin avocado ribbons, sweet unagi eel sauce, and toasted sesame.</p>
-                </div>
-                <div class="dish-item">
-                  <h3 class="dish-name">VOLCANO CRAB ROLL</h3>
-                  <p class="dish-desc">Classic California roll base baked table-side with spicy crab meat, scallions, masago caviar, and spicy aioli.</p>
-                </div>
-                <div class="dish-item">
-                  <h3 class="dish-name">TROPICAL SALMON ROLL</h3>
-                  <p class="dish-desc">Fresh salmon, cream cheese, ripe mango spears, wrapped in nori and crowned with passion fruit drizzle.</p>
-                </div>
-                <div class="dish-item">
-                  <h3 class="dish-name">RAINBOW SUNSET ROLL</h3>
-                  <p class="dish-desc">Crab and cucumber roll draped in vibrant layers of fresh ahi tuna, salmon, snapper, and ripe avocado.</p>
-                </div>
-                <div class="dish-item">
-                  <h3 class="dish-name">CRISPY PURA VIDA ROLL</h3>
-                  <p class="dish-desc">Tempura snapper, cream cheese, avocado, wrapped in ripe sweet plantain and drizzled with sweet soy sauce.</p>
+              <div>
+                <h3 class="thematic-section-heading">APPETIZERS</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                  <ul class="bullet-list-gold" style="margin: 0;">
+                    <li>Tempura Shrimp</li>
+                    <li>Tempura Vegetables</li>
+                    <li>Tuna Tataki</li>
+                    <li>Spicy Tofu</li>
+                    <li>Sriracha Shrimp</li>
+                    <li>Edamame</li>
+                  </ul>
+                  <ul class="bullet-list-gold" style="margin: 0;">
+                    <li>Tuna Tartare</li>
+                    <li>Uvita Salad</li>
+                    <li>Poke Tower</li>
+                    <li>Miso Soup</li>
+                    <li>Tuk Tuk Tacos</li>
+                    <li>Tom Kha Gai Soup</li>
+                  </ul>
                 </div>
               </div>
-              <div class="dish-col">
-                <div class="dish-item">
-                  <h3 class="dish-name">SPICY YELLOWFIN TUNA ROLL</h3>
-                  <p class="dish-desc">Line-caught Quepos tuna tossed in sriracha sesame sauce, crisp cucumber, and green scallions.</p>
-                </div>
-                <div class="dish-item">
-                  <h3 class="dish-name">GOLDEN LOBSTER TAIL ROLL</h3>
-                  <p class="dish-desc">Butter-poached Pacific lobster, avocado, green asparagus, topped with spicy mayo and micro cilantro.</p>
-                </div>
-                <div class="dish-item">
-                  <h3 class="dish-name">TEMPURA CRUNCHY SHRIMP ROLL</h3>
-                  <p class="dish-desc">Panko-crusted jumbo shrimp, avocado, cucumber, rolled and coated in crunchy tempura flakes and eel glaze.</p>
-                </div>
-                <div class="dish-item">
-                  <h3 class="dish-name">VEGETARIAN ZEN ROLL</h3>
-                  <p class="dish-desc">Haas avocado, cucumber, asparagus spears, pickled carrot, and wakame seaweed wrapped in sesame rice.</p>
-                </div>
-                <div class="dish-item">
-                  <h3 class="dish-name">TUNA TATAKI SLICES</h3>
-                  <p class="dish-desc">Seared sesame-crusted yellowfin tuna medallions over ponzu sauce, radish sprouts, and wasabi cream.</p>
-                </div>
-                <div class="dish-item">
-                  <h3 class="dish-name">HAMACHI & SERRANO NIGIRI</h3>
-                  <p class="dish-desc">Delicate yellowtail nigiri topped with paper-thin serrano pepper slices and citrus yuzu dressing.</p>
-                </div>
+
+              <div>
+                <img src="assets/images/tuna_tartare_stack.jpg" alt="Fresh Tuna Tartare" style="width: 1.25in; height: 1.25in; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--gold-hairline); display: block; margin: 0 auto;">
               </div>
             </div>
 
-            <div class="inclusion-pill" style="margin-top: 6px;">
+            <!-- Rolls Section: 2 Columns (Left Aligned & Right Aligned) -->
+            <div style="border-top: 1px solid var(--gold-hairline); padding-top: 6px;">
+              <h3 class="thematic-section-heading" style="margin-bottom: 6px;">ROLLS</h3>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <!-- Left Column -->
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                  <div class="thematic-right-dish-item" style="text-align: left;">
+                    <span class="thematic-right-dish-title">California</span>
+                    <span class="thematic-right-dish-ingredients">(Kanikama, avocado, cream cheese, cucumber, sesame)</span>
+                  </div>
+                  <div class="thematic-right-dish-item" style="text-align: left;">
+                    <span class="thematic-right-dish-title">Sake</span>
+                    <span class="thematic-right-dish-ingredients">(Avocado, salmon, sesame)</span>
+                  </div>
+                  <div class="thematic-right-dish-item" style="text-align: left;">
+                    <span class="thematic-right-dish-title">California Deluxe</span>
+                    <span class="thematic-right-dish-ingredients">(Kanikama, avocado, cream cheese, cucumber, Tobiko)</span>
+                  </div>
+                  <div class="thematic-right-dish-item" style="text-align: left;">
+                    <span class="thematic-right-dish-title">Spicy Tuna</span>
+                    <span class="thematic-right-dish-ingredients">(Tuna, chives, sriracha, cucumber, avocado topping)</span>
+                  </div>
+                  <div class="thematic-right-dish-item" style="text-align: left;">
+                    <span class="thematic-right-dish-title">Emperor</span>
+                    <span class="thematic-right-dish-ingredients">(Crab, dynamite mix, avocado, cream cheese, salmon, furikake, eel sauce)</span>
+                  </div>
+                  <div class="thematic-right-dish-item" style="text-align: left;">
+                    <span class="thematic-right-dish-title">Rainbow Roll</span>
+                    <span class="thematic-right-dish-ingredients">(Kanikama, avocado, cream cheese, cucumber, 3 fishes)</span>
+                  </div>
+                  <div class="thematic-right-dish-item" style="text-align: left;">
+                    <span class="thematic-right-dish-title">Spider Roll</span>
+                    <span class="thematic-right-dish-ingredients">(Crab, asparagus, chives, avocado, sesame, eel sauce)</span>
+                  </div>
+                </div>
+
+                <!-- Right Column -->
+                <div style="display: flex; flex-direction: column; gap: 8px; text-align: right;">
+                  <div class="thematic-right-dish-item">
+                    <span class="thematic-right-dish-title">Samurai Roll</span>
+                    <span class="thematic-right-dish-ingredients">(Salmon, tuna, avocado, chives, red pepper, chipotle, eel sauce)</span>
+                  </div>
+                  <div class="thematic-right-dish-item">
+                    <span class="thematic-right-dish-title">Dragon Roll</span>
+                    <span class="thematic-right-dish-ingredients">(Crab, cucumber, cream cheese, carrot, eel, avocado, masago, eel sauce)</span>
+                  </div>
+                  <div class="thematic-right-dish-item">
+                    <span class="thematic-right-dish-title">Tiger Roll</span>
+                    <span class="thematic-right-dish-ingredients">(Tuna, avocado, fried asparagus, salmon, torched spicy mayo)</span>
+                  </div>
+                  <div class="thematic-right-dish-item">
+                    <span class="thematic-right-dish-title">Crunchy Shitake Roll</span>
+                    <span class="thematic-right-dish-ingredients">(Fried roll, shitake mushroom, asparagus, panko, sriracha)</span>
+                  </div>
+                  <div class="thematic-right-dish-item">
+                    <span class="thematic-right-dish-title">Spicy Lobster Roll</span>
+                    <span class="thematic-right-dish-ingredients">(Fried roll, lobster, chives, avocado with eel sauce, spicy mayo)</span>
+                  </div>
+                  <div class="thematic-right-dish-item">
+                    <span class="thematic-right-dish-title">Mango Shrimp Roll</span>
+                    <span class="thematic-right-dish-ingredients">(Steamed shrimp, mango, cream cheese, tuna, furikake, eel sauce)</span>
+                  </div>
+                  <div class="thematic-right-dish-item">
+                    <span class="thematic-right-dish-title">Veggie Tico Roll</span>
+                    <span class="thematic-right-dish-ingredients">(Boiled vegetables, sunflower cream cheese, avocado, plantain)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inclusion-pill" style="margin-top: 8px;">
               ALL FISH IS SOURCED FRESH DAILY FROM THE ARTISANAL BOATS AT MARINA PEZ VELA IN QUEPOS
             </div>
           </div>
@@ -1948,7 +2129,7 @@
     <article class="menu-page" id="page-14">
       <div class="page-border-outer">
         <div class="page-border-inner">
-          <div class="category-hero">
+          <div class="category-hero" style="height: 1.85in; min-height: 1.85in;">
             <img src="assets/images/costa_rican_tamales_hero.jpg" alt="Costa Rican Fiesta Tica Heritage">
             <div class="category-hero-overlay">
               <svg class="category-emblem-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1961,7 +2142,7 @@
               <p class="category-subtitle">TRADICIÓN COSTARRICENSE · AUTHENTIC HERITAGE BANQUET</p>
             </div>
           </div>
-          <div class="page-content">
+          <div class="page-content" style="padding-top: 8px;">
             <div class="sarchi-badge-header">
               <div class="flag-costa-rica-badge">
                 <div class="flag-bar-blue"></div>
@@ -1970,23 +2151,19 @@
                 <div class="flag-bar-white"></div>
                 <div class="flag-bar-blue"></div>
               </div>
-              <span style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; color: var(--gold-dark); text-transform: uppercase;">
+              <span style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: var(--gold-dark); text-transform: uppercase;">
                 AUTHENTIC CULINARY CULTURE OF COSTA RICA
               </span>
             </div>
 
-            <div class="includes-gold-box">
-              <h3 class="includes-box-title">YOUR FIESTA TICA INCLUDES:</h3>
-              <ul class="bullet-list-gold">
-                <li>Welcome Beverage: Traditional "Agua de Sapo" (Refreshing iced sugarcane panela, crushed fresh ginger, and lime).</li>
-                <li>Warm Handmade Corn Tortillas "palmeadas a mano" right in your villa kitchen.</li>
-                <li>Starter: Sopa de Mariscos Quepeña (Coastal seafood chowder) or Traditional Olla de Carne broth.</li>
-                <li>Complete Casado Campesino de Gala served family-style with all classic accompaniments.</li>
-                <li>Dessert Finale: Creamy Arroz con Leche with cinnamon sticks and Caramelized Sweet Plantains with fresh Turrialba cheese.</li>
-              </ul>
+            <div style="background-color: var(--gold-light); border: 1px solid var(--gold-hairline); border-radius: 4px; padding: 8px 14px; margin-bottom: 10px;">
+              <h3 class="thematic-section-heading" style="font-size: 13.5px; margin-bottom: 4px;">YOUR FIESTA TICA INCLUDES:</h3>
+              <p style="font-size: 11.5px; line-height: 1.45; color: #333;">
+                Traditional welcome beverage "Agua de Sapo" (Sugarcane panela, crushed fresh ginger & lime) · Warm handmade corn tortillas "palmeadas a mano" in your villa kitchen · Complete Casado de Gala · Creamy Arroz con Leche & Sweet Plantains with Turrialba cheese.
+              </p>
             </div>
 
-            <div class="dish-grid-2col">
+            <div class="dish-grid-2col" style="row-gap: 14px;">
               <div class="dish-col">
                 <div class="dish-item">
                   <h3 class="dish-name">CASADO CAMPESINO DE GALA</h3>
@@ -1997,7 +2174,7 @@
                   <p class="dish-desc">Whole fresh Pacific red snapper scored, seasoned with garlic, salt, and lime, fried crispy and served with double-fried patacones, shredded cabbage salad, and tartar dip.</p>
                 </div>
                 <div class="dish-item">
-                  <h3 class="dish-name">TAMALES TRADICIONALES EN HOJA DE PLÁTANO</h3>
+                  <h3 class="dish-name">TAMALES TRADICIONALES EN HOJA</h3>
                   <p class="dish-desc">Slow-steamed corn masa wrapped in aromatic banana leaves, stuffed with tender pork, chicken, rice, carrots, bell peppers, and prunes, served with Lizano sauce.</p>
                 </div>
                 <div class="dish-item">
@@ -2007,7 +2184,7 @@
               </div>
               <div class="dish-col">
                 <div class="dish-item">
-                  <h3 class="dish-name">CEVICHE TICO CLÁSICO CON SODA CRACKERS</h3>
+                  <h3 class="dish-name">CEVICHE TICO CON SODA CRACKERS</h3>
                   <p class="dish-desc">Fresh Pacific corvina cured in tart lime juice with finely diced sweet onions, sweet red peppers, and fresh cilantro, served with traditional galletas de soda.</p>
                 </div>
                 <div class="dish-item">
@@ -2025,7 +2202,7 @@
               </div>
             </div>
 
-            <div class="inclusion-pill" style="margin-top: 6px;">
+            <div class="inclusion-pill" style="margin-top: 8px;">
               EXPERIENCE THE TRUE SPIRIT OF PURA VIDA CULINARY HOSPITALITY IN THE COMFORT OF YOUR VILLA
             </div>
           </div>
@@ -2055,56 +2232,70 @@
       <circle cx="20" cy="3.5" r="2" fill="#ffffff"/>
       <path d="M12 25L16 33L20 27L24 33L28 25" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-              <h2 class="category-title" style="font-size: 22px;">FAQ & POLICIES</h2>
+              <h2 class="category-title" style="font-size: 24px;">FAQ & POLICIES</h2>
               <p class="category-subtitle">PREGUNTAS FRECUENTES & POLÍTICAS DE SERVICIO EN VILLAS</p>
             </div>
           </div>
-          <div class="page-content" style="padding-top: 8px;">
-            <div class="dish-grid-2col">
-              <div class="dish-col">
+          <div class="page-content" style="padding-top: 6px;">
+            <h3 class="faq-title-header">FREQUENTLY ASKED QUESTIONS</h3>
+
+            <div class="dish-grid-2col" style="column-gap: 28px; row-gap: 16px;">
+              <div class="dish-col" style="gap: 14px;">
                 <div class="faq-qa-item">
-                  <h3 class="faq-question">1. HOW DOES GROCERY SHOPPING WORK?</h3>
-                  <p class="faq-answer">Chef Marcos personally sources all groceries from local organic farmers markets, artisan bakeries, and the Quepos marina docks daily. Only the freshest catch and prime produce are selected for your villa.</p>
+                  <h4 class="faq-question">HOW MANY OPTIONS DO WE HAVE?</h4>
+                  <div class="faq-answer">
+                    <p style="margin-bottom: 2px;"><strong>Breakfast menu:</strong> pick 2 options</p>
+                    <p style="margin-bottom: 2px;"><strong>Lunch menu:</strong> pick 2 options</p>
+                    <p style="margin-bottom: 2px;"><strong>Dinner menu:</strong> pick 2 appetizers, 2 entrees, and 1 dessert</p>
+                    <p style="margin-bottom: 2px;"><strong>Special Menu:</strong> 2 appetizers, 1 entree, and 1 dessert</p>
+                    <p><strong>Kids menu:</strong> 1 option</p>
+                  </div>
                 </div>
+
                 <div class="faq-qa-item">
-                  <h3 class="faq-question">2. WHAT TIME DOES THE CHEF ARRIVE?</h3>
-                  <p class="faq-answer">For breakfast, our culinary team arrives 60-90 minutes prior to your preferred serving time. For lunch and dinner, Chef Marcos arrives 2 to 2.5 hours prior to prep, cook, and set the table.</p>
+                  <h4 class="faq-question">HOW MUCH TIME DO YOU NEED TO PREPARE?</h4>
+                  <p class="faq-answer">We will get to the villa 1 hour before the scheduled meal. 1:30 to 2:00 hours prior if the group is more than 12 guests.</p>
                 </div>
+
                 <div class="faq-qa-item">
-                  <h3 class="faq-question">3. ARE TABLE SETTING & CLEANUP INCLUDED?</h3>
-                  <p class="faq-answer">Yes, 100%! We provide full restaurant-style table setting, plated or family-style service, and thorough kitchen cleanup, leaving your counters, stove, and dishware sparkling clean.</p>
-                </div>
-                <div class="faq-qa-item">
-                  <h3 class="faq-question">4. CAN YOU ACCOMMODATE SPECIAL DIETS?</h3>
-                  <p class="faq-answer">Absolutely. We expertly accommodate Gluten-Free, Dairy-Free, Vegan, Vegetarian, Kosher-style, Nut Allergies, and Keto requirements with tailored substitute dishes.</p>
+                  <h4 class="faq-question">WHEN DO WE PAY YOU?</h4>
+                  <p class="faq-answer">We ask for a 30% deposit when making a reservation to secure your calendar dates, and the remainder upon service completion.</p>
                 </div>
               </div>
-              <div class="dish-col">
+
+              <div class="dish-col" style="gap: 14px;">
                 <div class="faq-qa-item">
-                  <h3 class="faq-question">5. DO YOU PROVIDE BARTENDER SERVICES?</h3>
-                  <p class="faq-answer">Yes! We provide professional private mixologists and bartenders as an add-on package for poolside tropical cocktails, craft margaritas, and curated wine pairings.</p>
+                  <h4 class="faq-question">WHAT DOES THE BARTENDER SERVICE INCLUDE?</h4>
+                  <p class="faq-answer">The bartender service includes mixing and serving handcrafted drinks. You can provide the alcohol and mixers, or we can purchase them and you reimburse us.</p>
                 </div>
+
                 <div class="faq-qa-item">
-                  <h3 class="faq-question">6. WHAT ARE THE PAYMENT TERMS?</h3>
-                  <p class="faq-answer">A 30% deposit secures your reservation dates on Chef Marcos' private calendar. The remaining balance is payable upon service completion via Cash (USD/CRC), Zelle, PayPal, or Credit Card.</p>
+                  <h4 class="faq-question">WHAT ARE YOUR CANCELLATION POLICIES?</h4>
+                  <div class="faq-answer">
+                    <p style="margin-bottom: 2px;">• 1 month ahead: Full reimbursement</p>
+                    <p style="margin-bottom: 2px;">• 2 weeks ahead: 50% reimbursement</p>
+                    <p>• 1 week ahead: No reimbursement</p>
+                  </div>
                 </div>
+
                 <div class="faq-qa-item">
-                  <h3 class="faq-question">7. WHAT IS THE CANCELLATION POLICY?</h3>
-                  <p class="faq-answer">Cancellations made 14 days or more before the reservation date receive a full deposit refund or credit. Rescheduling within 7 days is accommodated based on calendar availability.</p>
+                  <h4 class="faq-question">HOW DO WE PAY?</h4>
+                  <p class="faq-answer">You can pay with credit card, cash (USD / Costa Rican Colones), Zelle, or bank wire transfer.</p>
                 </div>
+
                 <div class="faq-qa-item">
-                  <h3 class="faq-question">8. ARE STAFF GRATUITIES INCLUDED?</h3>
-                  <p class="faq-answer">Staff gratuities are not included in the meal quotes. Tips are entirely at your discretion and are warmly appreciated by Chef Marcos and assistants for outstanding service (standard 15-20%).</p>
+                  <h4 class="faq-question">IS THE GRATUITY INCLUDED?</h4>
+                  <p class="faq-answer">Gratuity is not included; we kindly ask that you give it directly to Chef Marcos and assistants for outstanding service (customary 15-20%).</p>
                 </div>
               </div>
             </div>
 
             <!-- Booking Direct Banner -->
-            <div style="background-color: var(--gold-light); border: 1px solid var(--gold-hairline); border-radius: 4px; padding: 8px 14px; text-align: center; margin-top: auto;">
-              <h4 style="font-family: 'Cinzel', serif; font-size: 11px; font-weight: 700; color: var(--gold-dark); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 2px;">
+            <div style="background-color: var(--gold-light); border: 1.25px solid var(--gold-hairline); border-radius: 4px; padding: 8px 14px; text-align: center; margin-top: auto;">
+              <h4 style="font-family: 'Cinzel', serif; font-size: 11.5px; font-weight: 700; color: var(--gold-dark); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 2px;">
                 READY TO BOOK YOUR PRIVATE CHEF DATES?
               </h4>
-              <p style="font-size: 9px; color: #444; font-weight: 500;">
+              <p style="font-size: 10px; color: #333; font-weight: 600;">
                 Direct WhatsApp: <strong>+506 6081-1676</strong> · Email: <strong>info@chefmarcosmena.com</strong> · Manuel Antonio & Quepos, Costa Rica
               </p>
             </div>
