@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserve Your Private Dining Experience — Chef Marcos Mena</title>
+  <meta name="description" content="Book private chef services in Manuel Antonio & Quepos with Chef Marcos Mena. Customized villa dining, fresh local seafood, and bespoke celebrations.">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo_cloche.svg">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header scrolled">
+    <div class="header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-emblem">M</div>
+        <div class="brand-text">
+          <span class="brand-title">CHEF MARCOS MENA</span>
+          <span class="brand-subtitle">Private Dining Experience</span>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="menu/pdf-menu.html">Menu</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="https://wa.me/50660811676" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+        <a href="reserve.html" class="btn btn-nav-reserve">RESERVE</a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="reserve-page-header">
+    <div class="container-narrow">
+      <span class="subtitle">Private Chef Reservation</span>
+      <h1>Reserve Your Experience</h1>
+      <p>Complete the details below to check availability for your private villa in Manuel Antonio, Quepos, or Central Pacific Costa Rica. Chef Marcos will review your request and connect directly via WhatsApp.</p>
+    </div>
+  </section>
+
+  <!-- Reservation Form Section -->
+  <section class="reservation-form-section">
+    <div class="container-narrow">
+      <div class="reservation-card">
+        <form id="reservationForm">
+          <div class="form-grid">
+            
+            <!-- Full Name -->
+            <div class="form-group">
+              <label for="clientName" class="form-label">Full Name <span class="req">*</span></label>
+              <input type="text" id="clientName" class="form-control" placeholder="e.g. Michael Smith" required>
+            </div>
+
+            <!-- Phone / WhatsApp -->
+            <div class="form-group">
+              <label for="clientPhone" class="form-label">Phone / WhatsApp Number <span class="req">*</span></label>
+              <input type="tel" id="clientPhone" class="form-control" placeholder="+1 (555) 000-0000" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="clientEmail" class="form-label">Email Address</label>
+              <input type="email" id="clientEmail" class="form-control" placeholder="michael@example.com">
+            </div>
+
+            <!-- Villa Location -->
+            <div class="form-group">
+              <label for="villaLocation" class="form-label">Villa / Rental Location <span class="req">*</span></label>
+              <input type="text" id="villaLocation" class="form-control" placeholder="e.g. Villa Punto de Vista, Manuel Antonio" required>
+            </div>
+
+            <!-- Service Dates -->
+            <div class="form-group">
+              <label for="serviceDates" class="form-label">Desired Date(s) of Service <span class="req">*</span></label>
+              <input type="text" id="serviceDates" class="form-control" placeholder="e.g. Nov 15 - 18, 2026 or single date" required>
+            </div>
+
+            <!-- Guest Count -->
+            <div class="form-group">
+              <label class="form-label">Number of Guests</label>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                <input type="number" id="adultsCount" class="form-control" placeholder="Adults" min="1" value="4">
+                <input type="number" id="childrenCount" class="form-control" placeholder="Children" min="0" value="0">
+              </div>
+            </div>
+
+            <!-- Services Checkboxes -->
+            <div class="form-group full-width">
+              <label class="form-label">Meal Services Desired</label>
+              <div class="checkbox-pills-grid">
+                <div class="pill-option">
+                  <input type="checkbox" id="srvBreakfast" name="services" value="Breakfast & Lunch" checked>
+                  <label for="srvBreakfast" class="pill-label">
+                    <span class="pill-checkmark">✓</span> Breakfast & Lunch
+                  </label>
+                </div>
+                <div class="pill-option">
+                  <input type="checkbox" id="srvDinner" name="services" value="Fine Dining / Dinner" checked>
+                  <label for="srvDinner" class="pill-label">
+                    <span class="pill-checkmark">✓</span> Sunset Dinner / Fine Dining
+                  </label>
+                </div>
+                <div class="pill-option">
+                  <input type="checkbox" id="srvFullDay" name="services" value="Full Day Chef Service">
+                  <label for="srvFullDay" class="pill-label">
+                    <span class="pill-checkmark">✓</span> Full Day Chef Service
+                  </label>
+                </div>
+                <div class="pill-option">
+                  <input type="checkbox" id="srvEvents" name="services" value="Private Event / Celebration">
+                  <label for="srvEvents" class="pill-label">
+                    <span class="pill-checkmark">✓</span> Event / Wedding / Party
+                  </label>
+                </div>
+                <div class="pill-option">
+                  <input type="checkbox" id="srvBartender" name="services" value="Bartender & Mixology">
+                  <label for="srvBartender" class="pill-label">
+                    <span class="pill-checkmark">✓</span> Bartender & Mixology
+                  </label>
+                </div>
+                <div class="pill-option">
+                  <input type="checkbox" id="srvGrocery" name="services" value="Grocery Villa Stocking">
+                  <label for="srvGrocery" class="pill-label">
+                    <span class="pill-checkmark">✓</span> Grocery Villa Pre-Stocking
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dietary Restrictions -->
+            <div class="form-group full-width">
+              <label for="dietaryNotes" class="form-label">Dietary Restrictions, Allergies, or Preferences</label>
+              <input type="text" id="dietaryNotes" class="form-control" placeholder="e.g. 1 Gluten-free guest, 1 Shellfish allergy, loves spicy salsas">
+            </div>
+
+            <!-- Special Requests / Kitchen Details -->
+            <div class="form-group full-width">
+              <label for="specialRequests" class="form-label">Special Requests, Celebrations, or Vision</label>
+              <textarea id="specialRequests" class="form-control" placeholder="Tell Chef Marcos about your group, any birthdays or anniversaries, specific favorite dishes, or kitchen details..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group full-width" style="text-align: center; margin-top: 1rem;">
+              <button type="submit" class="btn btn-gold" style="width: 100%; max-width: 420px; font-size: 0.95rem; padding: 1.15rem 2rem;">
+                SEND RESERVATION TO WHATSAPP
+              </button>
+              <p class="form-footer-note">
+                🔒 Direct personal connection with Chef Marcos Mena. No automatic charges or booking fees. We reply promptly within a few hours.
+              </p>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="brand-emblem">M</div>
+            <div class="brand-text">
+              <span class="brand-title">CHEF MARCOS MENA</span>
+              <span class="brand-subtitle">Manuel Antonio, Costa Rica</span>
+            </div>
+          </div>
+          <p>Bespoke private chef culinary services across luxury rental villas, yachts, and private residences in Manuel Antonio, Quepos, and Dominical.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="menu/pdf-menu.html">Gastronomic Menu</a></li>
+            <li><a href="index.html#about">About Chef Marcos</a></li>
+            <li><a href="reserve.html">Make a Reservation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="services/breakfast-lunch.html">Breakfast & Lunch</a></li>
+            <li><a href="services/dinner.html">Sunset Plated Dinner</a></li>
+            <li><a href="services/events.html">Events & Celebrations</a></li>
+            <li><a href="services/bartender.html">Bartender & Mixology</a></li>
+            <li><a href="services/grocery-shopping.html">Grocery Villa Stocking</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect Directly</h4>
+          <div class="footer-contact-item">
+            <span class="icon">📍</span>
+            <span>Manuel Antonio & Quepos, Puntarenas, Costa Rica</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon">📱</span>
+            <a href="https://wa.me/50660811676" target="_blank" rel="noopener">+506 6081-1676 (WhatsApp)</a>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon">✉️</span>
+            <a href="mailto:chefmarcosmenacr@gmail.com">chefmarcosmenacr@gmail.com</a>
+          </div>
+          <div class="footer-social-links">
+            <a href="https://www.facebook.com/elpointgourmet" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Facebook">FB</a>
+            <a href="https://wa.me/50660811676" target="_blank" rel="noopener" class="social-icon-btn" aria-label="WhatsApp">WA</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Chef Marcos Mena Viales. All Rights Reserved. Luxury Villa Dining Experience.</p>
+        <button class="back-to-top-btn">TOP ↑</button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+</body>
+</html>
