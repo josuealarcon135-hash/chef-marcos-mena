@@ -1540,3 +1540,34 @@ textarea.form-control {
   .photobanner-item { width: 220px; height: 170px; }
   .service-card-wrapper { height: 390px; }
 }
+
+/* ==========================================================================
+   Suppress Netlify Injected Promo Badges, Drawers & Powered by Netlify
+   ========================================================================== */
+#nl-badge-frame,
+#nl-hud-frame,
+[id^="nl-"],
+[class*="netlify-badge"],
+[class*="netlify-identity"],
+iframe[src*="netlify"],
+iframe[title*="Netlify"],
+iframe[title*="Powered by Netlify"],
+.netlify-badge,
+.netlify-banner,
+div[data-netlify-badge],
+div[class*="netlify"],
+a[href*="netlify.com"][class*="badge"],
+a[href*="netlify.app"][class*="badge"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  width: 0 !important;
+  height: 0 !important;
+  max-width: 0 !important;
+  max-height: 0 !important;
+  z-index: -9999 !important;
+}

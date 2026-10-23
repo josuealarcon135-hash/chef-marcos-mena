@@ -209,3 +209,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// Suppress Netlify Injected Promo Badges, Drawers & "Powered by Netlify"
+(function() {
+  const killNetlify = function() {
+    document.querySelectorAll('#nl-badge-frame, #nl-hud-frame, iframe[id^="nl-"], iframe[title*="Netlify"], iframe[title*="Powered by Netlify"], [class*="netlify-badge"], [id*="netlify"], div[data-netlify-badge], a[href*="netlify.com"][class*="badge"]').forEach(function(el) {
+      try {
+        el.remove();
+      } catch (err) {}
+    });
+  };
+  killNetlify();
+  if (typeof MutationObserver !== 'undefined') {
+    new MutationObserver(killNetlify).observe(document.documentElement, { childList: true, subtree: true });
+  }
+  window.addEventListener('DOMContentLoaded', killNetlify);
+  window.addEventListener('load', killNetlify);
+  setInterval(killNetlify, 400);
+})();
