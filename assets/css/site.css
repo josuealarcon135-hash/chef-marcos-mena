@@ -828,99 +828,83 @@ h1, h2, h3, h4, h5, h6 {
    Menu Showcase Section
    ========================================================================== */
 
+/* ==========================================================================
+   Menu Showcase Section (Minimalist Centered Style Inspired by CRChefs)
+   ========================================================================== */
+
 .menu-showcase-section {
-  padding: 6.5rem 0;
+  padding: 5.5rem 0;
   background: var(--bg-white);
   border-top: 1px solid var(--border-light);
+  text-align: center;
 }
 
-.menu-showcase-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4.5rem;
+.menu-simple-container {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  padding: 0 1rem;
 }
 
-.menu-preview-card {
-  position: relative;
-  border: 1px solid var(--border-gold);
-  padding: 1.25rem;
-  background: var(--bg-white);
-  box-shadow: var(--shadow-lg);
-  border-radius: 4px;
-}
-
-.menu-preview-inner {
-  position: relative;
-  overflow: hidden;
-  border-radius: 2px;
-  height: 480px;
-}
-
-.menu-preview-inner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.menu-preview-card:hover .menu-preview-inner img {
-  transform: scale(1.03);
-}
-
-.menu-badge-corner {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  background: rgba(18, 18, 18, 0.85);
-  backdrop-filter: blur(5px);
-  color: var(--primary-gold);
-  padding: 0.5rem 1.2rem;
-  font-size: 0.7rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 600;
-  border-left: 2px solid var(--primary-gold);
-}
-
-.menu-info-content h2 {
-  font-size: 2.2rem;
-  margin-bottom: 1.25rem;
-}
-
-.menu-info-content p {
-  font-size: 0.98rem;
-  line-height: 1.85;
+.menu-simple-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
   color: var(--text-body);
-  margin-bottom: 1.75rem;
+  max-width: 585px;
+  margin: 0 auto;
+  font-family: inherit;
 }
 
-.menu-highlights-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem 1.5rem;
-  margin-bottom: 2.5rem;
+.menu-cover-wrapper {
+  margin-top: 36px;
+  margin-bottom: 24px;
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.menu-highlight-item {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  font-size: 0.88rem;
-  font-weight: 500;
-  color: var(--text-dark);
+.menu-cover-wrapper:hover {
+  transform: translateY(-4px);
 }
 
-.menu-highlight-item span.bullet {
-  color: var(--primary-gold);
-  font-size: 1.1rem;
+.menu-cover-img {
+  display: block;
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid #cab986;
+  padding: 4px;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  cursor: pointer;
 }
 
-.menu-actions {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  flex-wrap: wrap;
+.menu-simple-action {
+  margin-top: 8px;
+}
+
+.btn-menu-direct {
+  display: inline-block;
+  color: #ffffff !important;
+  background: #c4b179 !important;
+  font-size: 14px !important;
+  text-decoration: none !important;
+  padding: 12px 42px !important;
+  letter-spacing: 2px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  border-radius: 2px !important;
+  border: none !important;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.btn-menu-direct:hover {
+  background: #a39967 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(163, 153, 103, 0.35);
 }
 
 /* ==========================================================================
