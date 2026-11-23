@@ -376,7 +376,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100vh;
   min-height: 650px;
   overflow: hidden;
-  background: #000000;
+  background: radial-gradient(ellipse at center, #16202c 0%, #0a1017 55%, #05080c 100%);
 }
 
 .slider-container {
@@ -397,6 +397,9 @@ h1, h2, h3, h4, h5, h6 {
   visibility: hidden;
   transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 1.2s;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .slide-item.active {
@@ -406,10 +409,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .slide-item video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 22%;
+  height: 94%;
+  max-height: 94vh;
+  width: auto;
+  max-width: 92vw;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95), 0 0 35px rgba(202, 185, 134, 0.18);
+  border: 1px solid rgba(202, 185, 134, 0.28);
 }
 
 .slide-item img {
@@ -425,7 +433,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.65) 100%);
+  background: radial-gradient(circle at center, rgba(0,0,0,0) 35%, rgba(0,0,0,0.6) 100%);
   z-index: 3;
   pointer-events: none;
 }
@@ -440,13 +448,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-content {
   position: absolute;
-  bottom: 12%;
+  bottom: 8%;
   left: 5%;
-  max-width: 720px;
+  max-width: 480px;
   z-index: 10;
   color: #ffffff;
   text-shadow: 0 4px 15px rgba(0,0,0,0.7);
   animation: heroFadeIn 1.5s ease-out;
+  pointer-events: none;
 }
 
 @keyframes heroFadeIn {
@@ -1541,8 +1550,16 @@ textarea.form-control {
     box-shadow: -5px 0 25px rgba(0,0,0,0.5);
   }
   .nav-links.active { right: 0; }
-  .hero-title { font-size: 2.2rem; }
-  .hero-content { bottom: 8%; left: 1.5rem; right: 1.5rem; }
+  .hero-title { font-size: 1.85rem; }
+  .hero-content { bottom: 5%; left: 1.25rem; right: 1.25rem; text-align: center; }
+  .slide-item video {
+    height: 92%;
+    max-height: 92vh;
+    max-width: 95vw;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(202, 185, 134, 0.2);
+  }
   .hero-floating-reserve { top: 1rem; right: 4.5rem; }
   .form-grid { grid-template-columns: 1fr; }
   .reservation-card { padding: 2rem 1.25rem; }
